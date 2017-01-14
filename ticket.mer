@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="com.mysql.jdbc.Driver" database="ticket" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="car">
+      <Drawing expanded="true" location="2,0" dimensions="223,151" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="carName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="carCard" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="buyTime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="TIMESTAMP" size="19" />
+        </Column>
+        <Column name="seatNum" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="carTypeId" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="cartype">
+      <Drawing expanded="true" location="0,251" dimensions="228,71" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="typeName" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="driver">
+      <Drawing expanded="true" location="273,0" dimensions="241,151" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="driverName" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="age" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="identityCard" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="18" />
+        </Column>
+        <Column name="phone" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="11" />
+        </Column>
+        <Column name="sex" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="2" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="car_ibfk_1">
+      <Details primary_table="cartype" foreign_table="car">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="carTypeId" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

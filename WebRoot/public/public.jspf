@@ -1,0 +1,22 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set value="${pageContext.request.contextPath}" var="ticket"/>
+
+<title>订票管理系统</title>
+<!-- 引入easyUI的主题文件 --> 
+<link rel="stylesheet" type="text/css" href="${ticket}/jquery-easyui-1.4.5/themes/default/easyui.css">   
+<link rel="stylesheet" type="text/css" href="${ticket}/jquery-easyui-1.4.5/themes/icon.css">   
+<!-- 引入jQuery和easyUI的框架组件 -->
+<script type="text/javascript" src="${ticket}/jquery-easyui-1.4.5/jquery.min.js"></script>   
+<script type="text/javascript" src="${ticket}/jquery-easyui-1.4.5/jquery.easyui.min.js"></script>  
+<script type="text/javascript" src="${ticket}/jquery-easyui-1.4.5/locale/easyui-lang-zh_CN.js"></script>
+
+
+
+
+
+
+
+
+
+

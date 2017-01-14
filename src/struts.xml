@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<package name="default"  extends="json-default">
+	
+		<action name="send_*_*" class="sendAction">
+			<result>/WEB-INF/{1}/{2}.jsp</result>
+		</action>
+		<action name="driver_*_*" class="driverAction" method="{2}">
+			<result type="json" name="jsonMap">
+				<param name="root">jsonMap</param>
+			</result>
+			<result>/WEB-INF/{1}/{2}.jsp</result>
+		</action>
+		<action name="carType_*_*" class="carTypeAction" method="{2}">
+			<result type="json" name="jsonList">
+				<param name="root">jsonList</param>
+			</result>
+			<result type="json" name="jsonMap">
+				<param name="root">jsonMap</param>
+			</result>
+		</action>
+		<action name="car_*_*" class="carAction" method="{2}">
+			<result type="json" name="jsonMap">
+				<param name="root">jsonMap</param>
+			</result>
+		</action>
+	</package>
+</struts>    
