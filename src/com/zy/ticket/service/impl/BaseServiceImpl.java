@@ -2,13 +2,17 @@ package com.zy.ticket.service.impl;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import com.zy.ticket.dao.AddressDao;
 import com.zy.ticket.dao.BaseDao;
 import com.zy.ticket.dao.CarDao;
 import com.zy.ticket.dao.CarTypeDao;
 import com.zy.ticket.dao.DriverDao;
+import com.zy.ticket.dao.ManagerDao;
+import com.zy.ticket.dao.UserDao;
 import com.zy.ticket.service.BaseService;
 
 @SuppressWarnings("unchecked")
@@ -42,6 +46,12 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	
 	protected CarDao carDao;
 	
+	protected AddressDao addressDao;
+	
+	protected UserDao userDao;
+	
+	protected ManagerDao managerDao;
+	
 	public void setCarDao(CarDao carDao) {
 		this.carDao = carDao;
 	}
@@ -54,6 +64,17 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 		this.carTypeDao = carTypeDao;
 	}
 	
+	public void setAddressDao(AddressDao addressDao) {
+		this.addressDao = addressDao;
+	}
+	
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
+	
+	public void setManagerDao(ManagerDao managerDao) {
+		this.managerDao = managerDao;
+	}
 	@Override
 	public void saveModel(T t) {
 		baseDao.saveModel(t);
@@ -77,5 +98,18 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	@Override
 	public void updateModel(T t) {
 		baseDao.updateModel(t);
+	}
+	@Override
+	public List<T> query(){
+		return baseDao.query();
+	}
+	
+	@Override
+	public List<T> queryModelByPage(String type, String key, String rows,
+			String page, String sort, String order) {
+		int _page = Integer.parseInt(page);
+		int _rows = Integer.parseInt(rows);
+		int startRows = _rows *(_page-1);
+		return baseDao.queryModelByPage(type, key, startRows, _rows, sort, order);
 	}
 }

@@ -12,5 +12,7 @@
 	<mapping resource="com/zy/ticket/bean/CarType.hbm.xml" />
 	<mapping resource="com/zy/ticket/bean/Car.hbm.xml" />
 	<mapping resource="com/zy/ticket/bean/Address.hbm.xml"/>
+	<mapping resource="com/zy/ticket/bean/User.hbm.xml"/>
+	<mapping resource="com/zy/ticket/bean/Manager.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>

@@ -9,7 +9,6 @@ public class CarAction extends BaseAction<Car>{
 	public void saveCar(){
 		System.out.println(model);
 		carService.saveModel(model);
-		
 	}
 	
 	//根据id删除汽车信息

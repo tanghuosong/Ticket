@@ -25,10 +25,11 @@ public class DriverAction extends BaseAction<Driver>{
 		System.out.println(model);
 		driverService.updateModel(model);
 	}
-	//分页查询所有的司机
+	
+	//分页排序查询所有的司机
 	public String queryDriverByPage(){
 		jsonMap.put("total", driverService.getRowCount(type,key));
-		jsonMap.put("rows",driverService.queryDriverByPage(type, key ,rows,page,sort,order));
+		jsonMap.put("rows",driverService.queryModelByPage(type, key, rows, page, sort, order));
 		return "jsonMap";
 	}
 }

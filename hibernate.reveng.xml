@@ -3,4 +3,9 @@
 
 <hibernate-reverse-engineering>
 	<table name="address" catalog="ticket" class="Address"></table>
+<table name="user" catalog="ticket" class="User">
+	<primary-key>
+		<generator class="native"></generator>
+	</primary-key>
+</table>
 </hibernate-reverse-engineering>

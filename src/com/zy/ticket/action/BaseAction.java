@@ -12,9 +12,12 @@ import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.zy.ticket.service.AddressService;
 import com.zy.ticket.service.CarService;
 import com.zy.ticket.service.CarTypeService;
 import com.zy.ticket.service.DriverService;
+import com.zy.ticket.service.ManagerService;
+import com.zy.ticket.service.UserService;
 @SuppressWarnings("unchecked")
 public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	SessionAware,RequestAware, ModelDriven<T>{
@@ -61,6 +64,12 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	
 	protected CarService carService;
 
+	protected AddressService addressService;
+	
+	protected UserService userService;
+	
+	protected ManagerService managerService;
+	
 	public void setDriverService(DriverService driverService) {
 		this.driverService = driverService;
 	}
@@ -71,6 +80,18 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	
 	public void setCarService(CarService carService) {
 		this.carService = carService;
+	}
+	
+	public void setAddressService(AddressService addressService) {
+		this.addressService = addressService;
+	}
+	
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+	
+	public void setManagerService(ManagerService managerService) {
+		this.managerService = managerService;
 	}
 	
 	@Override

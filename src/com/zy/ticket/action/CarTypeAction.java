@@ -28,14 +28,14 @@ public class CarTypeAction extends BaseAction<CarType>{
 	
 	//查询汽车分类列表
 	public String queryCarTypeList(){
-		jsonList = carTypeService.queryCarTypeList();
+		jsonList = carTypeService.query();
 		return "jsonList";
 	}
 	
 	//分页查询所有的汽车分类
 	public String queryCarTypeByPage(){
 		jsonMap.put("total", carTypeService.getRowCount(type,key));
-		jsonMap.put("rows",carTypeService.queryCarTypeByPage(type, key ,rows,page,sort,order));
+		jsonMap.put("rows",carTypeService.queryModelByPage(type, key ,rows,page,sort,order));
 		return "jsonMap";
 	}
 }

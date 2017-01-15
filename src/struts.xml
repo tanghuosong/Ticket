@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<constant name="struts.multipart.saveDir" value="/tmp"/>
-	<package name="default"  extends="json-default">
+	<package name="default" extends="json-default">
 	
 		<action name="send_*_*" class="sendAction">
 			<result>/WEB-INF/{1}/{2}.jsp</result>
@@ -28,5 +28,21 @@
 				<param name="root">jsonMap</param>
 			</result>
 		</action>
+		<action name="address_*_*" class="addressAction" method="{2}">
+			<result type="json" name="jsonMap">
+				<param name="root">jsonMap</param>
+			</result>
+		</action>
+		<action name="user_*_*" class="userAction" method="{2}">
+			<result type="json" name="jsonMap">
+				<param name="root">jsonMap</param>
+			</result>
+		</action>
+		<action name="manager_*_*" class="managerAction" method="{2}">
+			<result type="json" name="jsonMap">
+				<param name="root">jsonMap</param>
+			</result>
+		</action>
+		
 	</package>
 </struts>    

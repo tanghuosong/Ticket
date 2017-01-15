@@ -73,4 +73,12 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 		Number number = (Number)session().createQuery(hql).setString("key", "%"+key+"%").uniqueResult();
 		return number.intValue();
 	}
+	
+	// 排序返回
+	@Override
+	public List<T> queryModelByPage(String type, String key,
+			int startRows, int _rows, String sort, String order) {
+		String hql = "From "+clazz.getSimpleName()+" t  WHERE t."+type+" like :key order by t."+sort+" "+order;
+		return session().createQuery(hql).setString("key", "%"+key+"%").setFirstResult(startRows).setMaxResults(_rows).list();
+	}
 }

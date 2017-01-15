@@ -24,4 +24,7 @@ public interface BaseDao<T> {
 	
 	//获取记录总数
 	public int getRowCount(String type, String key);
+	
+	public List<T> queryModelByPage(String type, String key,
+			int startRows, int _rows, String sort, String order);
 }
