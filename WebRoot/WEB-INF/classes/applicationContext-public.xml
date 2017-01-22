@@ -79,6 +79,8 @@
 	<bean id="addressDao" class="com.zy.ticket.dao.impl.AddressDaoImpl" parent="baseDao"/>
 	<bean id="userDao" class="com.zy.ticket.dao.impl.UserDaoImpl" parent="baseDao"/>
 	<bean id="managerDao" class="com.zy.ticket.dao.impl.ManagerDaoImpl" parent="baseDao"/>
+	<bean id="routeDao" class="com.zy.ticket.dao.impl.RouteDaoImpl" parent="baseDao"/>
+	<bean id="orderDao" class="com.zy.ticket.dao.impl.OrderDaoImpl" parent="baseDao"/>
 	
 	<!-- 配置service -->
 	<bean id="baseService" class="com.zy.ticket.service.impl.BaseService" lazy-init="true" >
@@ -88,6 +90,8 @@
 		<property name="addressDao" ref="addressDao"/>
 		<property name="userDao" ref="userDao"/>
 		<property name="managerDao" ref="managerDao"/>
+		<property name="routeDao" ref="routeDao"/>
+		<property name="orderDao" ref="orderDao"/>
 	</bean>
 	<bean id="driverService" class="com.zy.ticket.service.impl.DriverServiceImpl" parent="baseService"/>
 	<bean id="carTypeService" class="com.zy.ticket.service.impl.CarTypeServiceImpl" parent="baseService"/>
@@ -95,6 +99,8 @@
 	<bean id="addressService" class="com.zy.ticket.service.impl.AddressServiceImpl" parent="baseService"/>
 	<bean id="userService" class="com.zy.ticket.service.impl.UserServiceImpl" parent="baseService"/>
 	<bean id="managerService" class="com.zy.ticket.service.impl.ManagerServiceImpl" parent="baseService"/>
+	<bean id="orderService" class="com.zy.ticket.service.impl.OrderServiceImpl" parent="baseService"/>
+	<bean id="routeService" class="com.zy.ticket.service.impl.RouteServiceImpl" parent="baseService"/>
 	
 	<!-- 配置action -->
 	<bean id="baseAction" class="com.zy.ticket.action.BaseAction" scope="prototype">
@@ -104,6 +110,8 @@
 		<property name="addressService" ref="addressService"/>
 		<property name="userService" ref="userService"/>
 		<property name="managerService" ref="managerService"/>
+		<property name="orderService" ref="orderService"/>
+		<property name="routeService" ref="routeService"/>
 	</bean>
 	
 	<bean id="sendAction" class="com.zy.ticket.action.SendAction"/>
@@ -113,4 +121,6 @@
 	<bean id="addressAction" class="com.zy.ticket.action.AddressAction" parent="baseAction" scope="prototype"/>
 	<bean id="userAction" class="com.zy.ticket.action.UserAction" parent="baseAction" scope="prototype"/>
 	<bean id="managerAction" class="com.zy.ticket.action.ManagerAction" parent="baseAction" scope="prototype"/>
+	<bean id="routeAction" class="com.zy.ticket.action.RouteAction" parent="baseAction" scope="prototype"/>
+	<bean id="orderAction" class="com.zy.ticket.action.OrderAction" parent="baseAction" scope="prototype"/>
 </beans>

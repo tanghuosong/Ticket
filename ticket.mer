@@ -3,16 +3,36 @@
   <Connection session="com.mysql.jdbc.Driver" database="ticket" />
   <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
   <Tables>
-    <Table name="car">
-      <Drawing expanded="true" location="2,0" dimensions="223,151" />
+    <Table name="address">
+      <Drawing expanded="true" location="339,532" dimensions="218,131" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
         </Column>
-        <Column name="carName" primary_key="false" foreign_key="false" required="false" unique="false">
+        <Column name="province" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="VARCHAR" size="20" />
         </Column>
-        <Column name="carCard" primary_key="false" foreign_key="false" required="false" unique="false">
+        <Column name="city" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="county" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="station" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="car">
+      <Drawing expanded="true" location="657,522" dimensions="225,151" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="carName" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="carCard" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="VARCHAR" size="10" />
         </Column>
         <Column name="buyTime" primary_key="false" foreign_key="false" required="true" unique="false">
@@ -21,13 +41,13 @@
         <Column name="seatNum" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="INT UNSIGNED" size="10" />
         </Column>
-        <Column name="carTypeId" primary_key="false" foreign_key="true" required="false" unique="false">
+        <Column name="carTypeId" primary_key="false" foreign_key="true" required="true" unique="false">
           <Data type="INT UNSIGNED" size="10" />
         </Column>
       </Columns>
     </Table>
     <Table name="cartype">
-      <Drawing expanded="true" location="0,251" dimensions="228,71" />
+      <Drawing expanded="true" location="655,773" dimensions="228,71" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -38,18 +58,18 @@
       </Columns>
     </Table>
     <Table name="driver">
-      <Drawing expanded="true" location="273,0" dimensions="241,151" />
+      <Drawing expanded="true" location="0,522" dimensions="239,151" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
         </Column>
-        <Column name="driverName" primary_key="false" foreign_key="false" required="true" unique="false">
+        <Column name="drivername" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="VARCHAR" size="20" />
         </Column>
         <Column name="age" primary_key="false" foreign_key="false" required="true" unique="false">
-          <Data type="INT" size="10" />
+          <Data type="INT UNSIGNED" size="10" />
         </Column>
-        <Column name="identityCard" primary_key="false" foreign_key="false" required="true" unique="false">
+        <Column name="identitycard" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="VARCHAR" size="18" />
         </Column>
         <Column name="phone" primary_key="false" foreign_key="false" required="true" unique="false">
@@ -57,6 +77,98 @@
         </Column>
         <Column name="sex" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="VARCHAR" size="2" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="manager">
+      <Drawing expanded="true" location="0,889" dimensions="233,111" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="email" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="32" />
+        </Column>
+        <Column name="password" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="16" />
+        </Column>
+        <Column name="permission" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="order">
+      <Drawing expanded="true" location="168,0" dimensions="236,151" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="userid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="routeid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="status" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="createtime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="DATETIME" size="19" />
+        </Column>
+        <Column name="updatetime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="DATETIME" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="route">
+      <Drawing expanded="true" location="336,251" dimensions="224,171" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="addressid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="starttime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="DATETIME" size="19" />
+        </Column>
+        <Column name="carid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="driverid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="price" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+        <Column name="sold" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="user">
+      <Drawing expanded="true" location="13,251" dimensions="223,171" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT UNSIGNED" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="16" />
+        </Column>
+        <Column name="sex" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="4" />
+        </Column>
+        <Column name="password" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="16" />
+        </Column>
+        <Column name="idcard" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="18" />
+        </Column>
+        <Column name="email" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="32" />
+        </Column>
+        <Column name="phone" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="11" />
         </Column>
       </Columns>
     </Table>
@@ -69,6 +181,61 @@
         </PrimaryKeys>
         <ForeignKeys>
           <ColumnName name="carTypeId" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="userid">
+      <Details primary_table="user" foreign_table="order">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="userid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="routeid">
+      <Details primary_table="route" foreign_table="order">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="routeid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="driverid">
+      <Details primary_table="driver" foreign_table="route">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="driverid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="addressid">
+      <Details primary_table="address" foreign_table="route">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="addressid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="carid">
+      <Details primary_table="car" foreign_table="route">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="carid" />
         </ForeignKeys>
       </Details>
       <Drawing routingType="0" />

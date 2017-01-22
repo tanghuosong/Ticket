@@ -1,36 +1,63 @@
 package com.zy.ticket.bean;
 
-import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
-public class CarType implements Serializable {
+
+/**
+ * Cartype entity. @author MyEclipse Persistence Tools
+ */
+
+public class CarType  implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	private Integer id;
-	private String  typeName;
-	
-	public CarType() {
-	}
+     private String typeName;
+     private Set<?> cars = new HashSet<Object>(0);
 
-	public CarType(Integer id, String typeName) {
-		super();
-		this.id = id;
-		this.typeName = typeName;
-	}
 
-	public Integer getId() {
-		return id;
-	}
+    // Constructors
 
-	public String getTypeName() {
-		return typeName;
-	}
+    /** default constructor */
+    public CarType() {
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	/** minimal constructor */
+    public CarType(String typeName) {
+        this.typeName = typeName;
+    }
+    
+    /** full constructor */
+    public CarType(String typeName, Set<?> cars) {
+        this.typeName = typeName;
+        this.cars = cars;
+    }
 
-	public void setTypeName(String typeName) {
-		this.typeName = typeName;
-	}
+   
+    // Property accessors
+
+    public Integer getId() {
+        return this.id;
+    }
+    
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTypeName() {
+        return this.typeName;
+    }
+    
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    public Set<?> getCars() {
+        return this.cars;
+    }
+    
+    public void setCars(Set<?> cars) {
+        this.cars = cars;
+    }
+
 }

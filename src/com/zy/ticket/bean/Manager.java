@@ -6,8 +6,12 @@ package com.zy.ticket.bean;
 
 public class Manager implements java.io.Serializable {
 
-	private static final long serialVersionUID = 1L;
+	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String email;
 	private String password;
@@ -26,6 +30,7 @@ public class Manager implements java.io.Serializable {
 		this.permission = permission;
 	}
 
+	// Property accessors
 
 	public Integer getId() {
 		return this.id;

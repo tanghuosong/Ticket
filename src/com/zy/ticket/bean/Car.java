@@ -1,35 +1,70 @@
 package com.zy.ticket.bean;
 
-import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Car implements Serializable {
+/**
+ * Car entity. @author MyEclipse Persistence Tools
+ */
 
+public class Car implements java.io.Serializable {
+
+	// Fields
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	
 	private Integer id;
-	private String  carName;
-	private String  carCard;
+	private CarType carType;
+	private String carName;
+	private String carCard;
 	private Timestamp buyTime;
 	private Integer seatNum;
-	private CarType  carType;
-	
-	public Car(){}
+	private Set<?> routes = new HashSet<Object>(0);
 
-	public Car(Integer id, String carName, String carCard, Timestamp buyTime,
-			Integer seatNum, CarType carType) {
+	// Constructors
+
+	/** default constructor */
+	public Car() {
+	}
+	
+	
+
+	public Car(Integer id, CarType carType, String carName, String carCard,
+			Timestamp buyTime, Integer seatNum) {
 		super();
 		this.id = id;
+		this.carType = carType;
 		this.carName = carName;
 		this.carCard = carCard;
 		this.buyTime = buyTime;
 		this.seatNum = seatNum;
+	}
+
+
+
+	public Car(Integer id, CarType carType, String carName, String carCard,
+			Timestamp buyTime, Integer seatNum, Set<?> routes) {
+		super();
+		this.id = id;
 		this.carType = carType;
+		this.carName = carName;
+		this.carCard = carCard;
+		this.buyTime = buyTime;
+		this.seatNum = seatNum;
+		this.routes = routes;
 	}
 	
+
+
 	public Integer getId() {
 		return id;
+	}
+
+	public CarType getCarType() {
+		return carType;
 	}
 
 	public String getCarName() {
@@ -40,7 +75,7 @@ public class Car implements Serializable {
 		return carCard;
 	}
 
-	public Date getBuyTime() {
+	public Timestamp getBuyTime() {
 		return buyTime;
 	}
 
@@ -48,12 +83,16 @@ public class Car implements Serializable {
 		return seatNum;
 	}
 
-	public CarType getCarType() {
-		return carType;
+	public Set<?> getRoutes() {
+		return routes;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public void setCarType(CarType carType) {
+		this.carType = carType;
 	}
 
 	public void setCarName(String carName) {
@@ -72,7 +111,9 @@ public class Car implements Serializable {
 		this.seatNum = seatNum;
 	}
 
-	public void setCarType(CarType carType) {
-		this.carType = carType;
+	public void setRoutes(Set<?> routes) {
+		this.routes = routes;
 	}
+	
+
 }

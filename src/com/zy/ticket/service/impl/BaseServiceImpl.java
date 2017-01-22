@@ -12,6 +12,8 @@ import com.zy.ticket.dao.CarDao;
 import com.zy.ticket.dao.CarTypeDao;
 import com.zy.ticket.dao.DriverDao;
 import com.zy.ticket.dao.ManagerDao;
+import com.zy.ticket.dao.OrderDao;
+import com.zy.ticket.dao.RouteDao;
 import com.zy.ticket.dao.UserDao;
 import com.zy.ticket.service.BaseService;
 
@@ -51,6 +53,10 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	protected UserDao userDao;
 	
 	protected ManagerDao managerDao;
+
+	protected RouteDao routeDao;
+	
+	protected OrderDao orderDao;
 	
 	public void setCarDao(CarDao carDao) {
 		this.carDao = carDao;
@@ -74,6 +80,14 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	
 	public void setManagerDao(ManagerDao managerDao) {
 		this.managerDao = managerDao;
+	}
+	
+	public void setOrderDao(OrderDao orderDao) {
+		this.orderDao = orderDao;
+	}
+	
+	public void setRouteDao(RouteDao routeDao) {
+		this.routeDao = routeDao;
 	}
 	@Override
 	public void saveModel(T t) {

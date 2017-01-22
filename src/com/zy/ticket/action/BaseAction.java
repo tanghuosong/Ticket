@@ -17,6 +17,8 @@ import com.zy.ticket.service.CarService;
 import com.zy.ticket.service.CarTypeService;
 import com.zy.ticket.service.DriverService;
 import com.zy.ticket.service.ManagerService;
+import com.zy.ticket.service.OrderService;
+import com.zy.ticket.service.RouteService;
 import com.zy.ticket.service.UserService;
 @SuppressWarnings("unchecked")
 public class BaseAction<T> extends ActionSupport implements ApplicationAware,
@@ -70,6 +72,10 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	
 	protected ManagerService managerService;
 	
+	protected OrderService orderService;
+	
+	protected RouteService routeService;
+	
 	public void setDriverService(DriverService driverService) {
 		this.driverService = driverService;
 	}
@@ -92,6 +98,14 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	
 	public void setManagerService(ManagerService managerService) {
 		this.managerService = managerService;
+	}
+	
+	public void setRouteService(RouteService routeService) {
+		this.routeService = routeService;
+	}
+	
+	public void setOrderService(OrderService orderService) {
+		this.orderService = orderService;
 	}
 	
 	@Override
