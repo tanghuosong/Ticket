@@ -113,6 +113,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	public void updateModel(T t) {
 		baseDao.updateModel(t);
 	}
+	
 	@Override
 	public List<T> query(){
 		return baseDao.query();
@@ -121,6 +122,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	@Override
 	public List<T> queryModelByPage(String type, String key, String rows,
 			String page, String sort, String order) {
+//		System.out.println("page="+page+";"+"rows="+rows);
 		int _page = Integer.parseInt(page);
 		int _rows = Integer.parseInt(rows);
 		int startRows = _rows *(_page-1);

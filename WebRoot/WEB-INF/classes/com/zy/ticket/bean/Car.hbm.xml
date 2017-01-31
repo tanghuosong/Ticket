@@ -25,11 +25,12 @@
         <property name="seatNum" type="java.lang.Integer">
             <column name="seatNum" not-null="true" />
         </property>
-        <set name="routes" inverse="true">
+        <!-- <set name="routes" inverse="true">
             <key>
                 <column name="carid" not-null="true" />
             </key>
             <one-to-many class="com.zy.ticket.bean.Route" />
         </set>
+         -->
     </class>
 </hibernate-mapping>

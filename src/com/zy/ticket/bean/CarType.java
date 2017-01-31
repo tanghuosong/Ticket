@@ -1,8 +1,5 @@
 package com.zy.ticket.bean;
 
-import java.util.HashSet;
-import java.util.Set;
-
 
 /**
  * Cartype entity. @author MyEclipse Persistence Tools
@@ -13,7 +10,7 @@ public class CarType  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer id;
      private String typeName;
-     private Set<?> cars = new HashSet<Object>(0);
+//     private Set<?> cars = new HashSet<Object>(0);
 
 
     // Constructors
@@ -28,10 +25,10 @@ public class CarType  implements java.io.Serializable {
     }
     
     /** full constructor */
-    public CarType(String typeName, Set<?> cars) {
-        this.typeName = typeName;
-        this.cars = cars;
-    }
+//    public CarType(String typeName, Set<?> cars) {
+//        this.typeName = typeName;
+//        this.cars = cars;
+//    }
 
    
     // Property accessors
@@ -52,12 +49,12 @@ public class CarType  implements java.io.Serializable {
         this.typeName = typeName;
     }
 
-    public Set<?> getCars() {
-        return this.cars;
-    }
-    
-    public void setCars(Set<?> cars) {
-        this.cars = cars;
-    }
+//    public Set<?> getCars() {
+//        return this.cars;
+//    }
+//    
+//    public void setCars(Set<?> cars) {
+//        this.cars = cars;
+//    }
 
 }

@@ -1,9 +1,6 @@
 package com.zy.ticket.bean;
 // default package
 
-import java.util.HashSet;
-import java.util.Set;
-
 
 /**
  * Address entity. @author MyEclipse Persistence Tools
@@ -23,7 +20,7 @@ public class Address  implements java.io.Serializable {
      private String city;
      private String county;
      private String station;
-     private Set<?> routes = new HashSet<Object>(0);
+//     private Set<?> routes = new HashSet<Object>(0);
 
 
     // Constructors
@@ -39,13 +36,13 @@ public class Address  implements java.io.Serializable {
     }
     
     /** full constructor */
-    public Address(String province, String city, String county, String station, Set<?> routes) {
-        this.province = province;
-        this.city = city;
-        this.county = county;
-        this.station = station;
-        this.routes = routes;
-    }
+//    public Address(String province, String city, String county, String station, Set<?> routes) {
+//        this.province = province;
+//        this.city = city;
+//        this.county = county;
+//        this.station = station;
+//        this.routes = routes;
+//    }
 
    
     // Property accessors
@@ -90,20 +87,12 @@ public class Address  implements java.io.Serializable {
         this.station = station;
     }
 
-    public Set<?> getRoutes() {
-        return this.routes;
-    }
-    
-    public void setRoutes(Set<?> routes) {
-        this.routes = routes;
-    }
-   
-
-
-
-
-
-
-
+//    public Set<?> getRoutes() {
+//        return this.routes;
+//    }
+//    
+//    public void setRoutes(Set<?> routes) {
+//        this.routes = routes;
+//    }
 
 }

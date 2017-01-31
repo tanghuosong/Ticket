@@ -5,7 +5,7 @@
 <html>
   <head>
 	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/public.css">
-	<script type="text/javascript" src="${ticket }/JS/admin/userManage.js"></script>
+	<script type="text/javascript" src="${ticket }/JS/admin/orderManage.js"></script>
   </head>
   <body>
     	<table id="dg"></table>

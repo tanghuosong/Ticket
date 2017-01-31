@@ -28,11 +28,13 @@
         <property name="phone" type="java.lang.String">
             <column name="phone" length="11" not-null="true" />
         </property>
-        <set name="orders" inverse="true">
+        <!--         <set name="orders" inverse="true">
             <key>
                 <column name="userid" not-null="true" />
             </key>
             <one-to-many class="com.zy.ticket.bean.Order" />
         </set>
+         -->
+        
     </class>
 </hibernate-mapping>

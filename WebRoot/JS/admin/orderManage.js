@@ -1,44 +1,43 @@
 $(function(){
-	$('#dg').datagrid({
+	$('#dg').datagrid({    
 		pagination:true,
 		pageSize: 10,//每页显示的记录条数，默认为5  
 		pageList: [10, 15, 20],//可以设置每页记录条数的列表  
 		rownumbers:true,
 		loadMsg: "数据加载中...",
 		idField:"id",
-	    url:'driver_admin_queryDriverByPage.action?type=id'+'&&key=', 
+	    url:'car_admin_queryOrderByPage.action?type=id'+'&&key=', 
 	    columns:[[    
-	        {field:'ck',title:'选择',width:50,checkbox:true},    
-	        {field:'id',title:'编号',width:50,sortable:true,algin:'center'},    
-	        {field:'drivername',title:'姓名',width:100,algin:'center'},    
-	        {field:'sex',title:'性别',width:50,algin:'center'},    
-	        {field:'age',title:'年龄',width:50,align:'center',sortable:true},    
-	        {field:'identitycard',title:'身份证号',width:150,align:'center'},   
-	        {field:'phone',title:'联系电话',width:100,align:'center'}    
+	        {field:'ck',title:'选择',checkbox:true,width:50},    
+	        {field:'id',title:'地点编号',width:80,align:'center'},    
+	        {field:'carName',title:'省份',width:160,align:'center'},   
+	        {field:'carName',title:'市',width:160,align:'center'},   
+	        {field:'carName',title:'区/县',width:160,align:'center'},   
+	        {field:'carName',title:'站',width:160,align:'center'}
 	    ]],
 	    toolbar: [{
 			iconCls: 'icon-add',
-			text:"添加司机信息",
+			text:"添加地点信息",
 			handler: function(){
 				parent.$('#win').window({ 
-            		title:'添加司机信息',
+            		title:'添加汽车信息',
             	    width:400,    
             	    height:350,  
-            	    content:"<iframe src='send_admin_saveDriver.action' frameborder='0' width='100%' height='100%'/>",
+            	    content:"<iframe src='send_admin_savePlace.action' frameborder='0' width='100%' height='100%'/>",
             	    modal:true
             	}); 
 			}
 		},'-',{
 			iconCls: 'icon-edit',
-			text:"更新司机信息",
+			text:"更新地点信息",
 			handler: function(){
 				var rows = $('#dg').datagrid('getSelections');
             	if(rows.length==1){
 	            	parent.$('#win').window({ 
-	            		title:'更新司机信息',
+	            		title:'更新地点信息',
 	            	    width:400,    
 	            	    height:350,  
-	            	    content:"<iframe src='send_admin_updateDriver.action' frameborder='0' width='100%' height='100%'/>",
+	            	    content:"<iframe src='send_admin_updateOrder.action' frameborder='0' width='100%' height='100%'/>",
 	            	    modal:true
 	            	});
             	}else {
@@ -52,7 +51,7 @@ $(function(){
 			}
 		},'-',{
 			iconCls: 'icon-remove',
-			text:"删除司机信息",
+			text:"删除地点信息",
 			handler: function(){
 				 var rows = $('#dg').datagrid('getSelections');
 		         if(rows.length!=0){
@@ -62,7 +61,7 @@ $(function(){
 		        	 }
 		        	 $.messager.confirm('温馨提示', '确定删除吗？', function(r){
 		        			if (r){
-		        				$.post("driver_admin_deleteDriverByIds.action", { ids: ids },
+		        				$.post("car_admin_deleteOrderByIds.action", { ids: ids },
 		        					function(data){
 		        					 $.messager.show({
 				            			title:'温馨提示',
@@ -93,5 +92,5 @@ $(function(){
 		beforePageText: '第',//页数文本框前显示的汉字  
 		afterPageText: '页    共 {pages} 页',  
 		displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录'
-	});
+	});    
 });

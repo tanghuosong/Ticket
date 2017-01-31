@@ -22,11 +22,12 @@
         <property name="station" type="java.lang.String">
             <column name="station" length="20" />
         </property>
-        <set name="routes" inverse="true">
+        <!-- <set name="routes" inverse="true">
             <key>
                 <column name="addressid" not-null="true" />
             </key>
             <one-to-many class="com.zy.ticket.bean.Route" />
         </set>
+         -->
     </class>
 </hibernate-mapping>

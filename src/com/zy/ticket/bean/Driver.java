@@ -1,8 +1,5 @@
 package com.zy.ticket.bean;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Driver entity. @author MyEclipse Persistence Tools
  */
@@ -21,7 +18,7 @@ public class Driver implements java.io.Serializable {
 	private String identitycard;
 	private String phone;
 	private String sex;
-	private Set<?> routes = new HashSet<Object>(0);
+//	private Set<?> routes = new HashSet<Object>(0);
 
 	// Constructors
 
@@ -40,15 +37,15 @@ public class Driver implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Driver(String drivername, Integer age, String identitycard,
-			String phone, String sex, Set<?> routes) {
-		this.drivername = drivername;
-		this.age = age;
-		this.identitycard = identitycard;
-		this.phone = phone;
-		this.sex = sex;
-		this.routes = routes;
-	}
+//	public Driver(String drivername, Integer age, String identitycard,
+//			String phone, String sex, Set<?> routes) {
+//		this.drivername = drivername;
+//		this.age = age;
+//		this.identitycard = identitycard;
+//		this.phone = phone;
+//		this.sex = sex;
+//		this.routes = routes;
+//	}
 
 	// Property accessors
 
@@ -100,12 +97,12 @@ public class Driver implements java.io.Serializable {
 		this.sex = sex;
 	}
 
-	public Set<?> getRoutes() {
-		return this.routes;
-	}
-
-	public void setRoutes(Set<?> routes) {
-		this.routes = routes;
-	}
+//	public Set<?> getRoutes() {
+//		return this.routes;
+//	}
+//
+//	public void setRoutes(Set<?> routes) {
+//		this.routes = routes;
+//	}
 
 }

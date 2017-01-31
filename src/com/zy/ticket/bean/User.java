@@ -1,9 +1,6 @@
 package com.zy.ticket.bean;
 // default package
 
-import java.util.HashSet;
-import java.util.Set;
-
 
 /**
  * User entity. @author MyEclipse Persistence Tools
@@ -25,7 +22,7 @@ public class User  implements java.io.Serializable {
      private String idcard;
      private String email;
      private String phone;
-     private Set<?> orders = new HashSet<Object>(0);
+//     private Set<?> orders = new HashSet<Object>(0);
 
 
     // Constructors
@@ -45,15 +42,15 @@ public class User  implements java.io.Serializable {
     }
     
     /** full constructor */
-    public User(String name, String sex, String password, String idcard, String email, String phone, Set<?> orders) {
-        this.name = name;
-        this.sex = sex;
-        this.password = password;
-        this.idcard = idcard;
-        this.email = email;
-        this.phone = phone;
-        this.orders = orders;
-    }
+//    public User(String name, String sex, String password, String idcard, String email, String phone, Set<?> orders) {
+//        this.name = name;
+//        this.sex = sex;
+//        this.password = password;
+//        this.idcard = idcard;
+//        this.email = email;
+//        this.phone = phone;
+//        this.orders = orders;
+//    }
 
    
     // Property accessors
@@ -114,12 +111,12 @@ public class User  implements java.io.Serializable {
         this.phone = phone;
     }
 
-    public Set<?> getOrders() {
-        return this.orders;
-    }
-    
-    public void setOrders(Set<?> orders) {
-        this.orders = orders;
-    }
+//    public Set<?> getOrders() {
+//        return this.orders;
+//    }
+//    
+//    public void setOrders(Set<?> orders) {
+//        this.orders = orders;
+//    }
 
 }

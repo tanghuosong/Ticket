@@ -13,11 +13,13 @@
         <property name="typeName" type="java.lang.String">
             <column name="typeName" length="20" not-null="true" />
         </property>
+        <!-- 
         <set name="cars" inverse="true">
             <key>
                 <column name="carTypeId" not-null="true" />
             </key>
             <one-to-many class="com.zy.ticket.bean.Car" />
         </set>
+         -->
     </class>
 </hibernate-mapping>

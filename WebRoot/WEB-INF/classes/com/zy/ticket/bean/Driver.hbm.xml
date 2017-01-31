@@ -25,11 +25,13 @@
         <property name="sex" type="java.lang.String">
             <column name="sex" length="2" not-null="true" />
         </property>
+        <!-- 
         <set name="routes" inverse="true">
             <key>
                 <column name="driverid" not-null="true" />
             </key>
             <one-to-many class="com.zy.ticket.bean.Route" />
         </set>
+         -->
     </class>
 </hibernate-mapping>

@@ -4,8 +4,8 @@
 <%@include file="/public/public.jspf" %>
 <html>
   <head>
-	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/placeManage.css">
-	<script type="text/javascript" src="${ticket }/JS/admin/placeManage.js"></script>
+	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/public.css">
+	<script type="text/javascript" src="${ticket }/JS/admin/addressManage.js"></script>
   </head>
   <body>
     	<table id="dg"></table>

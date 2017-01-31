@@ -1,8 +1,6 @@
 package com.zy.ticket.bean;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Route entity. @author MyEclipse Persistence Tools
@@ -23,7 +21,7 @@ public class Route implements java.io.Serializable {
 	private Timestamp starttime;
 	private Double price;
 	private Integer sold;
-	private Set<?> orders = new HashSet<Object>(0);
+//	private Set<?> orders = new HashSet<Object>(0);
 
 	// Constructors
 
@@ -43,16 +41,16 @@ public class Route implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Route(Address address, Car car, Driver driver, Timestamp starttime,
-			Double price, Integer sold, Set<?> orders) {
-		this.address = address;
-		this.car = car;
-		this.driver = driver;
-		this.starttime = starttime;
-		this.price = price;
-		this.sold = sold;
-		this.orders = orders;
-	}
+//	public Route(Address address, Car car, Driver driver, Timestamp starttime,
+//			Double price, Integer sold, Set<?> orders) {
+//		this.address = address;
+//		this.car = car;
+//		this.driver = driver;
+//		this.starttime = starttime;
+//		this.price = price;
+//		this.sold = sold;
+//		this.orders = orders;
+//	}
 
 	// Property accessors
 
@@ -111,13 +109,13 @@ public class Route implements java.io.Serializable {
 	public void setSold(Integer sold) {
 		this.sold = sold;
 	}
-
-	public Set<?> getOrders() {
-		return this.orders;
-	}
-
-	public void setOrders(Set<?> orders) {
-		this.orders = orders;
-	}
+//
+//	public Set<?> getOrders() {
+//		return this.orders;
+//	}
+//
+//	public void setOrders(Set<?> orders) {
+//		this.orders = orders;
+//	}
 
 }

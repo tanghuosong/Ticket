@@ -4,7 +4,7 @@
 <%@include file="/public/public.jspf" %>
 <html>
   <head>
-	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/routeManage.css">
+	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/public.css">
 	<script type="text/javascript" src="${ticket }/JS/admin/routeManage.js"></script>
   </head>
   <body>

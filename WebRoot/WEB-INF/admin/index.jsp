@@ -29,14 +29,14 @@
 			    </div>  
 			    <div title="线路管理"  data-options="iconCls:'icon-filter'"  style="padding:5px;">
 			    	<ul>
-						<li><a href="#" title="send_admin_placeManage.action">地点管理</a></li>
+						<li><a href="#" title="send_admin_addressManage.action">地点管理</a></li>
 						<li><a href="#" title="send_admin_routeManage.action">线路管理</a></li>
 					</ul>
 			    </div> 
 			    <div title="用户管理" data-options="iconCls:'icon-man'"  style="padding:5px;">
 					<ul>
 						<li><a href="#" title="send_admin_userManage.action">用户管理</a></li>
-						<li><a href="#" title="send_admin_userManage.action">订单管理</a></li>
+						<li><a href="#" title="send_admin_orderManage.action">订单管理</a></li>
 					</ul>
 			    </div>    
 			</div>  
