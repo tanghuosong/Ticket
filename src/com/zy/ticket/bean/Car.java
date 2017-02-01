@@ -1,8 +1,6 @@
 package com.zy.ticket.bean;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Car entity. @author MyEclipse Persistence Tools
@@ -22,7 +20,8 @@ public class Car implements java.io.Serializable {
 	private String carCard;
 	private Timestamp buyTime;
 	private Integer seatNum;
-	private Set<?> routes = new HashSet<Object>(0);
+	private Integer status;
+//	private Set<?> routes = new HashSet<Object>(0);
 
 	// Constructors
 
@@ -33,7 +32,7 @@ public class Car implements java.io.Serializable {
 	
 
 	public Car(Integer id, CarType carType, String carName, String carCard,
-			Timestamp buyTime, Integer seatNum) {
+			Timestamp buyTime, Integer seatNum,Integer status) {
 		super();
 		this.id = id;
 		this.carType = carType;
@@ -41,21 +40,22 @@ public class Car implements java.io.Serializable {
 		this.carCard = carCard;
 		this.buyTime = buyTime;
 		this.seatNum = seatNum;
+		this.status = status;
 	}
 
 
-
-	public Car(Integer id, CarType carType, String carName, String carCard,
-			Timestamp buyTime, Integer seatNum, Set<?> routes) {
-		super();
-		this.id = id;
-		this.carType = carType;
-		this.carName = carName;
-		this.carCard = carCard;
-		this.buyTime = buyTime;
-		this.seatNum = seatNum;
-		this.routes = routes;
-	}
+//
+//	public Car(Integer id, CarType carType, String carName, String carCard,
+//			Timestamp buyTime, Integer seatNum, Set<?> routes) {
+//		super();
+//		this.id = id;
+//		this.carType = carType;
+//		this.carName = carName;
+//		this.carCard = carCard;
+//		this.buyTime = buyTime;
+//		this.seatNum = seatNum;
+//		this.routes = routes;
+//	}
 	
 
 
@@ -82,10 +82,10 @@ public class Car implements java.io.Serializable {
 	public Integer getSeatNum() {
 		return seatNum;
 	}
-
-	public Set<?> getRoutes() {
-		return routes;
-	}
+//
+//	public Set<?> getRoutes() {
+//		return routes;
+//	}
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -111,8 +111,15 @@ public class Car implements java.io.Serializable {
 		this.seatNum = seatNum;
 	}
 
-	public void setRoutes(Set<?> routes) {
-		this.routes = routes;
+//	public void setRoutes(Set<?> routes) {
+//		this.routes = routes;
+//	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	
+	public Integer getStatus() {
+		return status;
 	}
 	
 

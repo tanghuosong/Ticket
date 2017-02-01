@@ -4,7 +4,7 @@
   <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
   <Tables>
     <Table name="address">
-      <Drawing expanded="true" location="339,532" dimensions="218,131" />
+      <Drawing expanded="true" location="339,562" dimensions="218,131" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -24,7 +24,7 @@
       </Columns>
     </Table>
     <Table name="car">
-      <Drawing expanded="true" location="657,522" dimensions="225,151" />
+      <Drawing expanded="true" location="657,542" dimensions="225,171" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -44,10 +44,13 @@
         <Column name="carTypeId" primary_key="false" foreign_key="true" required="true" unique="false">
           <Data type="INT UNSIGNED" size="10" />
         </Column>
+        <Column name="status" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="BIT" />
+        </Column>
       </Columns>
     </Table>
     <Table name="cartype">
-      <Drawing expanded="true" location="655,773" dimensions="228,71" />
+      <Drawing expanded="true" location="655,813" dimensions="228,71" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -58,7 +61,7 @@
       </Columns>
     </Table>
     <Table name="driver">
-      <Drawing expanded="true" location="0,522" dimensions="239,151" />
+      <Drawing expanded="true" location="0,542" dimensions="239,171" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -78,10 +81,13 @@
         <Column name="sex" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="VARCHAR" size="2" />
         </Column>
+        <Column name="status" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
       </Columns>
     </Table>
     <Table name="manager">
-      <Drawing expanded="true" location="0,889" dimensions="233,111" />
+      <Drawing expanded="true" location="0,929" dimensions="233,111" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -121,7 +127,7 @@
       </Columns>
     </Table>
     <Table name="route">
-      <Drawing expanded="true" location="336,251" dimensions="224,171" />
+      <Drawing expanded="true" location="336,261" dimensions="224,171" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -147,7 +153,7 @@
       </Columns>
     </Table>
     <Table name="user">
-      <Drawing expanded="true" location="13,251" dimensions="223,171" />
+      <Drawing expanded="true" location="13,251" dimensions="223,191" />
       <Columns>
         <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
           <Data type="INT UNSIGNED" size="10" />
@@ -169,6 +175,9 @@
         </Column>
         <Column name="phone" primary_key="false" foreign_key="false" required="true" unique="false">
           <Data type="VARCHAR" size="11" />
+        </Column>
+        <Column name="status" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="BIT" />
         </Column>
       </Columns>
     </Table>

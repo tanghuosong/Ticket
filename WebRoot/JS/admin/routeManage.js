@@ -11,7 +11,7 @@ $(function(){
 	        {field:'ck',title:'选择',checkbox:true,width:50},    
 	        {field:'id',title:'线路编号',width:80,align:'center'},    
 	        {field:'address',title:'目的地',width:120,align:'center'},   
-	        {field:'carName',title:'发车时间',width:120,align:'center'},   
+	        {field:'starttime',title:'发车时间',width:120,align:'center'},   
 	        {field:'carType.typeName',title:'汽车种类',width:120,align:'center',
 	        	formatter: function(value,row,index){
 					if(row.carType!=null && row.carType.typeName!=null){
@@ -37,12 +37,12 @@ $(function(){
 			}
 		},'-',{
 			iconCls: 'icon-edit',
-			text:"更新汽车信息",
+			text:"更新线路信息",
 			handler: function(){
 				var rows = $('#dg').datagrid('getSelections');
             	if(rows.length==1){
 	            	parent.$('#win').window({ 
-	            		title:'更新汽车信息',
+	            		title:'更新线路信息',
 	            	    width:400,    
 	            	    height:350,  
 	            	    content:"<iframe src='send_admin_updateRoute.action' frameborder='0' width='100%' height='100%'/>",

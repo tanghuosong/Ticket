@@ -25,6 +25,9 @@
         <property name="sex" type="java.lang.String">
             <column name="sex" length="2" not-null="true" />
         </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" not-null="false" />
+        </property>
         <!-- 
         <set name="routes" inverse="true">
             <key>

@@ -15,8 +15,8 @@
 	        <input class="easyui-validatebox" type="text" name="id" readonly="readonly"  />   
 	    </div>   
 	    <div class="eachItems">   
-	        <label for="driverName">&nbsp;&nbsp;姓名：</label>   
-	        <input class="easyui-validatebox" type="text" name="driverName" data-options="required:true" />   
+	        <label for="drivername">&nbsp;&nbsp;姓名：</label>   
+	        <input class="easyui-validatebox" type="text" name="drivername" data-options="required:true" />   
 	    </div>   
 	    <div class="eachItems">   
 	        <label for="sex">&nbsp;&nbsp;性别：</label>   
@@ -28,14 +28,18 @@
 	        <input class="easyui-validatebox" type="text" name="age" data-options="required:true,validType:'age'" />   
 	    </div>
 	    <div class="eachItems">   
-	        <label for="identityCard">身份证号：</label>   
-	        <input class="easyui-validatebox" type="text" name="identityCard" data-options="required:true,validType:'identifyCard'" />   
+	        <label for="identitycard">身份证号：</label>   
+	        <input class="easyui-validatebox" type="text" name="identitycard" data-options="required:true,validType:'identifyCard'" />   
 	    </div>    
 		<div class="eachItems">   
-	        <label for="phone">手&nbsp;机号：</label>   
+	        <label for="phone">&nbsp;手机号：</label>   
 	        <input class="easyui-validatebox" type="text" name="phone" data-options="required:true,validType:'phone'" />   
 	    </div>
-	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认添加</a>  
+	    <div class="eachItems">   
+	        <label for="status">&nbsp;&nbsp;状态：</label>   
+	        <input class="easyui-validatebox" type="text" name="status" data-options="required:true" readonly="readonly"/>   
+	    </div>
+	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认更新</a>  
 	</form>  
 </body>
 </html>

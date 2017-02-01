@@ -1,0 +1,6 @@
+html{ height: 100%; }
+body{ height: 100%; }
+a{text-decoration: none; }
+img{ border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; }
+ul{list-style-type: none; }
+.vv{ visibility: visible! important; }

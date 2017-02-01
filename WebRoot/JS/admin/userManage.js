@@ -14,16 +14,25 @@ $(function(){
 	        {field:'sex',title:'性别',width:160,align:'center'},   
 	        {field:'idcard',title:'身份证',width:160,align:'center'},   
 	        {field:'email',title:'邮箱',width:160,align:'center'},   
-	        {field:'phone',title:'手机',width:160,align:'center'}
+	        {field:'phone',title:'手机',width:160,align:'center'},
+	        {field:'status',title:'状态',width:80,align:'center',
+	        	formatter: function(value,row,index){
+					if (row.status==1){
+						return "正常";
+					} else {
+						return "禁用";
+					}
+	        	}
+	        }
 	    ]],
 	    toolbar: [{
 			iconCls: 'icon-edit',
-			text:"更新用户信息",
+			text:"更新用户状态",
 			handler: function(){
 				var rows = $('#dg').datagrid('getSelections');
             	if(rows.length==1){
 	            	parent.$('#win').window({ 
-	            		title:'更新用户信息',
+	            		title:'更新用户状态',
 	            	    width:400,    
 	            	    height:350,  
 	            	    content:"<iframe src='send_admin_updateUser.action' frameborder='0' width='100%' height='100%'/>",
@@ -73,13 +82,26 @@ $(function(){
 		         }
 			}
 		}]
-  
 	});
+//	$('#dg').datagrid({
+//		columns:[[
+//			{field:'status',title:'状态', width:80,
+//				formatter: function(value,row,index){
+//					if (row.user){
+//						return row.user.name;
+//					} else {
+//						return value;
+//					}
+//				}
+//			}
+//		]]
+//	});
+
 	var p = $('#dg').datagrid('getPager');  
 	$(p).pagination({  
 		pageNumber:1,
 		beforePageText: '第',//页数文本框前显示的汉字  
 		afterPageText: '页    共 {pages} 页',  
 		displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录'
-	});    
+	});  
 });

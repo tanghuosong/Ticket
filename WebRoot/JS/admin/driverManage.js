@@ -14,7 +14,16 @@ $(function(){
 	        {field:'sex',title:'性别',width:50,algin:'center'},    
 	        {field:'age',title:'年龄',width:50,align:'center',sortable:true},    
 	        {field:'identitycard',title:'身份证号',width:150,align:'center'},   
-	        {field:'phone',title:'联系电话',width:100,align:'center'}    
+	        {field:'phone',title:'联系电话',width:100,align:'center'},
+	        {field:'status',title:'当前状态',width:80, align:'center',
+	        	formatter: function(value,row,index){
+	        		if (row.status==0){
+	        			return "待分配";
+	        		} else {
+	        			return "已分配";
+	        		}
+	        	}
+	        }
 	    ]],
 	    toolbar: [{
 			iconCls: 'icon-add',

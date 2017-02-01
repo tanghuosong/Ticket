@@ -3,19 +3,21 @@ $(function(){
 	var rows = dg.datagrid("getSelections");
 	$('#ff').form('load',{
 		id:rows[0].id,
-		driverName:rows[0].driverName,
+		drivername:rows[0].drivername,
 		sex:rows[0].sex,
 		age:rows[0].age,
-		identityCard:rows[0].identityCard,
-		phone:rows[0].phone
+		identitycard:rows[0].identitycard,
+		phone:rows[0].phone,
+		status:rows[0].status
 	});
-	 $('#btn').click(function(){    
+	
+	$('#btn').click(function(){    
 		 $('#ff').form('submit', {
-			    url:'driver_admin_updateDriver.action',   
-			    success:function(data){    
-			        parent.$('#win').window('close');
-			        dg.datagrid("reload");
-			    }    
+		    url:'driver_admin_updateDriver.action',   
+		    success:function(data){    
+		        parent.$('#win').window('close');
+		        dg.datagrid("reload");
+		    }    
 		}); 
 	  }); 
 	 $(".easyui-validatebox").validatebox({    
@@ -30,7 +32,7 @@ $(function(){
 		        },    
 		        message: '手机号码格式不正确！'  
 		    },
-		    identifyCard: {
+		    identifycard: {
 		    	validator:function(value , param){
 		    		var identify = /^\d{18}$/;
 		    		return value.match(identify);	
@@ -43,5 +45,12 @@ $(function(){
 		    	},
 		    	message:'司机年龄必须在18到65之间！'
 		    }
-		});  
+		});
+		// 转换状态码
+		var status = $("input[name='status']");
+		if(status.val()==1){
+			$("input[name='status']").val("已分配");
+		}else{
+			$("input[name='status']").val("未分配");
+		}
 });

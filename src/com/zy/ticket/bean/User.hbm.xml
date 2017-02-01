@@ -28,6 +28,9 @@
         <property name="phone" type="java.lang.String">
             <column name="phone" length="11" not-null="true" />
         </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" length="10" not-null="true" />
+        </property>
         <!--         <set name="orders" inverse="true">
             <key>
                 <column name="userid" not-null="true" />

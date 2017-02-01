@@ -11,8 +11,8 @@
 <body>
 	<form id="ff" method="post">   
 	    <div class="eachItems">   
-	        <label for="driverName">姓&nbsp;&nbsp;名：</label>   
-	        <input class="easyui-validatebox" type="text" name="driverName" data-options="required:true" />   
+	        <label for="drivername">姓&nbsp;&nbsp;名：</label>   
+	        <input class="easyui-validatebox" type="text" name="drivername" data-options="required:true" />   
 	    </div>   
 	    <div class="eachItems">   
 	        <label for="sex">性&nbsp;&nbsp;别：</label>   
@@ -24,8 +24,8 @@
 	        <input class="easyui-validatebox" type="text" name="age" data-options="required:true,validType:'age'" />   
 	    </div>
 	    <div class="eachItems">   
-	        <label for="identityCard">身份证号：</label>   
-	        <input class="easyui-validatebox" type="text" name="identityCard" data-options="required:true,validType:'identifyCard'" />   
+	        <label for="identitycard">身份证号：</label>   
+	        <input class="easyui-validatebox" type="text" name="identitycard" data-options="required:true,validType:'identifyCard'" />   
 	    </div>    
 		<div class="eachItems">   
 	        <label for="phone">&nbsp;手机号：</label>   

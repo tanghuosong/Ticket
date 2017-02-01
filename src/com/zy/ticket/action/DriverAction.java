@@ -7,6 +7,7 @@ public class DriverAction extends BaseAction<Driver>{
 	
 	//添加司机信息
 	public void saveDriver(){
+		model.setStatus(0);
 		driverService.saveModel(model);
 	}
 	

@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>订票系统</title>
-	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/driverManage.css">
+	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/public.css">
 	<script type="text/javascript" src="${ticket }/JS/admin/driverManage.js"></script>
 </head>
 <body>

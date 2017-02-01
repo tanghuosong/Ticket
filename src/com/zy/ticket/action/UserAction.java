@@ -22,8 +22,12 @@ public class UserAction extends BaseAction<User>{
 	
 	//更新用户信息
 	public void updateUser(){
-		System.out.println(model);
+//		System.out.println(model);
 		userService.updateModel(model);
+	}
+	
+	public void updateUserStatus(){
+		userService.updateUserStatus(model);
 	}
 	
 	//分页排序查询所有的用户

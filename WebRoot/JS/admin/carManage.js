@@ -20,7 +20,16 @@ $(function(){
 	        },    
 	        {field:'seatNum',title:'荷载人数',width:70,align:'center',sortable:true},    
 	        {field:'carCard',title:'车牌号码',width:100,align:'center'},    
-	        {field:'buyTime',title:'购买时间',width:150,align:'center',sortable:true},   
+	        {field:'buyTime',title:'购买时间',width:150,align:'center',sortable:true},
+	        {field:'status',title:'状态',width:80,aligin:'center',
+	        	formatter: function(value,row,index){
+					if (row.status==0){
+						return "闲置";
+					} else {
+						return "使用中";
+					}
+	        	}
+	        }   
 	    ]],
 	    toolbar: [{
 			iconCls: 'icon-add',

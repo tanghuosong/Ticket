@@ -15,13 +15,14 @@ public class User  implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer id;
-     private String name;
-     private String sex;
-     private String password;
-     private String idcard;
-     private String email;
-     private String phone;
+	 private Integer id;
+	 private String name;
+	 private String sex;
+	 private String password;
+	 private String idcard;
+	 private String email;
+	 private String phone;
+	 private Integer status;
 //     private Set<?> orders = new HashSet<Object>(0);
 
 
@@ -32,13 +33,14 @@ public class User  implements java.io.Serializable {
     }
 
 	/** minimal constructor */
-    public User(String name, String sex, String password, String idcard, String email, String phone) {
+    public User(String name, String sex, String password, String idcard, String email, String phone,Integer status) {
         this.name = name;
         this.sex = sex;
         this.password = password;
         this.idcard = idcard;
         this.email = email;
         this.phone = phone;
+        this.status = status;
     }
     
     /** full constructor */
@@ -111,6 +113,15 @@ public class User  implements java.io.Serializable {
         this.phone = phone;
     }
 
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+    
+    
 //    public Set<?> getOrders() {
 //        return this.orders;
 //    }

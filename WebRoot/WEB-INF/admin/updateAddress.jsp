@@ -11,7 +11,7 @@
 <body>
 	<form id="ff" method="post">   
 		<div class="eachItems">   
-	        <label for="id">&nbsp;&nbsp;编号：</label>   
+	        <label for="id">编号：</label>   
 	        <input class="easyui-validatebox" type="text" name="id" readonly="readonly"  />   
 	    </div>   
 	    <div class="eachItems">   

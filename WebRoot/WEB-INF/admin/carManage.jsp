@@ -5,7 +5,7 @@
 <html>
   <head>
     <title>订票系统</title>
-	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/carManage.css">
+	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/public.css">
 	<script type="text/javascript" src="${ticket }/JS/admin/carManage.js"></script>
   </head>
   <body>

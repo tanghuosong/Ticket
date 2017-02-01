@@ -1,0 +1,24 @@
+body{font-size: 12px; background-color: #fff; color: #333; font-family: arial, Helvetica, sans-serif; }
+a{color:#fff;}
+.general .middle{background:url(../../images/customer/middleBg.png) #fff repeat-x; overflow: hidden; }
+.general .middle .wrapper .con {clear: both; min-height: 300px; float: left; padding-bottom: 30px; margin: 30px; width: 880px; }
+.general .middle .wrapper .con a {color: #669900; border-bottom: #4f4f4f 1px dotted; }
+.general .middle .wrapper .con a:hover {color: #333; border-bottom: #4f4f4f 1px dotted; }
+.general .middle .wrapper p { line-height: 18px; }
+.general .header { background: url(../../images/customer/headerBg.png) repeat-x; height: 101px; }
+.general .wrapper { padding-right: 20px; padding-left: 20px; float: none; padding-bottom:0px; margin: auto; width: 940px; padding-top: 0px; }
+.pageTitle { clear: both; margin-top: 24px; font-size: 24px; float: left; color: #fff; }
+.contentTitle { clear: both; font-size: 20px; float: left; width: 100%; color: #436206; }
+.feature_tour .tab { clear: both; background: url(../../images/customer/featuresTabBg.png) no-repeat; float: left; visibility: hidden; margin: 35px 0px 0px 9px; width: 921px; }
+.feature_tour .tab a { display: block; font-size: 14px; float: left; width: 20%; color: #999; text-indent: 20px; line-height: 47px; height: 47px; text-shadow: 0px 1px 0px #fff; }
+.feature_tour .tab a.current { color: #fff; text-shadow: 0px 1px 0px #788e21; }
+.feature_tour .mask {clear:both;float: left;margin:20px 0px 0px;overflow: hidden;width:100%;position:relative;height:405px;text-align:center;border:solid 1px #85b02c; }
+.feature_tour .mask .maskCon { width: 5000px; }
+.feature_tour .mask .maskCon .innerCon { float: left;width: 940px;line-height:255px; }
+.feature_tour .nav { clear: both; float: left; visibility: hidden; margin: 20px 0px 40px; width: 100%; }
+.feature_tour .nav p { margin: auto; width: 90px; }
+.feature_tour .nav p a { display: block; float: left; width: 45px; height: 36px; }
+.feature_tour .nav p a.prev { background: url(../../images/customer/feature_tours_navigation.png) no-repeat left 0px; }
+.feature_tour .nav p a.prev:hover { background-position: 0px -36px; }
+.feature_tour .nav p a.next { background: url(../../images/customer/feature_tours_navigation.png) no-repeat right 0px; }
+.feature_tour .nav p a.next:hover { background-position: right -72px; }

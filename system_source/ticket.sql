@@ -27,9 +27,11 @@ CREATE TABLE `address` (
   `county` varchar(20) DEFAULT NULL,
   `station` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `address` */
+
+insert  into `address`(`id`,`province`,`city`,`county`,`station`) values (2,'安徽省','蚌埠市','龙子湖区','长途汽车站'),(3,'山东省','泰安市','泰山县','长途汽车站');
 
 /*Table structure for table `car` */
 
@@ -42,6 +44,7 @@ CREATE TABLE `car` (
   `buyTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `seatNum` int(2) unsigned NOT NULL,
   `carTypeId` int(10) unsigned NOT NULL,
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `car_ibfk_1` (`carTypeId`),
   CONSTRAINT `car_ibfk_1` FOREIGN KEY (`carTypeId`) REFERENCES `cartype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -49,7 +52,7 @@ CREATE TABLE `car` (
 
 /*Data for the table `car` */
 
-insert  into `car`(`id`,`carName`,`carCard`,`buyTime`,`seatNum`,`carTypeId`) values (5,'金龙客车','皖H33333','2016-10-02 00:00:00',35,2);
+insert  into `car`(`id`,`carName`,`carCard`,`buyTime`,`seatNum`,`carTypeId`,`status`) values (5,'金龙客车','皖H33333','2017-02-01 11:37:09',35,2,0);
 
 /*Table structure for table `cartype` */
 
@@ -76,12 +79,13 @@ CREATE TABLE `driver` (
   `identitycard` varchar(18) NOT NULL,
   `phone` varchar(11) NOT NULL,
   `sex` varchar(2) NOT NULL,
+  `status` tinyint(1) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `driver` */
 
-insert  into `driver`(`id`,`drivername`,`age`,`identitycard`,`phone`,`sex`) values (1,'ceshi3',54,'123456789009876543','13455556666','男'),(2,'唐火松',24,'340826199309103451','18949344290','男'),(3,'张宇',22,'123456789009876543','13455556666','男');
+insert  into `driver`(`id`,`drivername`,`age`,`identitycard`,`phone`,`sex`,`status`) values (2,'唐火松',24,'340826199309103451','18949344290','男',0),(3,'张宇',22,'123456789009876543','13455556666','男',0),(4,'夏磊',33,'888888889999999999','18949344290','男',0),(5,'段少强',33,'888888888888888888','13455556666','男',0);
 
 /*Table structure for table `manager` */
 
@@ -111,8 +115,8 @@ CREATE TABLE `order` (
   PRIMARY KEY (`id`),
   KEY `userid` (`userid`),
   KEY `routeid` (`routeid`),
-  CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `user` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `routeid` FOREIGN KEY (`routeid`) REFERENCES `route` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `routeid` FOREIGN KEY (`routeid`) REFERENCES `route` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `order` */
@@ -152,10 +156,13 @@ CREATE TABLE `user` (
   `idcard` varchar(18) NOT NULL,
   `email` varchar(32) NOT NULL,
   `phone` varchar(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
+
+insert  into `user`(`id`,`name`,`sex`,`password`,`idcard`,`email`,`phone`,`status`) values (1,'唐火松','男','123456','340826199309103451','ths930910@163.com','18949344290',1),(2,'张宇','女','123456','340822222222222222','ffdfdfdfd@qq.com','18949344290',1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

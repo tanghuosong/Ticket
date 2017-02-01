@@ -18,6 +18,7 @@ public class Driver implements java.io.Serializable {
 	private String identitycard;
 	private String phone;
 	private String sex;
+	private Integer status;
 //	private Set<?> routes = new HashSet<Object>(0);
 
 	// Constructors
@@ -28,12 +29,13 @@ public class Driver implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Driver(String drivername, Integer age, String identitycard,
-			String phone, String sex) {
+			String phone, String sex, Integer status) {
 		this.drivername = drivername;
 		this.age = age;
 		this.identitycard = identitycard;
 		this.phone = phone;
 		this.sex = sex;
+		this.status = status;
 	}
 
 	/** full constructor */
@@ -95,6 +97,14 @@ public class Driver implements java.io.Serializable {
 
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+	
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	
+	public Integer getStatus() {
+		return status;
 	}
 
 //	public Set<?> getRoutes() {
