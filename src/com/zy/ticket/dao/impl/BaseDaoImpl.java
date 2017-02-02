@@ -81,4 +81,10 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 		String hql = "From "+clazz.getSimpleName()+" t  WHERE t."+type+" like :key order by t."+sort+" "+order;
 		return session().createQuery(hql).setString("key", "%"+key+"%").setFirstResult(startRows).setMaxResults(_rows).list();
 	}
+	
+	@Override
+	public List<T> findModelListByState(int state) {
+		String sql = "From "+clazz.getSimpleName()+" c where c.status=:status";
+		return session().createQuery(sql).setInteger("status", state).list();
+	}
 }

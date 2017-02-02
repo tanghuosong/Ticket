@@ -7,7 +7,6 @@ public class CarAction extends BaseAction<Car>{
 	
 	//添加汽车信息
 	public void saveCar(){
-		System.out.println(model);
 		carService.saveModel(model);
 	}
 	
@@ -30,5 +29,11 @@ public class CarAction extends BaseAction<Car>{
 		jsonMap.put("total", carService.getRowCount(type,key));
 		jsonMap.put("rows",carService.queryCarByPage(type, key ,rows,page,sort,order));
 		return "jsonMap";
+	}
+	
+	public String findCarByStatus(){
+//		mapList= carService.findModelListByState(Integer.parseInt(state));
+		mapList.addAll(carService.findModelListByState(Integer.parseInt(state)));
+		return "mapList";
 	}
 }

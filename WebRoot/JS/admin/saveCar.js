@@ -6,6 +6,15 @@ $(function(){
 	    panelHeight:'auto',
 	    editable:false
 	});  
+	$("#btn").click(function(){
+		$('#ff').form('submit', {   
+		    url:'car_admin_saveCar.action',    
+		    success:function(data){    
+		    	 parent.$('#win').window('close');
+			     parent.$("iframe[title='汽车管理']").get(0).contentWindow.$("#dg").datagrid("reload");
+		    }    
+		});
+	});
 	$(".easyui-validatebox").validatebox({    
 	    required: true, 
 	    missingMessage:'请填写完整信息！'
@@ -34,13 +43,5 @@ $(function(){
 	    	message:'购买日期必须在今天之前！！'
 	    }
 	}); 
-	$("#btn").click(function(){
-		$('#ff').form('submit', {   
-		    url:'car_admin_saveCar.action',    
-		    success:function(data){    
-		    	 parent.$('#win').window('close');
-			     parent.$("iframe[title='汽车管理']").get(0).contentWindow.$("#dg").datagrid("reload");
-		    }    
-		});
-	});
+	
 });

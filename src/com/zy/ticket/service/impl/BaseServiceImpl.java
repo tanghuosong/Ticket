@@ -128,4 +128,9 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 		int startRows = _rows *(_page-1);
 		return baseDao.queryModelByPage(type, key, startRows, _rows, sort, order);
 	}
+	
+	@Override
+	public List<T> findModelListByState(int state) {
+		return baseDao.findModelListByState(state);
+	}
 }

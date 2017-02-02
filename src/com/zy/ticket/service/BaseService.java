@@ -24,4 +24,6 @@ public interface BaseService<T> {
 	// 排序分页返回
 	public List<T> queryModelByPage(String type, String key, String rows,
 			String page, String sort, String order);
+					
+	public List<T> findModelListByState(int state);
 }

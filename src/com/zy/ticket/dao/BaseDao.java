@@ -27,4 +27,7 @@ public interface BaseDao<T> {
 	
 	public List<T> queryModelByPage(String type, String key,
 			int startRows, int _rows, String sort, String order);
+			
+	public List<T> findModelListByState(int state);
+	
 }

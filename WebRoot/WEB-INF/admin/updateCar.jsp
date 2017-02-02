@@ -35,6 +35,7 @@
 		        <label for="buyTime">购买时间：</label>   
 		        <input id="dt" type="text" name="buyTime" readonly="readonly"/>     
 		    </div>
+	        <input id="dt" type="hidden" name="status" readonly="readonly"/>     
 		    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">确认更新</a>  
 		</form>
 	</div>  

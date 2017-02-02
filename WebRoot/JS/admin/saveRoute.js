@@ -36,10 +36,10 @@ $(function(){
 	}); 
 	$("#btn").click(function(){
 		$('#ff').form('submit', {   
-		    url:'car_admin_saveCar.action',    
+		    url:'route_admin_saveRoute.action',    
 		    success:function(data){    
 		    	 parent.$('#win').window('close');
-			     parent.$("iframe[title='汽车管理']").get(0).contentWindow.$("#dg").datagrid("reload");
+			     parent.$("iframe[title='线路管理']").get(0).contentWindow.$("#dg").datagrid("reload");
 		    }    
 		});
 	});

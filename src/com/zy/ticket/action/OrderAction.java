@@ -22,7 +22,6 @@ public class OrderAction extends BaseAction<Order>{
 	
 	//更新订单信息
 	public void updateOrder(){
-		System.out.println(model);
 		orderService.updateModel(model);
 	}
 	

@@ -6,18 +6,18 @@
 <head>
 	<title>订票系统</title>
 	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/public.css">
-	<script type="text/javascript" src="${ticket }/JS/admin/saveCar.js"></script>
+	<script type="text/javascript" src="${ticket }/JS/admin/saveRoute.js"></script>
 </head>
 <body>
 	<form id="ff" method="post">   
 	    <div class="eachItems">   
-	        <label for="carName">汽车名称：</label>   
-	        <input class="easyui-validatebox" type="text" name="carName" data-options="required:true" />   
-	    </div>   
-	    <div class="eachItems">   
 	        <label for="carType.id">汽车种类：</label>   
 	        <input id="cc" name="carType.id"> 
 	    </div>
+	    <div class="eachItems">   
+	        <label for="carName">汽车名称：</label>   
+	        <input class="easyui-validatebox" type="text" name="carName" data-options="required:true" />   
+	    </div>   
 	    <div class="eachItems">   
 	        <label for="seatNum">荷载人数：</label>   
 	        <input id="nn" class="easyui-numberbox" type="text" name="seatNum" data-options="required:true" />   

@@ -14,7 +14,8 @@ $(function(){
 		'carType.id':rows[0].carType.id,
 		seatNum:rows[0].seatNum,
 		carCard:rows[0].carCard,
-		buyTime:rows[0].buyTime
+		buyTime:rows[0].buyTime,
+		status:rows[0].status
 	});
 	
 	$("#btn").click(function(){

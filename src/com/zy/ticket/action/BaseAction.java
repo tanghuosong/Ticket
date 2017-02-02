@@ -49,6 +49,7 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	//json形式数据返回
 	protected Map<String, Object> jsonMap = new HashMap<String, Object>();
 	protected List<T> jsonList = new ArrayList<T>();
+	protected List<Object> mapList = new ArrayList<Object>();
 	protected InputStream inputStream;
 	
 	//前台传入参数
@@ -59,6 +60,8 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	protected String order = "desc";
 	protected String type;
 	protected String key;
+	protected String state;
+	
 	//注入service
 	protected DriverService driverService;
 	
@@ -142,6 +145,11 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	public List<T> getJsonList() {
 		return jsonList;
 	}
+	
+	public List<Object> getMapList() {
+		return mapList;
+	}
+	
 	public InputStream getInputStream() {
 		return inputStream;
 	}
@@ -165,7 +173,6 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	public String getRows() {
 		return rows;
 	}
-	
 	public void setOrder(String order) {
 		this.order = order;
 	}
@@ -181,4 +188,9 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	public void setKey(String key) {
 		this.key = key;
 	}
+	
+	public void setState(String state) {
+		this.state = state;
+	}
+	
 }

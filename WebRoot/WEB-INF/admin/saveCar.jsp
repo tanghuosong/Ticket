@@ -6,7 +6,7 @@
 <head>
 	<title>订票系统</title>
 	<link rel="stylesheet" type="text/css" href="${ticket}/CSS/admin/public.css">
-	<script type="text/javascript" src="${ticket }/JS/admin/saveCar.js"></script>
+	<script type="text/javascript" src="${ticket}/JS/admin/saveCar.js"></script>
 </head>
 <body>
 	<form id="ff" method="post">   
@@ -30,6 +30,7 @@
 	        <label for="buyTime">购买时间：</label>   
 	        <input id="dt" class="easyui-validatebox" type="text" name="buyTime" data-options="required:true,validType:'buyTime'"/>     
 	    </div>
+	    <input type="hidden" name="status" value="0"/>
 	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认添加</a>  
 	</form>  
 </body>

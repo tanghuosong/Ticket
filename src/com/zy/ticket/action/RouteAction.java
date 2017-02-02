@@ -22,7 +22,6 @@ public class RouteAction extends BaseAction<Route>{
 	
 	//更新线路信息
 	public void updateRoute(){
-		System.out.println(model);
 		routeService.updateModel(model);
 	}
 	

@@ -33,4 +33,10 @@ public class DriverAction extends BaseAction<Driver>{
 		jsonMap.put("rows",driverService.queryModelByPage(type, key, rows, page, sort, order));
 		return "jsonMap";
 	}
+	
+	//根据状态查询司机，返回list
+	public String findDriverByStatus(){
+		jsonList = driverService.findModelListByState(Integer.parseInt(state));
+		return "jsonList";
+	}
 }

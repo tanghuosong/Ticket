@@ -6,7 +6,7 @@ $(function(){
 		rownumbers:true,
 		loadMsg: "数据加载中...",
 		idField:"id",
-	    url:'car_admin_queryOrderByPage.action?type=id'+'&&key=', 
+	    url:'order_admin_queryOrderByPage.action?type=id'+'&&key=', 
 	    columns:[[    
 	        {field:'ck',title:'选择',checkbox:true,width:50},    
 	        {field:'id',title:'地点编号',width:80,align:'center'},    
@@ -61,7 +61,7 @@ $(function(){
 		        	 }
 		        	 $.messager.confirm('温馨提示', '确定删除吗？', function(r){
 		        			if (r){
-		        				$.post("car_admin_deleteOrderByIds.action", { ids: ids },
+		        				$.post("order_admin_deleteOrderByIds.action", { ids: ids },
 		        					function(data){
 		        					 $.messager.show({
 				            			title:'温馨提示',

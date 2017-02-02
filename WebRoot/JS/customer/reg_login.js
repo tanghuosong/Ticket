@@ -1,5 +1,8 @@
 $(document).ready(function(){
-	$.formValidator.initConfig({formid:"form1",debug:false,submitonce:true,
+	$.formValidator.initConfig({
+		formid:"form1",
+		debug:false,
+		submitonce:true,
 		onerror:function(msg,obj,errorlist){
 			//$.map(errorlist,function(msg1){alert(msg1)});
 			alert(msg);
