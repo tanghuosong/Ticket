@@ -7,6 +7,7 @@ public class AddressAction extends BaseAction<Address>{
 	
 	//添加地点信息
 	public void saveAddress(){
+		model.setFullname(model.getProvince()+","+model.getCity()+","+model.getCounty()+","+model.getStation());
 		addressService.saveModel(model);
 	}
 	
@@ -31,5 +32,10 @@ public class AddressAction extends BaseAction<Address>{
 		jsonMap.put("total", addressService.getRowCount(type,key));
 		jsonMap.put("rows",addressService.queryModelByPage(type, key, rows, page, sort, order));
 		return "jsonMap";
+	}
+	
+	public String queryAddressList(){
+		jsonList = addressService.query();
+		return "jsonList";
 	}
 }

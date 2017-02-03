@@ -20,6 +20,7 @@ public class Address  implements java.io.Serializable {
      private String city;
      private String county;
      private String station;
+     private String fullname;
 //     private Set<?> routes = new HashSet<Object>(0);
 
 
@@ -86,6 +87,14 @@ public class Address  implements java.io.Serializable {
     public void setStation(String station) {
         this.station = station;
     }
+    
+    public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+    
+    public String getFullname() {
+		return fullname;
+	}
 
 //    public Set<?> getRoutes() {
 //        return this.routes;

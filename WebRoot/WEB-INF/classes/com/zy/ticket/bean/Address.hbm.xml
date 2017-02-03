@@ -22,6 +22,9 @@
         <property name="station" type="java.lang.String">
             <column name="station" length="20" />
         </property>
+        <property name="fullname" type="java.lang.String">
+            <column name="fullname" length="100" />
+        </property>
         <!-- <set name="routes" inverse="true">
             <key>
                 <column name="addressid" not-null="true" />

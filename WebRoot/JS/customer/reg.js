@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$("#checkImg").click(function(){
+		$(this).attr("src","${pageContext.request.contextPath}/checkImageAction.action?flag="+new Date().getTime());
+	});
 	$.formValidator.initConfig({
 		formid:"form1",
 		debug:false,
@@ -16,7 +19,28 @@ $(document).ready(function(){
 	$("#iptCard").formValidator({onshow:"15或18位的身份证",onfocus:"15或18位的身份证",oncorrect:"输入正确"}).functionValidator({fun:isCardID});
 	$("#t_Email").formValidator({onshow:"6-100个字符",onfocus:"6-100个字符",oncorrect:"通过"}).inputValidator({min:6,max:100,onerror:"长度非法"}).regexValidator({regexp:"email",datatype:"enum",onerror:"格式不正确"});
 	$("#phone").formValidator({onshow:"11个字符",onfocus:"11个字符",oncorrect:"通过"}).inputValidator({min:11,max:11,onerror:"长度非法"}).regexValidator({regexp:"mobile",datatype:"enum",onerror:"格式不正确"});
+	
+	$("input[name='t_CheckCode']").blur(function(){
+		if(!$(this).val()){
+//			$(this).next("img").next(".msg").html("<font color='red'>*请输入验证码</font>");
+			return false;
+		}else{
+//			$(this).next("img").next(".msg").html("");
+			$.get("user_home_checkCode.action", { vdcode:$(this).val()},function(data){
+				if(data=="true"){
+//					alert("true");
+					$("input[name='t_CheckCode']").next("img").next(".msg").html("<font color='green'>√</font>");
+					return true;
+				}else if(data=="false"){
+//					alert("false");
+					$("input[name='t_CheckCode']").next("img").next(".msg").html("<font color='red'>验证码错误！</font>");
+					return false;
+				}
+			},"text");
+		}
+	});
 });
+
 function test1(obj)
 {
 	if(obj.value=="全角字符当做1个长度")

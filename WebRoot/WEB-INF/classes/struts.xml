@@ -42,10 +42,16 @@
 			<result type="json" name="jsonMap">
 				<param name="root">jsonMap</param>
 			</result>
+			<result type="json" name="jsonList">
+				<param name="root">jsonList</param>
+			</result>
 		</action>
 		<action name="user_*_*" class="userAction" method="{2}">
 			<result type="json" name="jsonMap">
 				<param name="root">jsonMap</param>
+			</result>
+			<result type="stream" name="stream">
+				<param name="inputStream">inputStream</param>
 			</result>
 		</action>
 		<action name="manager_*_*" class="managerAction" method="{2}">
@@ -63,6 +69,6 @@
 				<param name="root">jsonMap</param>
 			</result>
 		</action>
-		
+		<action name="checkImageAction" class="com.zy.ticket.action.CheckImgAction"/>
 	</package>
 </struts>    

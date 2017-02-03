@@ -9,26 +9,34 @@
 	<script type="text/javascript" src="${ticket }/JS/admin/saveRoute.js"></script>
 </head>
 <body>
-	<form id="ff" method="post">   
+	<form id="ff" method="post"> 
+		<div class="eachItems">   
+	        <label for="startAddress">出发地点：</label>   
+	        <input class="easyui-validatebox" type="text" name="" value="蚌埠" readonly="readonly" data-options="required:true" />   
+	    </div>    
 	    <div class="eachItems">   
-	        <label for="carType.id">汽车种类：</label>   
-	        <input id="cc" name="carType.id"> 
+	        <label for="address.id">　终点站：</label>   
+	        <input id="cc1" name="address.id"> 
 	    </div>
 	    <div class="eachItems">   
-	        <label for="carName">汽车名称：</label>   
-	        <input class="easyui-validatebox" type="text" name="carName" data-options="required:true" />   
+	        <label for="starttime">出发时间：</label>   
+	        <input id="ss" class="easyui-validatebox" type="text" name="starttime" data-options="required:true,validType:'buyTime'"/>     
+	    </div>
+	    <div class="eachItems">   
+	        <label for="car.id">　　汽车：</label>   
+	        <input id="cc2" name="car.id"> 
+	    </div>
+	    <div class="eachItems">   
+	        <label for="driver.id">　　司机：</label>   
+	        <input id="cc3" name="driver.id"> 
+	    </div>
+	    <div class="eachItems">   
+	        <label for="price">　　价格：</label>   
+	        <input class="easyui-validatebox" type="text" name="price" data-options="required:true" />   
 	    </div>   
 	    <div class="eachItems">   
-	        <label for="seatNum">荷载人数：</label>   
-	        <input id="nn" class="easyui-numberbox" type="text" name="seatNum" data-options="required:true" />   
-	    </div>
-	    <div class="eachItems">   
-	        <label for="carCard">车牌号码：</label>   
-	        <input class="easyui-validatebox" type="text" name="carCard" data-options="required:true,validType:'carCard'" />   
-	    </div>    
-		<div class="eachItems">   
-	        <label for="buyTime">购买时间：</label>   
-	        <input id="dt" class="easyui-validatebox" type="text" name="buyTime" data-options="required:true,validType:'buyTime'"/>     
+	        <label for="sold">已售车票：</label>   
+	        <input id="nn" class="easyui-numberbox" type="text" name="sold" data-options="required:true" />   
 	    </div>
 	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认添加</a>  
 	</form>  

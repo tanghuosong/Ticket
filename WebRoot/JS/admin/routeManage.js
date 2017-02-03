@@ -10,18 +10,30 @@ $(function(){
 	    columns:[[    
 	        {field:'ck',title:'选择',checkbox:true,width:50},    
 	        {field:'id',title:'线路编号',width:80,align:'center'},    
-	        {field:'address',title:'目的地',width:120,align:'center'},   
-	        {field:'starttime',title:'发车时间',width:120,align:'center'},   
-	        {field:'carType.typeName',title:'汽车种类',width:120,align:'center',
+	        {field:'address.province',title:'目的地',width:120,align:'center',
 	        	formatter: function(value,row,index){
-					if(row.carType!=null && row.carType.typeName!=null){
-						return row.carType.typeName;
+					if(row.address!=null && row.address.fullname!=null){
+						return row.address.fullname;
 					}
 	        	}	
-	        },    
-	        {field:'seatNum',title:'荷载人数',width:70,align:'center',sortable:true},    
-	        {field:'carCard',title:'车牌号码',width:100,align:'center'},    
-	        {field:'buyTime',title:'购买时间',width:150,align:'center',sortable:true},   
+	        },  
+	        {field:'starttime',title:'发车时间',width:120,align:'center'},   
+	        {field:'car.carName',title:'汽车',width:120,align:'center',
+	        	formatter: function(value,row,index){
+					if(row.car!=null && row.car.carName!=null){
+						return row.car.carName;
+					}
+	        	}	
+	        },  
+	        {field:'driver.drivername',title:'司机',width:120,align:'center',
+	        	formatter: function(value,row,index){
+					if(row.driver!=null && row.driver.drivername!=null){
+						return row.driver.drivername;
+					}
+	        	}	
+	        },  
+	        {field:'price',title:'价格',width:100,align:'center'},    
+	        {field:'sold',title:'已售',width:150,align:'center',sortable:true},   
 	    ]],
 	    toolbar: [{
 			iconCls: 'icon-add',

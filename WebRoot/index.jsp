@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/JS/customer/formValidator_min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/JS/customer/formValidatorRegex.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/JS/customer/custom.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/JS/customer/reg_login.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/JS/customer/reg.js"></script>
 </head>
 <body onload="ready();">
 <div class="general feature_tour">
@@ -46,7 +46,7 @@
 					                <dd><span class="title">邮箱地址：</span><input class="reg_input" name="email" type="text" id="t_Email" onblur="checkemail(this.value)" /><span id="t_EmailTip" class="onshow"></span></dd>
 					                <dd><span class="title">手  机  号：</span><input name="phone" id="phone" class="reg_input" type="text" onblur="return checkphone(this.value)" /><span id="phoneTip" class="onshow"></span></dd>
 					                <dd><span class="title">验  证  码：</span><input id="t_CheckCode" class="reg_input_pic" name="t_CheckCode" type="text" maxlength="4" />
-					                <img class="img" src="images/eee.jpg" width="60" height="30" /><span id="t_CheckCodeTip" class="reg_m onError in_pic_s">sdsdas</span></dd>
+					                <img id="checkImg" class="img" src="checkImageAction"  title="点击更换验证码" /><span id="t_CheckCodeTip" class="reg_m onError in_pic_s"></span></dd>
 					            </dl>
 					            <div class="f_reg_but"><input id="button" name="button" type="submit" value="免费注册" class="r_button"/></div>
 					        </form>                              

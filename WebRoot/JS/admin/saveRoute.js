@@ -1,11 +1,30 @@
 $(function(){
-	$('#cc').combobox({    
-	    url:'carType_admin_queryCarTypeList.action',    
+	$('#cc1').combobox({    
+	    url:'address_admin_queryAddressList.action',    
 	    valueField:'id',    
-	    textField:'typeName',
+	    textField:'fullname',
 	    panelHeight:'auto',
 	    editable:false
 	});  
+	$('#cc2').combobox({    
+	    url:'car_admin_findCarByStatus.action?state=0',    
+	    valueField:'id',    
+	    textField:'carName',
+	    panelHeight:'auto',
+	    editable:false
+	});  
+	$('#cc3').combobox({    
+	    url:'driver_admin_findDriverByStatus.action?state=0',    
+	    valueField:'id',    
+	    textField:'drivername',
+	    panelHeight:'auto',
+	    editable:false
+	});  
+	$('#ss').timespinner({    
+	    min: '08:30',    
+	    required: true,    
+	    showSeconds: true   
+	}); 
 	$(".easyui-validatebox").validatebox({    
 	    required: true, 
 	    missingMessage:'请填写完整信息！'
