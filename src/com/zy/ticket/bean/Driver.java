@@ -37,6 +37,15 @@ public class Driver implements java.io.Serializable {
 		this.sex = sex;
 		this.status = status;
 	}
+	
+	public Driver(String drivername, Integer age, String identitycard,
+			String phone, String sex) {
+		this.drivername = drivername;
+		this.age = age;
+		this.identitycard = identitycard;
+		this.phone = phone;
+		this.sex = sex;
+	}
 
 	/** full constructor */
 //	public Driver(String drivername, Integer age, String identitycard,

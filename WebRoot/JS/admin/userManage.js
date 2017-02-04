@@ -33,8 +33,8 @@ $(function(){
             	if(rows.length==1){
 	            	parent.$('#win').window({ 
 	            		title:'更新用户状态',
-	            	    width:400,    
-	            	    height:350,  
+	            	    width:430,    
+	            	    height:400,  
 	            	    content:"<iframe src='send_admin_updateUser.action' frameborder='0' width='100%' height='100%'/>",
 	            	    modal:true
 	            	});

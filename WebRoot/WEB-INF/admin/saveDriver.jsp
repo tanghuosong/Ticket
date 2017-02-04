@@ -11,16 +11,16 @@
 <body>
 	<form id="ff" method="post">   
 	    <div class="eachItems">   
-	        <label for="drivername">姓&nbsp;&nbsp;名：</label>   
+	        <label for="drivername">　　姓名：</label>   
 	        <input class="easyui-validatebox" type="text" name="drivername" data-options="required:true" />   
 	    </div>   
 	    <div class="eachItems">   
-	        <label for="sex">性&nbsp;&nbsp;别：</label>   
-	        <input class="easyui-validatebox" type="radio" name="sex" value="男" />男   
+	        <label for="sex">　　性别：</label>   
+	        <input class="easyui-validatebox" type="radio" name="sex" value="男" checked="checked"/>男   
 	        <input class="easyui-validatebox" type="radio" name="sex" value="女"  />女   
 	    </div>
 	    <div class="eachItems">   
-	        <label for="age">年&nbsp;&nbsp;龄：</label>   
+	        <label for="age">　　年龄：</label>   
 	        <input class="easyui-validatebox" type="text" name="age" data-options="required:true,validType:'age'" />   
 	    </div>
 	    <div class="eachItems">   
@@ -28,7 +28,7 @@
 	        <input class="easyui-validatebox" type="text" name="identitycard" data-options="required:true,validType:'identifyCard'" />   
 	    </div>    
 		<div class="eachItems">   
-	        <label for="phone">&nbsp;手机号：</label>   
+	        <label for="phone">　手机号：</label>   
 	        <input class="easyui-validatebox" type="text" name="phone" data-options="required:true,validType:'phone'" />   
 	    </div>
 	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认添加</a>  

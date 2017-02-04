@@ -11,20 +11,20 @@
 <body>
 	<form id="ff" method="post">   
 	    <div class="eachItems">   
-	        <label for="id">&nbsp;&nbsp;编号：</label>   
+	        <label for="id">　　编号：</label>   
 	        <input class="easyui-validatebox" type="text" name="id" readonly="readonly"  />   
 	    </div>   
 	    <div class="eachItems">   
-	        <label for="drivername">&nbsp;&nbsp;姓名：</label>   
+	        <label for="drivername">　　姓名：</label>   
 	        <input class="easyui-validatebox" type="text" name="drivername" data-options="required:true" />   
 	    </div>   
 	    <div class="eachItems">   
-	        <label for="sex">&nbsp;&nbsp;性别：</label>   
+	        <label for="sex">　　性别：</label>   
 	        <input class="easyui-validatebox" type="radio" name="sex" value="男" />男   
 	        <input class="easyui-validatebox" type="radio" name="sex" value="女"  />女   
 	    </div>
 	    <div class="eachItems">   
-	        <label for="age">&nbsp;&nbsp;年龄：</label>   
+	        <label for="age">　　年龄：</label>   
 	        <input class="easyui-validatebox" type="text" name="age" data-options="required:true,validType:'age'" />   
 	    </div>
 	    <div class="eachItems">   
@@ -32,12 +32,12 @@
 	        <input class="easyui-validatebox" type="text" name="identitycard" data-options="required:true,validType:'identifyCard'" />   
 	    </div>    
 		<div class="eachItems">   
-	        <label for="phone">&nbsp;手机号：</label>   
+	        <label for="phone">　手机号：</label>   
 	        <input class="easyui-validatebox" type="text" name="phone" data-options="required:true,validType:'phone'" />   
 	    </div>
 	    <div class="eachItems">   
-	        <label for="status">&nbsp;&nbsp;状态：</label>   
-	        <input class="easyui-validatebox" type="text" name="status" data-options="required:true" readonly="readonly"/>   
+	        <label for="state">　　状态：</label>   
+	        <input class="easyui-validatebox" type="text" name="state" data-options="required:true" readonly="readonly"/>   
 	    </div>
 	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认更新</a>  
 	</form>  

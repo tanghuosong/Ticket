@@ -24,14 +24,15 @@ CREATE TABLE `address` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `province` varchar(20) NOT NULL,
   `city` varchar(20) NOT NULL,
-  `county` varchar(20) DEFAULT NULL,
-  `station` varchar(20) DEFAULT NULL,
+  `county` varchar(20) NOT NULL,
+  `station` varchar(20) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `address` */
 
-insert  into `address`(`id`,`province`,`city`,`county`,`station`) values (2,'安徽省','蚌埠市','龙子湖区','长途汽车站'),(3,'山东省','泰安市','泰山县','长途汽车站');
+insert  into `address`(`id`,`province`,`city`,`county`,`station`,`fullname`) values (2,'安徽省','蚌埠市','龙子湖区','长途汽车站','安徽省,蚌埠市,龙子湖区，长途汽车站'),(3,'山东省','泰安市','泰山县','长途汽车站','山东省，泰安市，泰山县，长途汽车站'),(4,'湖南省','长沙市','长沙县','客运综合站','湖南省,长沙市,长沙县,客运综合站');
 
 /*Table structure for table `car` */
 
@@ -48,11 +49,11 @@ CREATE TABLE `car` (
   PRIMARY KEY (`id`),
   KEY `car_ibfk_1` (`carTypeId`),
   CONSTRAINT `car_ibfk_1` FOREIGN KEY (`carTypeId`) REFERENCES `cartype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `car` */
 
-insert  into `car`(`id`,`carName`,`carCard`,`buyTime`,`seatNum`,`carTypeId`,`status`) values (5,'金龙客车','皖H33333','2017-02-01 11:37:09',35,2,0);
+insert  into `car`(`id`,`carName`,`carCard`,`buyTime`,`seatNum`,`carTypeId`,`status`) values (5,'金龙客车','皖H33333','2017-02-05 00:33:19',35,2,1),(6,'五菱宏光','皖H99999','2017-02-01 23:59:27',9,4,0),(7,'上海通用','皖H88888','2017-02-05 00:34:10',35,6,0),(8,'宇通客车','皖H11111','2017-02-05 00:33:57',45,6,1),(9,'金龙大巴','皖H33333','2017-02-05 00:33:37',43,6,1),(10,'五菱至上','皖H09090','2017-02-01 00:00:00',13,4,0);
 
 /*Table structure for table `cartype` */
 
@@ -62,11 +63,11 @@ CREATE TABLE `cartype` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `typeName` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `cartype` */
 
-insert  into `cartype`(`id`,`typeName`) values (2,'中型客车'),(4,'小型客车'),(6,'大型客车');
+insert  into `cartype`(`id`,`typeName`) values (2,'中型客车'),(4,'小型客车'),(6,'大型客车'),(7,'豪华客车');
 
 /*Table structure for table `driver` */
 
@@ -81,11 +82,11 @@ CREATE TABLE `driver` (
   `sex` varchar(2) NOT NULL,
   `status` tinyint(1) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 /*Data for the table `driver` */
 
-insert  into `driver`(`id`,`drivername`,`age`,`identitycard`,`phone`,`sex`,`status`) values (2,'唐火松',24,'340826199309103451','18949344290','男',0),(3,'张宇',22,'123456789009876543','13455556666','男',0),(4,'夏磊',33,'888888889999999999','18949344290','男',0),(5,'段少强',33,'888888888888888888','13455556666','男',0);
+insert  into `driver`(`id`,`drivername`,`age`,`identitycard`,`phone`,`sex`,`status`) values (2,'唐火松',24,'340826199309103451','18949344290','男',1),(3,'张宇',22,'123456789009876543','13455556666','男',0),(4,'夏磊',33,'888888889999999999','18949344290','男',1),(5,'段少强',33,'888888888888888888','13455556666','男',1),(6,'吴晗',24,'888888888888888888','18949344290','男',0);
 
 /*Table structure for table `manager` */
 
@@ -128,7 +129,7 @@ DROP TABLE IF EXISTS `route`;
 CREATE TABLE `route` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `addressid` int(10) unsigned NOT NULL,
-  `starttime` datetime NOT NULL,
+  `starttime` time NOT NULL,
   `carid` int(10) unsigned NOT NULL,
   `driverid` int(10) unsigned NOT NULL,
   `price` double NOT NULL,
@@ -140,9 +141,11 @@ CREATE TABLE `route` (
   CONSTRAINT `addressid` FOREIGN KEY (`addressid`) REFERENCES `address` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `carid` FOREIGN KEY (`carid`) REFERENCES `car` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `driverid` FOREIGN KEY (`driverid`) REFERENCES `driver` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 /*Data for the table `route` */
+
+insert  into `route`(`id`,`addressid`,`starttime`,`carid`,`driverid`,`price`,`sold`) values (1,2,'13:00:00',5,2,134,3),(20,4,'08:00:00',9,4,200,1),(21,3,'08:00:00',8,5,111,1);
 
 /*Table structure for table `user` */
 
@@ -163,6 +166,35 @@ CREATE TABLE `user` (
 /*Data for the table `user` */
 
 insert  into `user`(`id`,`name`,`sex`,`password`,`idcard`,`email`,`phone`,`status`) values (1,'唐火松','男','123456','340826199309103451','ths930910@163.com','18949344290',1),(2,'张宇','女','123456','340822222222222222','ffdfdfdfd@qq.com','18949344290',1);
+
+/* Trigger structure for table `route` */
+
+DELIMITER $$
+
+/*!50003 DROP TRIGGER*//*!50032 IF EXISTS */ /*!50003 `update_status_insert` */$$
+
+/*!50003 CREATE */ /*!50017 DEFINER = 'root'@'localhost' */ /*!50003 TRIGGER `update_status_insert` AFTER INSERT ON `route` FOR EACH ROW BEGIN 
+	UPDATE DRIVER SET driver.`status`=1 WHERE driver.`id`= new.driverid;
+	UPDATE CAR SET car.`status`=1 WHERE car.`id`= new.carid;
+	
+    END */$$
+
+
+DELIMITER ;
+
+/* Trigger structure for table `route` */
+
+DELIMITER $$
+
+/*!50003 DROP TRIGGER*//*!50032 IF EXISTS */ /*!50003 `update_status_delete` */$$
+
+/*!50003 CREATE */ /*!50017 DEFINER = 'root'@'localhost' */ /*!50003 TRIGGER `update_status_delete` AFTER DELETE ON `route` FOR EACH ROW BEGIN 
+	UPDATE DRIVER SET driver.`status`=0 WHERE driver.`id`= old.driverid;
+	UPDATE CAR SET car.`status`=0 WHERE car.`id`= old.carid;
+    END */$$
+
+
+DELIMITER ;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

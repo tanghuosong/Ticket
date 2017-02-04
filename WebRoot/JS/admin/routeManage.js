@@ -41,8 +41,8 @@ $(function(){
 			handler: function(){
 				parent.$('#win').window({ 
             		title:'添加线路信息',
-            	    width:400,    
-            	    height:350,  
+            	    width:450,    
+            	    height:430,  
             	    content:"<iframe src='send_admin_saveRoute.action' frameborder='0' width='100%' height='100%'/>",
             	    modal:true
             	}); 

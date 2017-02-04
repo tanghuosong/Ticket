@@ -21,7 +21,7 @@ $(function(){
 	    editable:false
 	});  
 	$('#ss').timespinner({    
-	    min: '08:30',    
+	    min: '08:00',    
 	    required: true,    
 	    showSeconds: true   
 	}); 
@@ -35,24 +35,9 @@ $(function(){
 	});  
 	//设置数字输入框，即座位数最小是9
 	$('#nn').numberbox({    
-	    min:9,    
+	    min:0,    
 	    precision:0    
 	});  
-	$.extend($.fn.validatebox.defaults.rules, {    
-	    carCard: {
-	    	validator:function(value , param){
-	    		var carCard = /^[\u4e00-\u9fa5]{1}[A-Z]{1}[A-Z_0-9]{5}$/;
-	    		return value.match(carCard);	
-	    	},
-	    	message:'请输入正确的车牌号！'
-	    },
-	    buyTime:{
-	    	validator:function(value,param){
-	    		return true;
-	    	},
-	    	message:'购买日期必须在今天之前！！'
-	    }
-	}); 
 	$("#btn").click(function(){
 		$('#ff').form('submit', {   
 		    url:'route_admin_saveRoute.action',    

@@ -8,12 +8,15 @@ $(function(){
 		age:rows[0].age,
 		identitycard:rows[0].identitycard,
 		phone:rows[0].phone,
-		status:rows[0].status
+		state:rows[0].status
 	});
 	
 	$('#btn').click(function(){    
 		 $('#ff').form('submit', {
-		    url:'driver_admin_updateDriver.action',   
+		    url:'driver_admin_updateDriver.action', 
+		    onSubmit: function(param){    
+		        param.status = rows[0].status;    
+		    },   
 		    success:function(data){    
 		        parent.$('#win').window('close');
 		        dg.datagrid("reload");
@@ -47,10 +50,10 @@ $(function(){
 		    }
 		});
 		// 转换状态码
-		var status = $("input[name='status']");
+		var status = $("input[name='state']");
 		if(status.val()==1){
-			$("input[name='status']").val("已分配");
+			$("input[name='state']").val("已分配");
 		}else{
-			$("input[name='status']").val("未分配");
+			$("input[name='state']").val("待分配");
 		}
 });

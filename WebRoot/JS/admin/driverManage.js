@@ -31,8 +31,8 @@ $(function(){
 			handler: function(){
 				parent.$('#win').window({ 
             		title:'添加司机信息',
-            	    width:400,    
-            	    height:350,  
+            	    width:420,    
+            	    height:330,  
             	    content:"<iframe src='send_admin_saveDriver.action' frameborder='0' width='100%' height='100%'/>",
             	    modal:true
             	}); 
@@ -45,8 +45,8 @@ $(function(){
             	if(rows.length==1){
 	            	parent.$('#win').window({ 
 	            		title:'更新司机信息',
-	            	    width:400,    
-	            	    height:350,  
+	            	    width:470,    
+	            	    height:390,  
 	            	    content:"<iframe src='send_admin_updateDriver.action' frameborder='0' width='100%' height='100%'/>",
 	            	    modal:true
 	            	});

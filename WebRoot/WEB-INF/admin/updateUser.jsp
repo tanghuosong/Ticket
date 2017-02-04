@@ -11,35 +11,35 @@
 <body>
 	<form id="ff" method="post">   
 	    <div class="eachItems">   
-	        <label for="id">&nbsp;&nbsp;编号：</label>   
+	        <label for="id">　　编号：</label>   
 	        <input class="easyui-validatebox" type="text" name="id" readonly="readonly"  />   
 	    </div>   
 	    <div class="eachItems">   
-	        <label for="name">&nbsp;&nbsp;姓名：</label>   
-	        <input class="easyui-validatebox" type="text" name="name" data-options="required:true" />   
+	        <label for="name">　　姓名：</label>   
+	        <input class="easyui-validatebox" type="text" name="name" readonly="readonly" data-options="required:true" />   
 	    </div>   
 	    <div class="eachItems">   
-	        <label for="sex">&nbsp;&nbsp;性别：</label>   
-	        <input class="easyui-validatebox" type="text" name="sex" data-options="required:true" />
+	        <label for="sex">　　性别：</label>   
+	        <input class="easyui-validatebox" type="text" name="sex" readonly="readonly" data-options="required:true" />
 	    </div>
 	    <div class="eachItems">   
 	        <label for="idcard">身份证号：</label>   
-	        <input class="easyui-validatebox" type="text" name="idcard" data-options="required:true,validType:'identifyCard'" />   
+	        <input class="easyui-validatebox" type="text" name="idcard" readonly="readonly" data-options="required:true,validType:'identifyCard'" />   
 	    </div>    
 	    <div class="eachItems">   
-	        <label for="email">&nbsp;&nbsp;邮箱：</label>   
-	        <input class="easyui-validatebox" type="text" name="email" data-options="required:true,validType:'age'" />   
+	        <label for="email">　　邮箱：</label>   
+	        <input class="easyui-validatebox" type="text" name="email" readonly="readonly" data-options="required:true,validType:'age'" />   
 	    </div>
 		<div class="eachItems">   
-	        <label for="phone">&nbsp;手机号：</label>   
-	        <input class="easyui-validatebox" type="text" name="phone" data-options="required:true,validType:'phone'" />   
+	        <label for="phone">　手机号：</label>   
+	        <input class="easyui-validatebox" type="text" name="phone" readonly="readonly" data-options="required:true,validType:'phone'" />   
 	    </div>
 	    <div class="eachItems">   
-	        <label for="stasus">&nbsp;&nbsp;状态：</label>   
+	        <label for="stasus">　　状态：</label>   
 	        <input class="easyui-validatebox" type="radio" name="status" value="1"/>正常   
 	        <input class="easyui-validatebox" type="radio" name="status" value="0"/>禁用  
 	    </div>
-	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认添加</a>  
+	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认更新</a>  
 	</form>  
 </body>
 </html>

@@ -22,7 +22,7 @@ $(function(){
 				parent.$('#win').window({ 
             		title:'添加地点信息',
             	    width:400,    
-            	    height:350,  
+            	    height:320,  
             	    content:"<iframe src='send_admin_saveAddress.action' frameborder='0' width='100%' height='100%'/>",
             	    modal:true
             	}); 

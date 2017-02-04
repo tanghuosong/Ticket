@@ -30,7 +30,7 @@
 	        <label for="station">车站：</label>   
 	        <input class="easyui-validatebox" type="text" name="station" data-options="required:true" />   
 	    </div>    
-	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认添加</a>  
+	    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">确认更新</a>  
 	</form>  
 </body>
 </html>
