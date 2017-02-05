@@ -1,4 +1,15 @@
 $(function(){
+	var dg = parent.$("iframe[title='线路管理']").get(0).contentWindow.$("#dg");
+	var rows = dg.datagrid("getSelections");
+	$('#ff').form('load',{
+		id:rows[0].id,
+		'address.id':rows[0].address.id,
+		starttime:rows[0].starttime,
+		'car.id':rows[0].car.id,
+		'driver.id':rows[0].driver.id,
+		price:rows[0].price,
+		sold:rows[0].sold
+	});
 	$('#cc1').combobox({    
 	    url:'address_admin_queryAddressList.action',    
 	    valueField:'id',    
@@ -7,17 +18,15 @@ $(function(){
 	    editable:false
 	});  
 	$('#cc2').combobox({    
-	    url:'car_admin_findCarByStatus.action?state=0',    
+	    url:'car_admin_findCarByStatusAndId.action?state=0&&key='+rows[0].car.id,    
 	    valueField:'id',    
 	    textField:'carName',
 	    panelHeight:'auto',
-	    editable:false,
-	    onSelect:function(record){
-	    	$("#seatNum").val(record.seatNum);
-		}
-	});
+	    editable:false
+	}); 
+
 	$('#cc3').combobox({    
-	    url:'driver_admin_findDriverByStatus.action?state=0',    
+	    url:'driver_admin_findDriverByStatusAndId.action?state=0&&key='+rows[0].driver.id,    
 	    valueField:'id',    
 	    textField:'drivername',
 	    panelHeight:'auto',
@@ -43,7 +52,7 @@ $(function(){
 	});  
 	$("#btn").click(function(){
 		$('#ff').form('submit', {   
-		    url:'route_admin_saveRoute.action',    
+		    url:'route_admin_updateRoute.action',    
 		    success:function(data){    
 		    	 parent.$('#win').window('close');
 			     parent.$("iframe[title='线路管理']").get(0).contentWindow.$("#dg").datagrid("reload");

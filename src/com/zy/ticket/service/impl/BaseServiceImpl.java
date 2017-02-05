@@ -133,4 +133,9 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	public List<T> findModelListByState(int state) {
 		return baseDao.findModelListByState(state);
 	}
+	
+	@Override
+	public List<T> findModelListByStateAndId(int state, int id) {
+		return baseDao.findModelListByStateAndId(state, id);
+	}
 }

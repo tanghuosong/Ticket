@@ -10,7 +10,7 @@ $(function(){
 	    columns:[[    
 	        {field:'ck',title:'选择',checkbox:true,width:50},    
 	        {field:'id',title:'线路编号',width:80,align:'center'},    
-	        {field:'address.province',title:'目的地',width:120,align:'center',
+	        {field:'address.province',title:'目的地',width:220,align:'center',
 	        	formatter: function(value,row,index){
 					if(row.address!=null && row.address.fullname!=null){
 						return row.address.fullname;
@@ -32,8 +32,8 @@ $(function(){
 					}
 	        	}	
 	        },  
-	        {field:'price',title:'价格',width:100,align:'center'},    
-	        {field:'sold',title:'已售',width:150,align:'center',sortable:true},   
+	        {field:'price',title:'车票售价',width:100,align:'center'},    
+	        {field:'sold',title:'剩余车票',width:150,align:'center',sortable:true},   
 	    ]],
 	    toolbar: [{
 			iconCls: 'icon-add',
@@ -55,8 +55,8 @@ $(function(){
             	if(rows.length==1){
 	            	parent.$('#win').window({ 
 	            		title:'更新线路信息',
-	            	    width:400,    
-	            	    height:350,  
+	            	    width:450,    
+	            	    height:450,  
 	            	    content:"<iframe src='send_admin_updateRoute.action' frameborder='0' width='100%' height='100%'/>",
 	            	    modal:true
 	            	});

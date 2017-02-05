@@ -39,4 +39,9 @@ public class DriverAction extends BaseAction<Driver>{
 		jsonList = driverService.findModelListByState(Integer.parseInt(state));
 		return "jsonList";
 	}
+	
+	public String findDriverByStatusAndId(){
+		jsonList = driverService.findModelListByStateAndId(Integer.parseInt(state),Integer.parseInt(key));
+		return "jsonList";
+	}
 }

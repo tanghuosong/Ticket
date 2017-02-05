@@ -19,5 +19,11 @@ public class CarDaoImpl extends BaseDaoImpl<Car> implements CarDao {
 		String hql = "From Car c LEFT JOIN FETCH c.carType WHERE c.status=:state";
 		return session().createQuery(hql).setInteger("state", state).list();
 	}
+	
+	@Override
+	public List<Car> findModelListByStateAndId(int state, int id) {
+		String hql = "From Car c LEFT JOIN FETCH c.carType WHERE c.status=:state OR c.id=:id";
+		return session().createQuery(hql).setInteger("state", state).setInteger("id", id).list();
+	}
 
 }

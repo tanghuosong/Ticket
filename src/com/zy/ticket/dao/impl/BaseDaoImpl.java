@@ -87,4 +87,10 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 		String sql = "From "+clazz.getSimpleName()+" c where c.status=:status";
 		return session().createQuery(sql).setInteger("status", state).list();
 	}
+	
+	@Override
+	public List<T> findModelListByStateAndId(int state ,int id) {
+		String sql = "From "+clazz.getSimpleName()+" c where c.status=:status or c.id=:id";
+		return session().createQuery(sql).setInteger("status", state).setInteger("id", id).list();
+	}
 }

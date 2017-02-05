@@ -29,5 +29,6 @@ public interface BaseDao<T> {
 			int startRows, int _rows, String sort, String order);
 			
 	public List<T> findModelListByState(int state);
-	
+		
+	public List<T> findModelListByStateAndId(int state,int id);
 }

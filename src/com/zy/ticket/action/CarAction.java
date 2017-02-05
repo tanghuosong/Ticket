@@ -36,4 +36,9 @@ public class CarAction extends BaseAction<Car>{
 		mapList.addAll(carService.findModelListByState(Integer.parseInt(state)));
 		return "mapList";
 	}
+	
+	public String findCarByStatusAndId(){
+		mapList.addAll(carService.findModelListByStateAndId(Integer.parseInt(state),Integer.parseInt(key)));
+		return "mapList";
+	}
 }

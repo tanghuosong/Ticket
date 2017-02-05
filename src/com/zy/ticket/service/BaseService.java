@@ -26,4 +26,6 @@ public interface BaseService<T> {
 			String page, String sort, String order);
 					
 	public List<T> findModelListByState(int state);
+	
+	public List<T> findModelListByStateAndId(int state,int id);
 }
