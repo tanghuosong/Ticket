@@ -20,7 +20,7 @@ public interface BaseDao<T> {
 	public void updateModel(T t);
 	
 	//增加一条记录
-	public void saveModel(T t);
+	public Object saveModel(T t);
 	
 	//获取记录总数
 	public int getRowCount(String type, String key);

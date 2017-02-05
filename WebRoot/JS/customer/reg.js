@@ -39,6 +39,41 @@ $(document).ready(function(){
 			},"text");
 		}
 	});
+	// 注册
+	$("form:first").submit(function(){
+		$.post("user_custom_saveUser.action", 
+			{ 
+				'name':$("#t_UserName").val(),
+				'sex':$("input[name='sex']").val(),
+				'email':$("#t_Email").val(),
+				'idcard':$("#iptCard").val(),
+				'phone':$("#phone").val(),
+				'password':$("#t_UserPass").val(),
+				'status':'1'
+			},
+			function(data){
+				if(data.result=="true"){
+					alert("注册成功！");
+				}else{
+					alert("注册失败！");
+				}
+		},"json");
+	});
+	// 登录
+	$("form:last").submit(function(){
+		$.post("user_custom_userLogin.action", 
+			{ 
+				'name':$("#loginName").val(),
+				'password':$("#loginPwd").val()
+			},
+			function(data){
+				if(data.result=="true"){
+					alert("登录成功！");
+				}else{
+					alert("登录失败！");
+				}
+			},"json");
+	});
 });
 
 function test1(obj)

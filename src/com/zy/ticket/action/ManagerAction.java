@@ -10,6 +10,8 @@ public class ManagerAction extends BaseAction<Manager>{
 		managerService.saveModel(model);
 	}
 	
+	
+	
 	//根据id删除管理员信息
 	public void deleteManagerById(){
 		managerService.deleteModelById(model.getId());

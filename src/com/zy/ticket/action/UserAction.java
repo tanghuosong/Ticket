@@ -17,22 +17,31 @@ public class UserAction extends BaseAction<User>{
 		this.vdcode = vdcode;
 	}
 	//验证验证码是否正确
-		public String checkCode() throws IOException{
-			String checkcode = (String)ActionContext.getContext().getSession().get("checkcode");
-			if(vdcode.equalsIgnoreCase(checkcode)){
-				//验证码正确
-				result = "true";
-			}else{
-				//验证码错误
-				result = "false";
-			}
-			inputStream = new ByteArrayInputStream(result.getBytes());
-			return "stream";
+	public String checkCode() throws IOException{
+		String checkcode = (String)ActionContext.getContext().getSession().get("checkcode");
+		if(vdcode.equalsIgnoreCase(checkcode)){
+			//验证码正确
+			result = "true";
+		}else{
+			//验证码错误
+			result = "false";
 		}
+		inputStream = new ByteArrayInputStream(result.getBytes());
+		return "stream";
+	}
 	
-	//添加用户信息
-	public void saveUser(){
-		userService.saveModel(model);
+	
+	//用户注册
+	public String saveUser(){
+//		System.out.println(model);
+		jsonMap.put("result", userService.saveModel(model));
+		return "jsonMap";
+	}
+
+	public String userLogin(){
+		System.out.println(model);
+		jsonMap.put("result", userService.checkUserLogin(model));
+		return "jsonMap";
 	}
 	
 	//根据id删除用户信息

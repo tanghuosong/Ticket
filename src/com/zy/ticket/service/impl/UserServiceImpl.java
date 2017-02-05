@@ -10,6 +10,15 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 		userDao.updateUserStatus(user);
 	}
 
+	@Override
+	public boolean checkUserLogin(User user) {
+		boolean result = false;
+		if(userDao.checkUserLogin(user)!=null){
+			result = true;
+		}
+		return result;
+	}
+
 
 
 }

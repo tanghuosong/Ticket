@@ -5,8 +5,8 @@ import java.util.List;
 public interface BaseService<T> {
 	
 	//保存模型 信息
-	public void saveModel(T t);
-
+	public boolean saveModel(T t);
+	
 	//根据id删除模型信息
 	public void deleteModelById(Integer id);
 	
@@ -24,8 +24,10 @@ public interface BaseService<T> {
 	// 排序分页返回
 	public List<T> queryModelByPage(String type, String key, String rows,
 			String page, String sort, String order);
-					
+	
+	// 根据状态查询Model
 	public List<T> findModelListByState(int state);
 	
+	// 根据状态和Id返回Model
 	public List<T> findModelListByStateAndId(int state,int id);
 }

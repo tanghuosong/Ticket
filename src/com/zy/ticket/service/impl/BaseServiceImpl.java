@@ -90,8 +90,12 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 		this.routeDao = routeDao;
 	}
 	@Override
-	public void saveModel(T t) {
-		baseDao.saveModel(t);
+	public boolean saveModel(T t) {
+		boolean result = false;
+		if(baseDao.saveModel(t)!=null){
+			result = true;
+		}
+		return result;
 	}
 
 	@Override

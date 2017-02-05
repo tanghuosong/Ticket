@@ -62,8 +62,8 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 	
 	//保存一条记录
 	@Override
-	public void saveModel(T t) {
-		session().merge(t);
+	public Object saveModel(T t) {
+		return session().merge(t);
 	}
 	
 	//查询记录总数

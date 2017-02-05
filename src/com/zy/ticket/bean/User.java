@@ -120,6 +120,13 @@ public class User  implements java.io.Serializable {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
+
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", sex=" + sex + ", password=" + password
+				+ ", idcard=" + idcard + ", email=" + email + ", phone="
+				+ phone + ", status=" + status + "]";
+	}
     
     
 //    public Set<?> getOrders() {
