@@ -118,6 +118,7 @@
 	</bean>
 	
 	<bean id="sendAction" class="com.zy.ticket.action.SendAction"/>
+	<bean id="checkImgAction" class="com.zy.ticket.action.CheckImgAction"/>
 	<bean id="driverAction" class="com.zy.ticket.action.DriverAction" parent="baseAction" scope="prototype"/>
 	<bean id="carTypeAction" class="com.zy.ticket.action.CarTypeAction" parent="baseAction" scope="prototype"/>
 	<bean id="carAction" class="com.zy.ticket.action.CarAction" parent="baseAction" scope="prototype"/>

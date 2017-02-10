@@ -69,6 +69,6 @@
 				<param name="root">jsonMap</param>
 			</result>
 		</action>
-		<action name="checkImageAction" class="com.zy.ticket.action.CheckImgAction"/>
+		<action name="checkImageAction" class="checkImgAction"/>
 	</package>
 </struts>    

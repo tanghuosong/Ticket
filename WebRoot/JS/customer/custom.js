@@ -4,22 +4,40 @@ function ready(){
 	var tabHeight = $(".tab a").height();
 	if(!window.cur) window.cur=0;
 	
+	
+	/*
+	 * 进入时加载首页数据
+	 * type, key, rows, page, sort, order
+	 * **/
+	$.ajax({
+	   type: "POST",
+	   url:"route_customer_queryRouteByPage.action",
+	   data: {"type":"id","key":"","rows":10,"page":1},
+	   success: function(data){
+//	     alert( "Data Saved: " + msg );
+		   alert(data.total);
+		   for(var route in data.rows){
+			   alert(data.rows[route].id);
+		   }
+	   }
+	});
+
 	$(".tab a").click(function(){
 		var index = $(".tab a").index(this);
 	   slide(conInnerConWidth, tabHeight, index);
 		return false;
 	});
-	
+	// 上一页
 	$(".prev").click(function(){
-	   if(window.cur>0) slide(conInnerConWidth, tabHeight, window.cur-1);
-		return false;
-	});
-	
+		   if(window.cur>0) slide(conInnerConWidth, tabHeight, window.cur-1);
+			return false;
+		});
+	// 下一页
 	$(".next").click(function(){
 	   if(window.cur<conSize-1) slide(conInnerConWidth, tabHeight, window.cur+1);
 		return false;
 	});
-	
+		
 	$(".faq ul a").click(function(){
 		var index = $(".faq ul a").index($(this));
 		$('html, body').animate({scrollTop: $(".details h1").eq(index).offset().top-15}, 1500);
