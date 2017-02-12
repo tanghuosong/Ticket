@@ -1,55 +1,27 @@
 $(function(){
 	var page = 1;
 	var total=0 ;
-	postUrl(page);
-	var pageToatl = ((total%10==0)&&(total/10!=0))?(total/10):((total/10)+1);
-	alert(pageToatl);
-//	if(total%10==0){
-//		pageTotal = total/10;
-//	}
-	$("#pageInfo").html("当前第"+page+"页,共"+pageToatl+"页");
-	/*
-	 * 进入时加载首页数据
-	 * **/
+	var pageTotal;
+	postUrl(page);// 进入请求车票数据
 	
+//	$("#pageInfo").html("当前第"+page+"页,共"+pageTotal+"页");
 	// 上一页
 	$(".prev").click(function(){
-		if(page==1){
-			page = page;
-		}else{
+		if(page>1){
 			page = page-1;
+			postUrl(page);
 		}
-		postUrl(page);
-		
 	});
 	
 	// 下一页
 	$(".next").click(function(){
-		if((total/10)>=1&&(total%10)>0){
-			page = total/10+1;
-		}else if((total/10)==0&&(total%10)>0){
-			page = 1;
+		if(page<pageTotal){
+			page = page+1;
+			postUrl(page);
 		}
-		postUrl(page);
-		
+//		$("#pageInfo").html("当前第"+page+"页,共"+pageTotal+"页");
 	});
-//	// tab的点击事件
-//	$("a[href=#]").click(function(event){
-//		var tabName = this.text;
-//		if(tabName == "车票查询"){
-//			
-//		}else if(tabName == "已购车票"){
-//			
-//		}else if(tabName == "未完成订单"){
-//			
-//		}else if(tabName == "用户注册"){
-//			
-//		}else if(tabName == "用户登录"){
-//			
-//		}
-//		alert(tabName);
-//		return false;
-//	});
+	
 	function postUrl(){
 		$.ajax({
 		   type: "POST",
@@ -58,6 +30,7 @@ $(function(){
 		   success: function(data){
 			   total = data.total;
 			   showData(data);
+			   updatePage();
 		   }
 		});
 	}
@@ -78,9 +51,12 @@ $(function(){
 	   }
     	$("#dataContent").html(title+content);
 	}
+	
+	function updatePage(){
+		pageTotal = (parseInt(total/10))+(total%10>0?1:0);// 分页总数
+		$("#pageInfo").html("当前第"+page+"页,共"+pageTotal+"页");
+	}
 });
 function buyTicket(title){
-	$.ajax({
-		
-	});
+	
 }

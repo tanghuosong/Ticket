@@ -49,11 +49,11 @@ CREATE TABLE `car` (
   PRIMARY KEY (`id`),
   KEY `car_ibfk_1` (`carTypeId`),
   CONSTRAINT `car_ibfk_1` FOREIGN KEY (`carTypeId`) REFERENCES `cartype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `car` */
 
-insert  into `car`(`id`,`carName`,`carCard`,`buyTime`,`seatNum`,`carTypeId`,`status`) values (5,'金龙客车','皖H33333','2017-02-05 13:47:57',35,2,1),(6,'五菱宏光','皖H99999','2017-02-12 14:38:25',9,4,1),(7,'上海通用','皖H88888','2017-02-12 14:57:56',35,6,1),(8,'宇通客车','皖H11111','2017-02-05 00:33:57',45,6,1),(9,'金龙大巴','皖H33333','2017-02-12 14:22:30',43,6,1),(10,'五菱至上','皖H09090','2017-02-05 14:43:31',13,4,1);
+insert  into `car`(`id`,`carName`,`carCard`,`buyTime`,`seatNum`,`carTypeId`,`status`) values (5,'金龙客车','皖H33333','2017-02-05 13:47:57',35,2,1),(6,'五菱宏光','皖H99999','2017-02-12 14:38:25',9,4,1),(7,'上海通用','皖H88888','2017-02-12 14:57:56',35,6,1),(8,'宇通客车','皖H11111','2017-02-05 00:33:57',45,6,1),(9,'金龙大巴','皖H33333','2017-02-12 14:22:30',43,6,1),(10,'五菱至上','皖H09090','2017-02-05 14:43:31',13,4,1),(11,'测试2','皖H09090','2017-02-12 21:34:29',22,2,1),(12,'测试1','皖H09090','2017-02-12 21:34:48',33,2,1),(13,'测试2','皖H09090','2017-02-12 21:35:32',45,4,1),(14,'测试4','皖H09090','2017-02-12 21:35:07',33,2,1),(15,'测试5','皖H09090','2017-02-12 21:35:17',23,2,1),(16,'测试2','皖H33333','2017-02-12 21:35:44',34,4,1);
 
 /*Table structure for table `cartype` */
 
@@ -82,11 +82,11 @@ CREATE TABLE `driver` (
   `sex` varchar(2) NOT NULL,
   `status` tinyint(1) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 /*Data for the table `driver` */
 
-insert  into `driver`(`id`,`drivername`,`age`,`identitycard`,`phone`,`sex`,`status`) values (2,'唐火松',24,'340826199309103451','18949344290','男',1),(4,'夏磊',33,'888888889999999999','18949344290','男',1),(5,'段少强',33,'888888888888888888','13455556666','男',1),(6,'吴晗',24,'888888888888888888','18949344290','男',1),(7,'张宇',23,'340813199409091111','13455556666','男',1),(8,'张宇',34,'340813199409091111','13455556666','男',1);
+insert  into `driver`(`id`,`drivername`,`age`,`identitycard`,`phone`,`sex`,`status`) values (2,'唐火松',24,'340826199309103451','18949344290','男',1),(4,'夏磊',33,'888888889999999999','18949344290','男',1),(5,'段少强',33,'888888888888888888','13455556666','男',1),(6,'吴晗',24,'888888888888888888','18949344290','男',1),(7,'张宇',23,'340813199409091111','13455556666','男',1),(8,'张宇',34,'340813199409091111','13455556666','男',1),(9,'测试一',32,'340813199409091111','18949344290','男',1),(10,'测试2',22,'123456789009876543','13288889999','男',1),(11,'测试3',33,'123456789009876543','13455556666','男',1),(12,'测试4',23,'123456789009876543','18949344290','男',1),(13,'测试4',32,'123456789009876543','18949344290','男',1),(14,'测试2',32,'123456789009876543','13455556666','男',1);
 
 /*Table structure for table `manager` */
 
@@ -141,11 +141,11 @@ CREATE TABLE `route` (
   CONSTRAINT `addressid` FOREIGN KEY (`addressid`) REFERENCES `address` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `carid` FOREIGN KEY (`carid`) REFERENCES `car` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `driverid` FOREIGN KEY (`driverid`) REFERENCES `driver` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 /*Data for the table `route` */
 
-insert  into `route`(`id`,`addressid`,`starttime`,`carid`,`driverid`,`price`,`sold`) values (1,2,'02:00:00',5,6,134,3),(20,4,'02:00:00',9,4,220,1),(21,3,'08:00:00',8,5,111,1),(22,2,'08:00:00',10,2,166,13),(23,2,'08:00:00',6,7,4566,9),(28,2,'08:00:00',7,8,45,35);
+insert  into `route`(`id`,`addressid`,`starttime`,`carid`,`driverid`,`price`,`sold`) values (1,2,'02:00:00',5,6,134,3),(20,4,'02:00:00',9,4,220,1),(21,3,'08:00:00',8,5,111,1),(22,2,'08:00:00',10,2,166,13),(23,2,'08:00:00',6,7,4566,9),(28,2,'08:00:00',7,8,45,35),(29,2,'08:00:00',11,10,45,22),(30,4,'08:00:00',12,11,43,33),(31,2,'08:00:00',14,12,45,33),(32,2,'08:00:00',15,13,45,23),(33,2,'08:00:00',13,14,44,45),(34,2,'08:00:00',16,9,67,34);
 
 /*Table structure for table `user` */
 

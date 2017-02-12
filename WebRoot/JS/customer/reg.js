@@ -7,7 +7,6 @@ $(document).ready(function(){
 		debug:false,
 		submitonce:true,
 		onerror:function(msg,obj,errorlist){
-			//$.map(errorlist,function(msg1){alert(msg1)});
 			alert(msg);
 		}
 	});
@@ -22,17 +21,13 @@ $(document).ready(function(){
 	
 	$("input[name='t_CheckCode']").blur(function(){
 		if(!$(this).val()){
-//			$(this).next("img").next(".msg").html("<font color='red'>*请输入验证码</font>");
 			return false;
 		}else{
-//			$(this).next("img").next(".msg").html("");
-			$.get("user_home_checkCode.action", { vdcode:$(this).val()},function(data){
+			$.get("user_customer_checkCode.action", { vdcode:$(this).val()},function(data){
 				if(data=="true"){
-//					alert("true");
 					$("input[name='t_CheckCode']").next("img").next(".msg").html("<font color='green'>√</font>");
 					return true;
 				}else if(data=="false"){
-//					alert("false");
 					$("input[name='t_CheckCode']").next("img").next(".msg").html("<font color='red'>验证码错误！</font>");
 					return false;
 				}

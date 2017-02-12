@@ -76,11 +76,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- 
-			<div class="nav">
-				<p><a href="#" class="prev">&nbsp;</a><a href="#" class="next">&nbsp;</a></p>
-			</div>
-			 -->
 		</div>
 	</div>
 </div>
