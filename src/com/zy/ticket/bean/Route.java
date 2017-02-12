@@ -1,6 +1,5 @@
 package com.zy.ticket.bean;
 
-import java.sql.Time;
 
 /**
  * Route entity. @author MyEclipse Persistence Tools
@@ -18,7 +17,7 @@ public class Route implements java.io.Serializable {
 	private Address address;
 	private Car car;
 	private Driver driver;
-	private Time starttime;
+	private String starttime;
 	private Double price;
 	private Integer sold;
 //	private Set<?> orders = new HashSet<Object>(0);
@@ -30,7 +29,7 @@ public class Route implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Route(Address address, Car car, Driver driver, Time starttime,
+	public Route(Address address, Car car, Driver driver, String starttime,
 			Double price, Integer sold) {
 		this.address = address;
 		this.car = car;
@@ -86,11 +85,11 @@ public class Route implements java.io.Serializable {
 		this.driver = driver;
 	}
 
-	public Time getStarttime() {
+	public String getStarttime() {
 		return this.starttime;
 	}
 
-	public void setStarttime(Time starttime) {
+	public void setStarttime(String starttime) {
 		this.starttime = starttime;
 	}
 

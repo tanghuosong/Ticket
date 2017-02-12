@@ -16,7 +16,7 @@
 	    </div>    
 	    <div class="eachItems">   
 	        <label for="address.id">　终点站：</label>   
-	        <input id="cc1" name="address.id"> 
+	        <input id="cc1" name="address.id" data-options="required: true"> 
 	    </div>
 	    <div class="eachItems">   
 	        <label for="starttime">出发时间：</label>   
@@ -24,7 +24,7 @@
 	    </div>
 	    <div class="eachItems">   
 	        <label for="driver.id">　　司机：</label>   
-	        <input id="cc3"  name="driver.id"  > 
+	        <input id="cc3"  name="driver.id" data-options="required: true" > 
 	    </div>
 	    <div class="eachItems">   
 	        <label for="price">车票售价：</label>   
@@ -32,7 +32,7 @@
 	    </div>   
 	    <div class="eachItems">   
 	        <label for="car.id">　　汽车：</label>   
-	        <input id="cc2" name="car.id" > 
+	        <input id="cc2" name="car.id" data-options="required: true"> 
 	    </div>
 	    <div class="eachItems">   
 	        <label for="sold">出售车票：</label>   

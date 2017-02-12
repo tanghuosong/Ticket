@@ -15,8 +15,8 @@ a{color:#fff;}
 .feature_tour .mask {clear:both;float: left;margin:20px 0px 0px;overflow: hidden;width:100%;position:relative;height:405px;text-align:center;border:solid 1px #85b02c; }
 .feature_tour .mask .maskCon { width: 5000px; }
 .feature_tour .mask .maskCon .innerCon { float: left;width: 940px;line-height:255px; }
-.feature_tour .nav { clear: both; float: left; visibility: hidden; margin: 20px 0px 40px; width: 100%; }
 
+.feature_tour .nav { clear: both; float: left; visibility: hidden; margin: 20px 0px 40px; width: 100%; }
 .feature_tour .nav p { margin:0 auto; width:90px; }
 .feature_tour .nav p a { display: block; float: left; width: 45px; height: 36px; }
 .feature_tour .nav p a.prev { background: url(../../images/customer/feature_tours_navigation.png) no-repeat left 0px; }

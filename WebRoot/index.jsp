@@ -30,9 +30,7 @@
 			<div class="mask">
 				<div class="maskCon">
 					<div id="con1" class="innerCon">
-						<div id="dataContent" class="tableContent">
-					        
-					    </div>
+						<div id="dataContent" class="tableContent"></div>
 						<div class="nav">
 							<p><a href="#" class="prev">&nbsp;</a><a href="#" class="next">&nbsp;</a></p>
 							<span id="pageInfo">共8页，当前第7页</span>

@@ -19,7 +19,7 @@
         <many-to-one name="driver" class="com.zy.ticket.bean.Driver" fetch="select">
             <column name="driverid" not-null="true" />
         </many-to-one>
-        <property name="starttime" type="java.sql.Time">
+        <property name="starttime" type="string">
             <column name="starttime" length="19" not-null="true" />
         </property>
         <property name="price" type="java.lang.Double">

@@ -57,7 +57,6 @@ $(function(){
 		   data: {"type":"id","key":"","rows":10,"page":page},
 		   success: function(data){
 			   total = data.total;
-//			   alert(data.total);
 			   showData(data);
 		   }
 		});
@@ -67,8 +66,21 @@ $(function(){
 	    var title = '<div class="tableTitle"><span class="carNum">车次</span><span class="startAddress">出发地</span><span class="endAddress">目的地</span><span class="startTime">发车时间</span><span class="price">票价</span><span class="ticketNum">剩余车票</span><span class="buy">购票</span></div>'
 		var content = "";
     	for(var index in data.rows){
-    		content = content+'<div class="eachItems"><span class="carNum">'+"C"+data.rows[index].id+'</span><span class="startAddress">'+"蚌埠"+'</span><span class="endAddress">'+data.rows[index].address.fullname+'</span><span class="startTime">'+data.rows[index].starttime+'</span><span class="price">'+data.rows[index].price+'</span><span class="ticketNum">'+data.rows[index].car.seatNum+'</span><span class="buyBtn"><a>购票</a></div>';
+    		content = content+'<div class="eachItems">'
+    		+'<span class="carNum">'+"C"+data.rows[index].id+'</span>'
+    		+'<span class="startAddress">'+"蚌埠"+'</span>'
+    		+'<span class="endAddress">'+data.rows[index].address.fullname+'</span>'
+    		+'<span class="startTime">'+data.rows[index].starttime+'</span>'
+    		+'<span class="price">'+data.rows[index].price+'</span>'
+    		+'<span class="ticketNum">'+data.rows[index].car.seatNum+'</span>'
+    		+'<span class="buyBtn"><a class="buyTicket" onclick="buyTicket(this.title)" href="javascript:void(0);"  title='+data.rows[index].id+'>购票</a>'
+    		+'</div>';
 	   }
     	$("#dataContent").html(title+content);
 	}
 });
+function buyTicket(title){
+	$.ajax({
+		
+	});
+}
