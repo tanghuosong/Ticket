@@ -4,6 +4,7 @@ $(function(){
 	    valueField:'id',    
 	    textField:'fullname',
 	    panelHeight:'auto',
+	    required:true,
 	    editable:false
 	});  
 	$('#cc2').combobox({    
@@ -11,6 +12,7 @@ $(function(){
 	    valueField:'id',    
 	    textField:'carName',
 	    panelHeight:'auto',
+	    required:true,
 	    editable:false,
 	    onSelect:function(record){
 	    	$("#seatNum").val(record.seatNum);
@@ -21,26 +23,18 @@ $(function(){
 	    valueField:'id',    
 	    textField:'drivername',
 	    panelHeight:'auto',
+	    required:true,
 	    editable:false
 	});  
 	$('#ss').timespinner({    
 	    min: '08:00',    
-	    required: true,    
-	    showSeconds: true   
+	    showSeconds: true ,
+	    required:true
 	}); 
 	$(".easyui-validatebox").validatebox({    
 	    required: true, 
 	    missingMessage:'请填写完整信息！'
 	}); 
-	//日期框验证
-	$('#dt').datebox({    
-	    required: true   
-	});  
-	//设置数字输入框，即座位数最小是9
-	$('#nn').numberbox({    
-	    min:0,    
-	    precision:0    
-	});  
 	$("#btn").click(function(){
 		$('#ff').form('submit', {   
 		    url:'route_admin_saveRoute.action',    

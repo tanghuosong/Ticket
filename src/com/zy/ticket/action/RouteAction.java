@@ -7,6 +7,7 @@ public class RouteAction extends BaseAction<Route>{
 	
 	//添加线路信息
 	public void saveRoute(){
+		System.out.println(model.getStarttime().toString());
 		routeService.saveModel(model);
 	}
 	

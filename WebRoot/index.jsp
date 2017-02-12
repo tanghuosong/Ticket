@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="${ticket}/CSS/customer/index.css"/>
 	<script type="text/javascript" src="${ticket}/JS/customer/formValidator_min.js"></script>
 	<script type="text/javascript" src="${ticket}/JS/customer/formValidatorRegex.js"></script>
+	<script type="text/javascript" src="${ticket}/JS/customer/index.js"></script>
 	<script type="text/javascript" src="${ticket}/JS/customer/custom.js"></script>
 	<script type="text/javascript" src="${ticket}/JS/customer/reg.js"></script>
 </head>
@@ -29,43 +30,12 @@
 			<div class="mask">
 				<div class="maskCon">
 					<div id="con1" class="innerCon">
-						<div class="tableContent">
-					        <div class="tableTitle">
-					            <span class="carNum">车次</span><span class="startAddress">出发地</span><span class="endAddress">目的地</span><span class="startTime">发车时间</span><span class="price">票价</span><span class="ticketNum">剩余车票</span><span class="buy">购票</span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">安徽省蚌埠市龙子湖区</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
-					        <div class="eachItems">
-					            <span class="carNum">001</span><span class="startAddress">蚌埠</span><span class="endAddress">目的地</span><span class="startTime">10:00</span><span class="price">180</span><span class="ticketNum">100</span><span class="buyBtn"><a>购票</a></span>
-					        </div>
+						<div id="dataContent" class="tableContent">
+					        
 					    </div>
 						<div class="nav">
 							<p><a href="#" class="prev">&nbsp;</a><a href="#" class="next">&nbsp;</a></p>
+							<span id="pageInfo">共8页，当前第7页</span>
 						</div>
 					</div>
 					<div id="con2" class="innerCon">已购车票</div>

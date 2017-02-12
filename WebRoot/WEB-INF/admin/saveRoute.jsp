@@ -16,23 +16,23 @@
 	    </div>    
 	    <div class="eachItems">   
 	        <label for="address.id">　终点站：</label>   
-	        <input id="cc1" name="address.id" class="easyui-validatebox" data-options="required:true"> 
+	        <input id="cc1" name="address.id"> 
 	    </div>
 	    <div class="eachItems">   
 	        <label for="starttime">出发时间：</label>   
-	        <input id="ss" class="easyui-validatebox" type="text" name="starttime" data-options="required:true,validType:'buyTime'"/>     
+	        <input id="ss" type="text" name="starttime"/>     
 	    </div>
 	    <div class="eachItems">   
 	        <label for="driver.id">　　司机：</label>   
-	        <input id="cc3" name="driver.id" class="easyui-validatebox" data-options="required:true"> 
+	        <input id="cc3"  name="driver.id"  > 
 	    </div>
 	    <div class="eachItems">   
 	        <label for="price">车票售价：</label>   
-	        <input class="easyui-validatebox" type="text" name="price" data-options="required:true" />   
+	        <input class="easyui-validatebox" type="text" name="price" />   
 	    </div>   
 	    <div class="eachItems">   
 	        <label for="car.id">　　汽车：</label>   
-	        <input id="cc2" name="car.id" class="easyui-validatebox" data-options="required:true"> 
+	        <input id="cc2" name="car.id" > 
 	    </div>
 	    <div class="eachItems">   
 	        <label for="sold">出售车票：</label>   

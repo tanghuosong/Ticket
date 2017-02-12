@@ -7,7 +7,7 @@ public class AddressAction extends BaseAction<Address>{
 	
 	//添加地点信息
 	public void saveAddress(){
-		model.setFullname(model.getProvince()+","+model.getCity()+","+model.getCounty()+","+model.getStation());
+		model.setFullname(model.getProvince()+model.getCity()+model.getCounty()+model.getStation());
 		addressService.saveModel(model);
 	}
 	

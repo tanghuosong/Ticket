@@ -3,38 +3,10 @@ function ready(){
 	var conSize = $(".innerCon").size();
 	var tabHeight = $(".tab a").height();
 	if(!window.cur) window.cur=0;
-	
-	
-	/*
-	 * 进入时加载首页数据
-	 * type, key, rows, page, sort, order
-	 * **/
-	$.ajax({
-	   type: "POST",
-	   url:"route_customer_queryRouteByPage.action",
-	   data: {"type":"id","key":"","rows":10,"page":1},
-	   success: function(data){
-//	     alert( "Data Saved: " + msg );
-		   alert(data.total);
-		   for(var route in data.rows){
-			   alert(data.rows[route].id);
-		   }
-	   }
-	});
 
 	$(".tab a").click(function(){
 		var index = $(".tab a").index(this);
 	   slide(conInnerConWidth, tabHeight, index);
-		return false;
-	});
-	// 上一页
-	$(".prev").click(function(){
-		   if(window.cur>0) slide(conInnerConWidth, tabHeight, window.cur-1);
-			return false;
-		});
-	// 下一页
-	$(".next").click(function(){
-	   if(window.cur<conSize-1) slide(conInnerConWidth, tabHeight, window.cur+1);
 		return false;
 	});
 		
@@ -44,29 +16,9 @@ function ready(){
 		return false;
 	});
 
-	// tab的点击事件
-	$("a[href=#]").click(function(event){
-		var tabName = this.text;
-//		alert(this.text);
-		if(tabName == "车票查询"){
-			
-		}else if(tabName == "已购车票"){
-			
-		}else if(tabName == "未完成订单"){
-			
-		}else if(tabName == "用户注册"){
-			
-		}else if(tabName == "用户登录"){
-			
-		}
-//		alert(tabName);
-		return false;
-	});
-
 	$(".top a").click(function(){
 		$('html, body').animate({scrollTop:0}, 1500);
 	});
-	
 	
 	$(".feature_tour .tab, .feature_tour .nav").addClass("vv");
 }
