@@ -6,25 +6,28 @@ public class AddressAction extends BaseAction<Address>{
 	private static final long serialVersionUID = 1L;
 	
 	//添加地点信息
-	public void saveAddress(){
+	public String saveAddress(){
 		model.setFullname(model.getProvince()+model.getCity()+model.getCounty()+model.getStation());
-		addressService.saveModel(model);
+		jsonMap.put("msg", addressService.saveModel(model));
+		return "jsonMap";
 	}
 	
 	//根据id删除地点信息
-	public void deleteAddressById(){
-		addressService.deleteModelById(model.getId());
+	public String deleteAddressById(){
+		jsonMap.put("msg", addressService.deleteModelById(model.getId()));
+		return "jsonMap";
 	}
 	
 	//根据id s批量删除地点信息
-	public void deleteAddressByIds(){
-		addressService.deleteModelByIds(ids);
+	public String deleteAddressByIds(){
+		jsonMap.put("msg", addressService.deleteModelByIds(ids));
+		return "jsonMap";
 	}
 	
 	//更新地点信息
-	public void updateAddress(){
-		System.out.println(model);
-		addressService.updateModel(model);
+	public String updateAddress(){
+		jsonMap.put("msg", addressService.updateModel(model));
+		return "jsonMap";
 	}
 	
 	//分页排序查询所有的地点

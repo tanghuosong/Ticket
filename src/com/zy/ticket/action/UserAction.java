@@ -34,34 +34,37 @@ public class UserAction extends BaseAction<User>{
 	//用户注册
 	public String saveUser(){
 //		System.out.println(model);
-		jsonMap.put("result", userService.saveModel(model));
+		jsonMap.put("msg", userService.saveModel(model));
 		return "jsonMap";
 	}
 
 	public String userLogin(){
-		System.out.println(model);
-		jsonMap.put("result", userService.checkUserLogin(model));
+		jsonMap.put("msg", userService.checkUserLogin(model));
 		return "jsonMap";
 	}
 	
 	//根据id删除用户信息
-	public void deleteUserById(){
-		userService.deleteModelById(model.getId());
+	public String deleteUserById(){
+		jsonMap.put("msg", userService.deleteModelById(model.getId()));
+		return "jsonMap";
 	}
 	
 	//根据id s批量删除用户信息
-	public void deleteUserByIds(){
-		userService.deleteModelByIds(ids);
+	public String deleteUserByIds(){
+		jsonMap.put("msg", userService.deleteModelByIds(ids));
+		return "jsonMap";
 	}
 	
 	//更新用户信息
-	public void updateUser(){
+	public String updateUser(){
 //		System.out.println(model);
-		userService.updateModel(model);
+		jsonMap.put("msg", userService.updateModel(model));
+		return "jsonMap";
 	}
 	
-	public void updateUserStatus(){
-		userService.updateUserStatus(model);
+	public String updateUserStatus(){
+		jsonMap.put("msg", userService.updateUserStatus(model));
+		return "jsonMap";
 	}
 	
 	//分页排序查询所有的用户

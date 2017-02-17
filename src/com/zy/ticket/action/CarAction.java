@@ -6,23 +6,29 @@ public class CarAction extends BaseAction<Car>{
 	private static final long serialVersionUID = 1L;
 	
 	//添加汽车信息
-	public void saveCar(){
-		carService.saveModel(model);
+	public String saveCar(){
+		jsonMap.put("msg", carService.saveModel(model));
+		return "jsonMap";
+		
 	}
 	
 	//根据id删除汽车信息
-	public void deleteCarById(){
-		carService.deleteModelById(model.getId());
+	public String deleteCarById(){
+		jsonMap.put("msg", carService.deleteModelById(model.getId()));
+		return "jsonMap";
 	}
 	
 	//根据id s批量删除汽车信息
-	public void deleteCarByIds(){
-		carService.deleteModelByIds(ids);
+	public String deleteCarByIds(){
+		jsonMap.put("msg", carService.deleteModelByIds(ids));
+		return "jsonMap";
 	}
 	
 	//更新汽车信息
-	public void updateCar(){
-		carService.updateModel(model);
+	public String updateCar(){
+		jsonMap.put("msg", carService.updateModel(model));
+		return "jsonMap";
+		
 	}
 	//分页查询所有的汽车
 	public String queryCarByPage(){

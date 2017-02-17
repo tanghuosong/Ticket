@@ -13,9 +13,19 @@ $(function(){
 	 $('#btn').click(function(){    
 		 $('#ff').form('submit', {
 			    url:'user_admin_updateUserStatus.action',   
-			    success:function(data){    
-			        parent.$('#win').window('close');
-			        dg.datagrid("reload");
+			    success:function(data){ 
+			    	var data = eval('(' + data + ')');
+			    	if(data.msg.result){
+			    		parent.$('#win').window('close');
+				        dg.datagrid("reload");
+			    	}else{
+			    		$.messager.show({
+			    			title:'错误提示',
+			    			msg:data.msg.content,
+			    			timeout:0,
+			    			showType:'slide'
+			    		});
+			    	}
 			    }    
 		}); 
 	  }); 

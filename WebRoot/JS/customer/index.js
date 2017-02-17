@@ -4,7 +4,6 @@ $(function(){
 	var pageTotal;
 	postUrl(page);// 进入请求车票数据
 	
-//	$("#pageInfo").html("当前第"+page+"页,共"+pageTotal+"页");
 	// 上一页
 	$(".prev").click(function(){
 		if(page>1){
@@ -19,9 +18,8 @@ $(function(){
 			page = page+1;
 			postUrl(page);
 		}
-//		$("#pageInfo").html("当前第"+page+"页,共"+pageTotal+"页");
 	});
-	
+	// 从服务器请求数据
 	function postUrl(){
 		$.ajax({
 		   type: "POST",
@@ -34,7 +32,7 @@ $(function(){
 		   }
 		});
 	}
-	
+	// 显示数据
 	function showData(data){
 	    var title = '<div class="tableTitle"><span class="carNum">车次</span><span class="startAddress">出发地</span><span class="endAddress">目的地</span><span class="startTime">发车时间</span><span class="price">票价</span><span class="ticketNum">剩余车票</span><span class="buy">购票</span></div>'
 		var content = "";
@@ -51,12 +49,13 @@ $(function(){
 	   }
     	$("#dataContent").html(title+content);
 	}
-	
+	// 更新页码显示
 	function updatePage(){
 		pageTotal = (parseInt(total/10))+(total%10>0?1:0);// 分页总数
 		$("#pageInfo").html("当前第"+page+"页,共"+pageTotal+"页");
 	}
 });
+// 买票函数
 function buyTicket(title){
-	
+	alert(title);
 }

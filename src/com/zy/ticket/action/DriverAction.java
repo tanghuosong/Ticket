@@ -6,25 +6,28 @@ public class DriverAction extends BaseAction<Driver>{
 	private static final long serialVersionUID = 1L;
 	
 	//添加司机信息
-	public void saveDriver(){
+	public String saveDriver(){
 		model.setStatus(0);
-		driverService.saveModel(model);
+		jsonMap.put("msg", driverService.saveModel(model));
+		return "jsonMap";
 	}
 	
 	//根据id删除司机信息
-	public void deleteDriverById(){
-		driverService.deleteModelById(model.getId());
+	public String deleteDriverById(){
+		jsonMap.put("msg", driverService.deleteModelById(model.getId()));
+		return "jsonMap";
 	}
 	
 	//根据id s批量删除司机信息
-	public void deleteDriverByIds(){
-		driverService.deleteModelByIds(ids);
+	public String deleteDriverByIds(){
+		jsonMap.put("msg",driverService.deleteModelByIds(ids));
+		return "jsonMap";
 	}
 	
 	//更新司机信息
-	public void updateDriver(){
-		System.out.println(model);
-		driverService.updateModel(model);
+	public String updateDriver(){
+		jsonMap.put("msg", driverService.updateModel(model));
+		return "jsonMap";
 	}
 	
 	//分页排序查询所有的司机

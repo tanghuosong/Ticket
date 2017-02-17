@@ -1,22 +1,36 @@
 package com.zy.ticket.service.impl;
 
+import com.zy.ticket.bean.Message;
 import com.zy.ticket.bean.User;
 import com.zy.ticket.service.UserService;
 
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService{
 
 	@Override
-	public void updateUserStatus(User user) {
-		userDao.updateUserStatus(user);
+	public Message updateUserStatus(User user) {
+		Message message = new Message();
+		try{
+			userDao.updateUserStatus(user);
+			message.result = true;
+			message.content = "更新成功！";
+		}catch (Exception e) {
+			message.result = false;
+			message.content = "更新失败！"+e.getMessage();
+		}
+		return message;
 	}
 
 	@Override
-	public boolean checkUserLogin(User user) {
-		boolean result = false;
+	public Message checkUserLogin(User user) {
+		Message message = new Message();
 		if(userDao.checkUserLogin(user)!=null){
-			result = true;
+			message.result = true;
+			message.content = "注册成功！";
+		}else{
+			message.result = false;
+			message.content = "注册失败！";
 		}
-		return result;
+		return message;
 	}
 
 

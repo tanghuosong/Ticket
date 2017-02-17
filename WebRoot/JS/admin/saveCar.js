@@ -37,14 +37,20 @@ $(function(){
 	$("#btn").click(function(){
 		$('#ff').form('submit', {   
 		    url:'car_admin_saveCar.action',
-		    success:function(data){    
-		    	 parent.$('#win').window('close');
-			     parent.$("iframe[title='汽车管理']").get(0).contentWindow.$("#dg").datagrid("reload");
-		    },
-		    error:function(data){
-		    	alert(data);
+		    success:function(data){   
+		    	var data = eval('(' + data + ')');
+		    	if(data.msg.result){
+		    		parent.$('#win').window('close');
+				    parent.$("iframe[title='汽车管理']").get(0).contentWindow.$("#dg").datagrid("reload");
+		    	}else{
+		    		$.messager.show({
+		    			title:'错误提示',
+		    			msg:data.msg.content,
+		    			timeout:0,
+		    			showType:'slide'
+		    		});
+		    	}
 		    }
-		    
 		});
 	});
 });

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import com.zy.ticket.bean.Message;
 import com.zy.ticket.dao.AddressDao;
 import com.zy.ticket.dao.BaseDao;
 import com.zy.ticket.dao.CarDao;
@@ -90,22 +91,44 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 		this.routeDao = routeDao;
 	}
 	@Override
-	public boolean saveModel(T t) {
-		boolean result = false;
+	public Message saveModel(T t) {
+		Message message  = new Message();
 		if(baseDao.saveModel(t)!=null){
-			result = true;
+			message.result = true;
+			message.content = "添加成功！";
+		}else{
+			message.result = false;
+			message.content = "添加失败,请检查是否输入有误！";
 		}
-		return result;
+		return message;
 	}
 
 	@Override
-	public void deleteModelById(Integer id) {
-		baseDao.deleteById(id);
+	public Message deleteModelById(Integer id) {
+		Message message = new Message();
+		try{
+			baseDao.deleteById(id);
+			message.result = true;
+			message.content = "删除成功！";
+		}catch (Exception e) {
+			message.result = false;
+			message.content = "删除失败！"+e.getMessage();
+		}
+		return message;
 	}
 
 	@Override
-	public void deleteModelByIds(String ids) {
-		baseDao.deleteByIds(ids);
+	public Message deleteModelByIds(String ids) {
+		Message message = new Message();
+		try{
+			baseDao.deleteByIds(ids);
+			message.result = true;
+			message.content = "删除成功！";
+		}catch (Exception e) {
+			message.result = false;
+			message.content = "删除失败！"+e.getMessage();
+		}
+		return message;
 	}
 
 	@Override
@@ -114,8 +137,18 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	}
 
 	@Override
-	public void updateModel(T t) {
-		baseDao.updateModel(t);
+	public Message updateModel(T t) {
+		Message message = new Message();
+		try{
+			baseDao.updateModel(t);
+			message.result = true;
+			message.content = "更新成功！";
+		}catch (Exception e) {
+			message.result = false;
+			message.content = "更新失败！"+e.getMessage();
+		}
+		return message;
+		
 	}
 	
 	@Override

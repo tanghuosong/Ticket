@@ -6,23 +6,27 @@ public class OrderAction extends BaseAction<Order>{
 	private static final long serialVersionUID = 1L;
 	
 	//添加订单信息
-	public void saveOrder(){
-		orderService.saveModel(model);
+	public String saveOrder(){
+		jsonMap.put("msg", orderService.saveModel(model));
+		return "jsonMap";
 	}
 	
 	//根据id删除订单信息
-	public void deleteOrderById(){
-		orderService.deleteModelById(model.getId());
+	public String deleteOrderById(){
+		jsonMap.put("msg", orderService.deleteModelById(model.getId()));
+		return "jsonMap";
 	}
 	
 	//根据id s批量删除订单信息
-	public void deleteOrderByIds(){
-		orderService.deleteModelByIds(ids);
+	public String deleteOrderByIds(){
+		jsonMap.put("msg", orderService.deleteModelByIds(ids));
+		return "jsonMap";
 	}
 	
 	//更新订单信息
-	public void updateOrder(){
-		orderService.updateModel(model);
+	public String updateOrder(){
+		jsonMap.put("msg", orderService.updateModel(model));
+		return "jsonMap";
 	}
 	
 	//分页排序查询所有的订单

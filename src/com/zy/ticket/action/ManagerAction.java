@@ -6,26 +6,28 @@ public class ManagerAction extends BaseAction<Manager>{
 	private static final long serialVersionUID = 1L;
 	
 	//添加管理员信息
-	public void saveManager(){
-		managerService.saveModel(model);
+	public String saveManager(){
+		jsonMap.put("msg", managerService.saveModel(model));
+		return "jsonMap";
 	}
 	
-	
-	
 	//根据id删除管理员信息
-	public void deleteManagerById(){
-		managerService.deleteModelById(model.getId());
+	public String deleteManagerById(){
+		jsonMap.put("msg", managerService.deleteModelById(model.getId()));
+		return "jsonMap";
 	}
 	
 	//根据id s批量删除管理员信息
-	public void deleteManagerByIds(){
-		managerService.deleteModelByIds(ids);
+	public String deleteManagerByIds(){
+		jsonMap.put("msg", managerService.deleteModelByIds(ids));
+		return "jsonMap";
 	}
 	
 	//更新管理员信息
-	public void updateManager(){
-		System.out.println(model);
-		managerService.updateModel(model);
+	public String updateManager(){
+		
+		jsonMap.put("msg", managerService.updateModel(model));
+		return "jsonMap";
 	}
 	
 	//分页排序查询所有的管理员

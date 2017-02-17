@@ -6,24 +6,28 @@ public class CarTypeAction extends BaseAction<CarType>{
 	private static final long serialVersionUID = 1L;
 	
 	//添加汽车分类信息
-	public void saveCarType(){
-		carTypeService.saveModel(model);
+	public String saveCarType(){
+		jsonMap.put("msg", carTypeService.saveModel(model));
+		return "jsonMap";
+		
 	}
 	
 	//根据id删除汽车分类信息
-	public void deleteCarTypeById(){
-		carTypeService.deleteModelById(model.getId());
+	public String deleteCarTypeById(){
+		jsonMap.put("msg", carTypeService.deleteModelById(model.getId()));
+		return "jsonMap";
 	}
 	
 	//根据id s批量删除汽车分类信息
-	public void deleteCarTypeByIds(){
-		carTypeService.deleteModelByIds(ids);
+	public String deleteCarTypeByIds(){
+		jsonMap.put("msg", carTypeService.deleteModelByIds(ids));
+		return "jsonMap";
 	}
 	
 	//更新汽车分类信息
-	public void updateCarType(){
-		System.out.println(model);
-		carTypeService.updateModel(model);
+	public String updateCarType(){
+		jsonMap.put("msg", carTypeService.updateModel(model));
+		return "jsonMap";
 	}
 	
 	//查询汽车分类列表

@@ -54,14 +54,23 @@ $(function(){
 		        			if (r){
 		        				$.post("carType_admin_deleteCarTypeByIds.action", { ids: ids },
 		        					function(data){
-		        					 $.messager.show({
-				            			title:'温馨提示',
-				            			msg:'删除成功！',
-				            			timeout:3000,
-				            			showType:'slide'
-					            	});
-					            	 $('#dg').datagrid('reload');
-					            	 $('#dg').datagrid('uncheckAll');
+		        						if(data.msg.result){
+		        							 $.messager.show({
+		 				            			title:'温馨提示',
+		 				            			msg:'删除成功！',
+		 				            			timeout:3000,
+		 				            			showType:'slide'
+		 					            	});
+		 					            	 $('#dg').datagrid('reload');
+		 					            	 $('#dg').datagrid('uncheckAll');
+		        						}else{
+		        							$.messager.show({
+						            			title:'错误提示',
+						            			msg:data.msg.content,
+						            			timeout:0,
+						            			showType:'slide'
+							            	});
+		        						}
 		        				});
 		        			}
 		        		});
