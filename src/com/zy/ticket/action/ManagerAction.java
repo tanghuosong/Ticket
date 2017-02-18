@@ -13,10 +13,6 @@ public class ManagerAction extends BaseAction<Manager>{
 	
 	// 管理员登录
 	public String managerLogin(){
-		// 登录成功，跳转到后台
-		if(managerService.checkLogin(model).result){
-			
-		}
 		jsonMap.put("msg", managerService.checkLogin(model));
 		return "jsonMap";
 	}

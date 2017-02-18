@@ -1,3 +1,15 @@
+/**翻页组件**/
+.nav { clear: both; float: left;  margin:30px 20px 0 0; width: 100%; }
+.nav p { margin:0 auto; width:90px; }
+.nav p a { display: block; float: left; width: 45px; height: 36px; }
+.nav p a.prev { background: url(../../images/customer/feature_tours_navigation.png) no-repeat left 0px; }
+.nav p a.prev:hover { background-position: 0px -36px; }
+.nav p a.next { background: url(../../images/customer/feature_tours_navigation.png) no-repeat right 0px; }
+.nav p a.next:hover { background-position: right -72px; }
+.nav span{display:inline-block;font-size:18px;line-height:36px;color:#884}
+
+.pageTitle { clear: both; margin-top: 24px; font-size: 24px; float: left; color: #fff; }
+.contentTitle { clear: both; font-size: 20px; float: left; width: 100%; color: #436206; }
 .userInfo {float:right;color:white;font-size:14px;margin-top:60px;margin-right:40px;}
 .tableContent{width:100%;min-height:330px;border-bottom:1px solid gray;}
 .tableContent span{display:block;float:left;width:100px;font-size: 16px;color: brown;margin-right:10px;text-align:center; }
