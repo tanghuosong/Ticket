@@ -35,26 +35,50 @@ $(document).ready(function(){
 					$("#reg_msg").html(data.msg.content).addClass("reg_success");
 					$("input").val("");
 				}else{
-					$("#reg_msg").html(data.msg.content).addClass("reg_error");;
+					$("#reg_msg").html(data.msg.content).addClass("reg_error");
 				}
 		},"json");
 	});
 	// 登录
-	$("form:last").submit(function(){
-		$.post("user_custom_userLogin.action", 
-			{ 
-				'name':$("#loginName").val(),
-				'password':$("#loginPwd").val()
-			},
-			function(data){
-				if(data.result=="true"){
-					alert("登录成功！");
-				}else{
-					alert("登录失败！");
-				}
+	$("#logincommit").click(function(){
+		if($("#permission").val()=="user"){
+			$.post("user_custom_userLogin.action", 
+				{ 
+					'name':$("#managerEmail").val(),
+					'password':$("#managerPwd").val()
+				},
+				function(data){
+					if(data.msg.result){
+						$("#login_input input").val("");
+						refresh();
+					}
+					alert(data.msg.content);
 			},"json");
+		}else{
+			$.post("manager_custom_managerLogin.action", 
+					{ 
+						'email':$("#managerEmail").val(),
+						'password':$("#managerPwd").val()
+					},
+					function(data){
+						if(data.msg.result){
+							$("#login_input :input").val("");
+						}
+						alert(data.msg.content);
+				},"json");
+		}
+		
+	});
+	
+	$("#exit").click(function(){
+		$.post("user_customer_exit.action",function(msg){
+			refresh();
+		});
 	});
 });
+function refresh(){
+    window.location.reload();//刷新当前页面.
+}
 
 function test1(obj)
 {

@@ -11,6 +11,16 @@ public class ManagerAction extends BaseAction<Manager>{
 		return "jsonMap";
 	}
 	
+	// 管理员登录
+	public String managerLogin(){
+		// 登录成功，跳转到后台
+		if(managerService.checkLogin(model).result){
+			
+		}
+		jsonMap.put("msg", managerService.checkLogin(model));
+		return "jsonMap";
+	}
+	
 	//根据id删除管理员信息
 	public String deleteManagerById(){
 		jsonMap.put("msg", managerService.deleteModelById(model.getId()));

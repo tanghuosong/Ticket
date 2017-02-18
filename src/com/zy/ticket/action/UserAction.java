@@ -1,5 +1,8 @@
 package com.zy.ticket.action;
 
+import org.apache.struts2.ServletActionContext;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.zy.ticket.bean.User;
 
 public class UserAction extends BaseAction<User>{
@@ -9,10 +12,18 @@ public class UserAction extends BaseAction<User>{
 		jsonMap.put("msg", userService.registerUser(model,vcode));
 		return "jsonMap";
 	}
-
+	// 用户登录
 	public String userLogin(){
 		jsonMap.put("msg", userService.checkUserLogin(model));
 		return "jsonMap";
+	}
+	
+	// 退出登录
+	public void exit() {
+		model=(User)ServletActionContext.getContext().getSession().get("user");
+		if(model!=null){
+			ActionContext.getContext().getSession().remove("user");
+		}
 	}
 	
 	//根据id删除用户信息

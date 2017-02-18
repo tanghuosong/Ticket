@@ -47,12 +47,14 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
 	@Override
 	public Message checkUserLogin(User user) {
-		if(userDao.checkUserLogin(user)!=null){
+		if(userDao.checkUserLogin(user).size()!=0){
 			message.result = true;
-			message.content = "注册成功！";
+			message.content = "登录成功！";
+			// 将用户存入session中，以便后面取值
+			ActionContext.getContext().getSession().put("user",user);
 		}else{
 			message.result = false;
-			message.content = "注册失败！";
+			message.content = "用户名或密码错误，请重新登录！";
 		}
 		return message;
 	}

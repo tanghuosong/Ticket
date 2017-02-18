@@ -1,5 +1,7 @@
 package com.zy.ticket.dao.impl;
 
+import java.util.List;
+
 import com.zy.ticket.bean.User;
 import com.zy.ticket.dao.UserDao;
 public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
@@ -10,10 +12,11 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
 		session().createQuery(sql).executeUpdate();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public User checkUserLogin(User user) {
+	public List<User> checkUserLogin(User user) {
 		String sql = "FROM User u where u.name =:name and u.password=:password";
-		return (User) session().createQuery(sql).setString("name", user.getName()).setString("password", user.getPassword()).uniqueResult();
+		return session().createQuery(sql).setString("name", user.getName()).setString("password", user.getPassword()).list();
 	}
 	
 	@Override

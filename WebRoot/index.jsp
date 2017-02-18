@@ -13,13 +13,18 @@
 	<script type="text/javascript" src="${ticket}/JS/customer/formValidatorRegex.js"></script>
 	<script type="text/javascript" src="${ticket}/JS/customer/index.js"></script>
 	<script type="text/javascript" src="${ticket}/JS/customer/custom.js"></script>
-	<script type="text/javascript" src="${ticket}/JS/customer/reg.js"></script>
+	<script type="text/javascript" src="${ticket}/JS/customer/reg_login.js"></script>
 </head>
 <body onload="ready();">
 <div class="general feature_tour">
 	<div class="middle">
 		<div class="wrapper">
-			<p class="pageTitle">长途汽车在线售票系统</p>
+			<div class="pageTitle">长途汽车在线售票系统</div>
+			<div id="userInfo" class="userInfo">
+				<c:if test="${user!=null}">
+					<span>当前用户：</span><span id="userName">${user.name }</span><span><a href="javascript:void(0)" id="exit">&nbsp;&nbsp;安全退出</a></span>
+				</c:if>
+			</div>
 			<div class="tab">
 				<a href="#" class="current">车票查询</a>
 				<a href="#">已购车票</a>
@@ -66,15 +71,18 @@
 					<div id="con5" class="innerCon">
 						<div class="login">
 						      <h1>用户登录</h1>
-						      <form id="loginForm" name="form2" method="post" action="">
-						        <p><input id="loginName" type="text" name="loginName" value="" placeholder="用户名"></p>
-						        <p><input id="loginPwd" type="password" name="pwd" value="" placeholder="密码"></p>
-						        <p><span class="title">权　　限： </span>
-						        	<input type="radio" id="user" name="permission" value="0" checked="checked" /><label for="user"> 用户　　</label>
-                                    <input type="radio" id="manager" name="permission" value="1" /><label for="manager"> 管理员</label>　
-				              	</p>
-						        <p class="submit"><input type="submit" name="commit" value="登录"></p>
-						      </form>
+						      <div id="login_input">
+							      <p><input id="managerEmail" type="text" name="loginName" value="" placeholder="用户名"></p>
+							      <p><input id="managerPwd" type="password" name="pwd" value="" placeholder="密码"></p>
+						      </div>
+							      <p><span class="title">角　色： </span>
+								      <select class="permission_select" id="permission">
+										  <option value="user">用户</option>
+										  <option value="manager">管理员</option>
+									  </select>
+					              </p>
+				              
+						      <p class="submit"><input id="logincommit" type="submit" name="logincommit" value="登录"></p>
 					    </div>
 					</div>
 				</div>
