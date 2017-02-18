@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import com.zy.ticket.bean.Message;
 import com.zy.ticket.dao.AddressDao;
 import com.zy.ticket.dao.BaseDao;
 import com.zy.ticket.dao.CarDao;
@@ -17,6 +16,7 @@ import com.zy.ticket.dao.OrderDao;
 import com.zy.ticket.dao.RouteDao;
 import com.zy.ticket.dao.UserDao;
 import com.zy.ticket.service.BaseService;
+import com.zy.ticket.util.Message;
 
 @SuppressWarnings("unchecked")
 public class BaseServiceImpl<T> implements BaseService<T> {

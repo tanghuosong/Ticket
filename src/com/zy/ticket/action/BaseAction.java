@@ -61,6 +61,8 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	protected String type;
 	protected String key;
 	protected String state;
+	protected String vcode;
+	
 	
 	//注入service
 	protected DriverService driverService;
@@ -191,6 +193,10 @@ public class BaseAction<T> extends ActionSupport implements ApplicationAware,
 	
 	public void setState(String state) {
 		this.state = state;
+	}
+	
+	public void setVcode(String vcode) {
+		this.vcode = vcode;
 	}
 	
 }

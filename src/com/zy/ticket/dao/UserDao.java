@@ -6,6 +6,7 @@ public interface UserDao extends BaseDao<User>{
 
 	public void updateUserStatus(User user);
 
-	public Object checkUserLogin(User user);
-
+	public User checkUserLogin(User user);
+	
+	public boolean checkUsername(String username);
 }

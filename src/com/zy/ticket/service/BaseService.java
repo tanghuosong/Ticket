@@ -2,7 +2,7 @@ package com.zy.ticket.service;
 
 import java.util.List;
 
-import com.zy.ticket.bean.Message;
+import com.zy.ticket.util.Message;
 
 public interface BaseService<T> {
 	

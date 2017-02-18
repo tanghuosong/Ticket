@@ -1,5 +1,10 @@
-package com.zy.ticket.bean;
+package com.zy.ticket.util;
 
+/***
+ * 这是一个工具消息类，用来返回操作提示
+ * result： 表示成功与否，返回true 或者 false
+ * content： 表示返回消息内容
+ * */
 public class Message {
 	
 	public boolean result;
@@ -8,7 +13,6 @@ public class Message {
 	
 	public Message() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Message(boolean result, String content) {
 		super();
