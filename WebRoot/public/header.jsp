@@ -10,8 +10,8 @@
 </head>
 <body>
     <div class="header">
-        <span class="header_logo"><a id="returnIndex" href="${ticket}/index.jsp">
-        	<!-- <img src="${ticket }/images/logo.jpg" title="点我回到首页"></a> -->
+        <span class="header_logo"><a id="returnIndex" href="${ticket}/index.jsp"><span>长途汽车售票系统</span></a>
+        	
         </span>
         <div class="header_nav">
             <ul>
@@ -33,7 +33,7 @@
     </div>
     <div id="LoginBox">
         <div class="row1">
-           	 会员登录<a href="javascript:void(0)"  class="close_btn" id="closeBtn">×</a>
+           	 用户登录<a href="javascript:void(0)"  class="close_btn" id="closeBtn">×</a>
         </div>
         <div class="row">
             	用户名: <span class="inputBox">

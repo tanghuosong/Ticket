@@ -19,6 +19,9 @@
         <property name="status" type="java.lang.Integer">
             <column name="status" not-null="true" />
         </property>
+        <property name="ticketnum" type="java.lang.Integer">
+            <column name="ticketnum" not-null="true" />
+        </property>
         <property name="createtime" type="java.sql.Timestamp">
             <column name="createtime" length="19" not-null="true" />
         </property>

@@ -5,8 +5,8 @@ import com.zy.ticket.bean.Order;
 public class OrderAction extends BaseAction<Order>{
 	private static final long serialVersionUID = 1L;
 	
-	//添加订单信息
-	public String saveOrder(){
+	//买票
+	public String buyTicket(){
 		jsonMap.put("msg", orderService.saveModel(model));
 		return "jsonMap";
 	}

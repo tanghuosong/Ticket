@@ -44,10 +44,23 @@ $(function(){
     		+'<span class="startTime">'+data.rows[index].starttime+'</span>'
     		+'<span class="price">'+data.rows[index].price+'</span>'
     		+'<span class="ticketNum">'+data.rows[index].car.seatNum+'</span>'
-    		+'<span class="buyBtn"><a class="buyTicket" onclick="buyTicket(this.title)" href="javascript:void(0);"  title='+data.rows[index].id+'>购票</a>'
+    		+'<span class="buyBtn"><a class="buyTicket" href="javascript:void(0);"  title='+data.rows[index].id+'>购票</a>'
     		+'</div>';
 	   }
     	$("#dataContent").html(title+content);
+    	// 点击买票
+    	$(".buyTicket").click(function(){
+    		if($("#userId").val()==""||$("#userId").val()==null){
+    			alert("您还未登录，请先登录再购票！");
+    		}else{
+    			$.post("order_customer_saveOrder.action",
+					{
+    					
+    				},function(){
+    				
+    			});
+    		}
+    	});
 	}
 	// 更新页码显示
 	function updatePage(){
@@ -55,7 +68,3 @@ $(function(){
 		$("#pageInfo").html("当前第"+page+"页,共"+pageTotal+"页");
 	}
 });
-// 买票函数
-function buyTicket(title){
-	alert(title);
-}

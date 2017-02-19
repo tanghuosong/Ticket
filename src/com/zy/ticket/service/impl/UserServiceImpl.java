@@ -51,7 +51,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 			message.result = true;
 			message.content = "登录成功！";
 			// 将用户存入session中，以便后面取值
-			ActionContext.getContext().getSession().put("user",user);
+			ActionContext.getContext().getSession().put("user",userDao.checkUserLogin(user).get(0));
 		}else{
 			message.result = false;
 			message.content = "用户名或密码错误，请重新登录！";

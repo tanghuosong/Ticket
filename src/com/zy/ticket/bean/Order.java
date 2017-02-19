@@ -18,6 +18,7 @@ public class Order implements java.io.Serializable {
 	private Route route;
 	private User user;
 	private Integer status;
+	private Integer ticketnum;
 	private Timestamp createtime;
 	private Timestamp updatetime;
 
@@ -28,11 +29,12 @@ public class Order implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Order(Route route, User user, Integer status, Timestamp createtime,
+	public Order(Route route, User user, Integer status, Integer ticketnum,Timestamp createtime,
 			Timestamp updatetime) {
 		this.route = route;
 		this.user = user;
 		this.status = status;
+		this.ticketnum = ticketnum;
 		this.createtime = createtime;
 		this.updatetime = updatetime;
 	}
@@ -87,4 +89,19 @@ public class Order implements java.io.Serializable {
 		this.updatetime = updatetime;
 	}
 
+	public Integer getTicketnum() {
+		return ticketnum;
+	}
+
+	public void setTicketnum(Integer ticketnum) {
+		this.ticketnum = ticketnum;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [route=" + route + ", user=" + user + ", status="
+				+ status + ", ticketnum=" + ticketnum + ", createtime="
+				+ createtime + ", updatetime=" + updatetime + "]";
+	}
+	
 }
