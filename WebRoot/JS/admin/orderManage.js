@@ -9,41 +9,59 @@ $(function(){
 	    url:'order_admin_queryOrderByPage.action?type=id'+'&&key=', 
 	    columns:[[    
 	        {field:'ck',title:'选择',checkbox:true,width:50},    
-	        {field:'id',title:'地点编号',width:80,align:'center'},    
-	        {field:'carName',title:'省份',width:160,align:'center'},   
-	        {field:'carName',title:'市',width:160,align:'center'},   
-	        {field:'carName',title:'区/县',width:160,align:'center'},   
-	        {field:'carName',title:'站',width:160,align:'center'}
+	        {field:'id',title:'订单编号',width:80,align:'center'},    
+	        {field:'user.name',title:'用户',width:160,align:'center',
+	        	formatter: function(value,row,index){
+					if(row.user!=null && row.user.name!=null){
+						return row.user.name;
+					}
+	        	}	
+	        },   
+	        {field:'route.address.fullname',title:'目的地',width:160,align:'center',
+	        	formatter: function(value,row,index){
+					if(row.route.address!=null && row.route.address.fullname!=null){
+						return row.route.address.fullname;
+					}
+	        	}	
+	        },   
+	        {field:'createtime',title:'预定时间',width:160,align:'center'},   
+	        {field:'updatetime',title:'修改时间',width:160,align:'center'},
+	        {field:'status',title:'状态',width:160,align:'center',
+	        	formatter: function(value,row,index){
+					if (row.status==0){
+						return "未付款";
+					} else if(row.status==1){
+						return "未取票";
+					}else if(row.status==2){
+						return "已取票";
+					}
+	        	}}
 	    ]],
 	    toolbar: [{
-			iconCls: 'icon-add',
-			text:"添加地点信息",
-			handler: function(){
-				parent.$('#win').window({ 
-            		title:'添加汽车信息',
-            	    width:400,    
-            	    height:350,  
-            	    content:"<iframe src='send_admin_savePlace.action' frameborder='0' width='100%' height='100%'/>",
-            	    modal:true
-            	}); 
-			}
-		},'-',{
 			iconCls: 'icon-edit',
-			text:"更新地点信息",
+			text:"出票",
 			handler: function(){
 				var rows = $('#dg').datagrid('getSelections');
             	if(rows.length==1){
-	            	parent.$('#win').window({ 
-	            		title:'更新地点信息',
-	            	    width:400,    
-	            	    height:350,  
-	            	    content:"<iframe src='send_admin_updateOrder.action' frameborder='0' width='100%' height='100%'/>",
-	            	    modal:true
-	            	});
+            		$.post("order_customer_sendTicket.action",
+        				{
+            				'id':rows[0].id
+        				},function(data){
+        					$.messager.show({
+                    			title:'温馨提示',
+                    			msg:data.msg.content,
+                    			timeout:3000,
+                    			showType:'slide'
+                    		});
+        					if(data.msg.result){
+        						$('#dg').datagrid('reload');
+				            	$('#dg').datagrid('uncheckAll');
+        					}
+    				});
             	}else {
             		$.messager.show({
             			title:'温馨提示',
-            			msg:'请选择一条信息进行修改！',
+            			msg:'请选择出票订单！',
             			timeout:3000,
             			showType:'slide'
             		});
@@ -51,7 +69,7 @@ $(function(){
 			}
 		},'-',{
 			iconCls: 'icon-remove',
-			text:"删除地点信息",
+			text:"删除订单信息",
 			handler: function(){
 				 var rows = $('#dg').datagrid('getSelections');
 		         if(rows.length!=0){
@@ -80,10 +98,9 @@ $(function(){
 						            			showType:'slide'
 							            	});
 			        					}
-		        					}
 		        					 
-		        				});
-		        			}
+		        					});
+		        	 			}
 		        		});
 		         }else{
 		        	 $.messager.show({

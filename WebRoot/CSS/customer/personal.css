@@ -12,3 +12,22 @@ legend{background:#B0C0D1;padding:4px 10px;color:#fff;}
 .c1{color:#014CC9;}
 .c2{color:#7E6095;display:none;}
 h3{font-size:16px;padding:5px 0;}
+
+.personalInfo{padding-top:60px;width:400px;float:left;}
+.item{width:300px;height:35px;margin-left:60px;}
+.trTitle{color:#666;font-size:18px;font-weight:400;}
+.trContent{color:gray;}
+.notice{width:400px;height:400px;margin-left:40px;float:right;}
+.notice dl dt{line-height:15px;font-weight:bold;letter-spacing:1px;text-align:center;padding-top:30px;}
+.notice dl dd{line-height:23px;text-indent:20px;letter-spacing:1px;margin-top:10px;color:#777;}
+
+.content{width:100%;margin:0 auto;}
+.orderTitle{font-size:18px;font-weight:400;color:gray;width:100%;text-align:center;}
+.orderTitle span,.orderContent span{display:block;float:left;margin:5px 20px 0px 20px;}
+.orderContent{font-size:16px;font-weight:200;color:gray;text-align:center;}
+.orderId{width:100px;}
+.orderTime{width:200px;}
+.des{width:300px;}
+.carNum{width:40px;}
+.ticketCount{width:70px;}
+.orderStatus{width:70px;}

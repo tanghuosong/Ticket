@@ -11,11 +11,19 @@
 .pageTitle { clear: both; margin-top: 24px; font-size: 24px; float: left; color: #fff; }
 .contentTitle { clear: both; font-size: 20px; float: left; width: 100%; color: #436206; }
 .userInfo {float:right;color:white;font-size:14px;margin-top:60px;margin-right:40px;}
-.tableContent{width:100%;min-height:330px;border-bottom:1px solid gray;}
+.tableContent{float:left;width:75%;min-height:330px;border-bottom:1px solid gray;}
 .tableContent span{display:block;float:left;width:100px;font-size: 16px;color: brown;margin-right:10px;text-align:center; }
 .tableTitle{width: 100%;height:60px;line-height: 60px;border-bottom:1px solid gray;}
 .tableTitle span{font-weight: bold; }
 .eachItems{width: 100%;height: 25px;line-height: 25px;}
 .eachItems span{font-size: 14px;}
 .eachItems span a{color:brown;}
-.tableContent .endAddress{display:block;width:200px;overflow:hidden;white-space:nowrap;}
+.tableContent .carNum{width:50px;}
+.tableContent .price{width:50px;}
+.tableContent .buyBtn{width:50px;}
+.tableContent .endAddress{display:block;width:230px;overflow:hidden;white-space:nowrap;}
+
+.searchBox{width:20%;min-height:330px;float:right;border-bottom:1px solid gray;}
+.searchBoxTitle{width:100%;height:60px;heightfont-size:16px;line-height: 60px;text-align:center;border-bottom:1px solid gray;color:brown;font-weight:700;}
+.searchBtn{display:inline-block;width:60%;height:25px;margin:0px 20px;background-color:white;line-height:25px;text-align:center;}
+.row11{display:block;margin-top:20px;}

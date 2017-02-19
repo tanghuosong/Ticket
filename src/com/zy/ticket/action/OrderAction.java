@@ -1,5 +1,8 @@
 package com.zy.ticket.action;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.zy.ticket.bean.Order;
 
 public class OrderAction extends BaseAction<Order>{
@@ -7,7 +10,20 @@ public class OrderAction extends BaseAction<Order>{
 	
 	//买票
 	public String buyTicket(){
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		model.setCreatetime(df.format(new Date()));
+		model.setUpdatetime(df.format(new Date()));
+		System.out.println(model);
 		jsonMap.put("msg", orderService.saveModel(model));
+		return "jsonMap";
+	}
+	
+	// 出票（修改订单状态）
+	public String sendTicket(){
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		model.setUpdatetime(df.format(new Date()));
+		model.setStatus(2);
+		jsonMap.put("msg", orderService.sendTicket(model));
 		return "jsonMap";
 	}
 	
@@ -35,4 +51,11 @@ public class OrderAction extends BaseAction<Order>{
 		jsonMap.put("rows",orderService.queryModelByPage(type, key, rows, page, sort, order));
 		return "jsonMap";
 	}
+	// 查询所有已完成订单
+	public String queryOrderByUserId(){
+		jsonMap.put("total", orderService.getRowCountByUserIdAndStatus(model));
+		jsonMap.put("rows", orderService.queryOrderByUserId(model,rows, page));
+		return "jsonMap";
+	}
+	
 }

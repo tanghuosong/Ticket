@@ -1,22 +1,77 @@
 $(function(){
+	var flag= "1";
 	new tab('test1_li_now_', '_', null, 'onmouseover');
 	new tab('test2_li_now_');
 	new tab('test3_li_now_', '_', function(){
 		switch (this['Index']) {
 		case 1:
-			alert("yi");
 			break;
 		case 2:
-			alert("er");
+			flag="2";
+			getNotFinishOrder();
 			break;
 		case 3:
-			alert("san");
+			flag="3";
+			getHasFinishOrder();
 			break;
-
-		default:
+		case 4:
+			flag="4";
+			pickTicket();
 			break;
 		}
 	});
+	new tab('test4-input-input_tab1-input_tab2', '-');
+	
+	function getNotFinishOrder(){
+		$.post("order_customer_queryOrderByUserId.action",
+			{
+				"user.id":$("#userId").val(),
+				"rows":10,
+				"page":1,
+				"status":0
+			},
+			function(data){
+				show(data);
+		});
+	}
+	function getHasFinishOrder(){
+		$.post("order_customer_queryOrderByUserId.action",
+			{
+				"user.id":$("#userId").val(),
+				"rows":10,
+				"page":1,
+				"status":1
+			},
+			function(data){
+				show(data);
+		});
+	}
+	
+	function pickTicket(){
+		$.post("order_customer_queryOrderByUserId.action",
+			{
+				"user.id":$("#userId").val(),
+				"rows":10,
+				"page":1,
+				"status":2
+			},
+			function(data){
+				show(data);
+		});
+	}
+	function show(data){
+		var content = '<div class="orderTitle"><span class="orderId">订单编号</span><span class="orderTime">订单日期</span><span class="carNum">车次</span><span class="des">目的地</span><span class="ticketCount">车票数量</span><span class="orderStatus">我要支付</span></div>';
+		for(var index in data.rows){
+			content = content+'<div class="orderContent"><span class="orderId">'+data.rows[index].id+'</span><span class="orderTime">'+data.rows[index].createtime+'</span><span class="carNum">'+'C'+data.rows[index].route.id+'</span><span class="des">'+data.rows[index].route.address.fullname+'</span><span class="ticketCount">'+data.rows[index].ticketnum+'</span><span class="orderStatus"><a href="javascript:void(0)" title='+data.rows[index].id+'>支付</a></span></div>';
+		}
+		if(flag=="2"){
+			$("#finishOrder").html(content);
+		}else if(flag=="3"){
+			$("#unfinishedOrder").html(content);
+		}else if(flag=="4"){
+			$("#pickTicket").html(content);
+		}
+	}
 });
 
 function tab(o, s, cb, ev){ //tab切换类

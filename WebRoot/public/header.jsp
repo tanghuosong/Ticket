@@ -27,7 +27,7 @@
 		                <li>｜<a href="javascript:void(0)" id="exit">安全退出</a></li>
 	                </c:otherwise>
                 </c:choose>
-                <li>｜<a href="send_admin_login.action" target="_blank">进入后台</a></li>
+                <li>｜<a href="send_admin_index.action" target="_blank">进入后台</a></li>
             </ul>
         </div>
     </div>

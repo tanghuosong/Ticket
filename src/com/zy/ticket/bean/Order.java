@@ -1,6 +1,5 @@
 package com.zy.ticket.bean;
 
-import java.sql.Timestamp;
 
 /**
  * Order entity. @author MyEclipse Persistence Tools
@@ -19,8 +18,8 @@ public class Order implements java.io.Serializable {
 	private User user;
 	private Integer status;
 	private Integer ticketnum;
-	private Timestamp createtime;
-	private Timestamp updatetime;
+	private String createtime;
+	private String updatetime;
 
 	// Constructors
 
@@ -29,8 +28,8 @@ public class Order implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Order(Route route, User user, Integer status, Integer ticketnum,Timestamp createtime,
-			Timestamp updatetime) {
+	public Order(Route route, User user, Integer status, Integer ticketnum,String createtime,
+			String updatetime) {
 		this.route = route;
 		this.user = user;
 		this.status = status;
@@ -38,7 +37,7 @@ public class Order implements java.io.Serializable {
 		this.createtime = createtime;
 		this.updatetime = updatetime;
 	}
-
+	
 	// Property accessors
 
 	public Integer getId() {
@@ -73,19 +72,19 @@ public class Order implements java.io.Serializable {
 		this.status = status;
 	}
 
-	public Timestamp getCreatetime() {
+	public String getCreatetime() {
 		return this.createtime;
 	}
 
-	public void setCreatetime(Timestamp createtime) {
+	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
 	}
 
-	public Timestamp getUpdatetime() {
+	public String getUpdatetime() {
 		return this.updatetime;
 	}
 
-	public void setUpdatetime(Timestamp updatetime) {
+	public void setUpdatetime(String updatetime) {
 		this.updatetime = updatetime;
 	}
 
@@ -97,11 +96,12 @@ public class Order implements java.io.Serializable {
 		this.ticketnum = ticketnum;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Order [route=" + route + ", user=" + user + ", status="
 				+ status + ", ticketnum=" + ticketnum + ", createtime="
-				+ createtime + ", updatetime=" + updatetime + "]";
+				+ createtime + ", updatetime=" + updatetime +  "]";
 	}
-	
+
 }

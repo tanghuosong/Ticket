@@ -56,4 +56,7 @@ public class UserAction extends BaseAction<User>{
 		jsonMap.put("rows",userService.queryModelByPage(type, key, rows, page, sort, order));
 		return "jsonMap";
 	}
+	
+	
+	
 }
