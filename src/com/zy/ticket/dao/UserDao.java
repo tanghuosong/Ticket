@@ -12,4 +12,5 @@ public interface UserDao extends BaseDao<User>{
 	
 	public boolean checkUsername(String username);
 
+	public void updateUserPassword(User user,String newPassword);
 }

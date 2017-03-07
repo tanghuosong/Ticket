@@ -7,6 +7,14 @@ import com.zy.ticket.bean.User;
 
 public class UserAction extends BaseAction<User>{
 	private static final long serialVersionUID = 1L;
+	private String newPassword;
+	private String oldPassword;
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+	public void setOldPassword(String oldPassword) {
+		this.oldPassword = oldPassword;
+	}
 	//用户注册
 	public String saveUser(){
 		jsonMap.put("msg", userService.registerUser(model,vcode));
@@ -57,6 +65,10 @@ public class UserAction extends BaseAction<User>{
 		return "jsonMap";
 	}
 	
-	
+	// 修改用户密码
+	public String updateUserPassword(){
+		jsonMap.put("msg", userService.updateUserPassword(newPassword,oldPassword));
+		return "jsonMap";
+	}
 	
 }

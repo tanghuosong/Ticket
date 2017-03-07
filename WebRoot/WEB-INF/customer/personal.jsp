@@ -19,11 +19,20 @@
 		</div>
 		<div>
 			<div id="test3_1" class="tablist block">
-				<div id="personalInfo" class="personalInfo">
-					<div class="item"><span class="trTitle">用户账号：</span><span class="trContent">${user.name }</span></div>
-					<div class="item"><span class="trTitle">用户性别：</span><span class="trContent">${user.sex }</span></div>
-					<div class="item"><span class="trTitle">用户邮箱：</span><span class="trContent">${user.email }</span></div>
-					<div class="item"><span class="trTitle">用户电话：</span><span class="trContent">${user.phone }</span></div>
+				<div class = "left_content">
+					<div id="personalInfo" class="personalInfo">
+						<div class="item"><span class="trTitle">用户账号：</span><span class="trContent">${user.name }</span></div>
+						<div class="item"><span class="trTitle">用户性别：</span><span class="trContent">${user.sex }</span></div>
+						<div class="item"><span class="trTitle">用户邮箱：</span><span class="trContent">${user.email }</span></div>
+						<div class="item"><span class="trTitle">用户电话：</span><span class="trContent">${user.phone }</span></div>
+						<div class="item"><a id="updatePassword" name="updatePassword" href="javascript:void(0)" title="修改密码">修改密码</a></div>
+					</div>
+					
+					<div class = "updatePass" id="updatePass">
+						<div class="item"><span class="trTitle">旧密码</span><input type="password" name = "oldPassword"></div>
+						<div class="item"><span class="trTitle">新密码</span><input type="password" name = "newPassword"></div>
+						<div class="item"><input type="button" class="submitUpdate" id="submitUpdate" name="submit" value="确认修改"/></div>
+					</div>
 				</div>
 				<div class="notice">
 					<dl>

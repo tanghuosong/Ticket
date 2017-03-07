@@ -27,4 +27,12 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
 		}
 		return true;
 	}
+	
+	@Override
+	public void updateUserPassword(User user,String newPassword) {
+		String sqlString = "UPDATE User u SET u.password =:newpassword WHERE u.name=:name AND u.password =:oldpassword ";
+		session().createQuery(sqlString).setString("newpassword",newPassword)
+		.setString("name", user.getName()).setString("oldpassword", user.getPassword())
+		.executeUpdate();
+	}
 }

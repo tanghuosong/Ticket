@@ -22,6 +22,11 @@ $(function(){
 	});
 	new tab('test4-input-input_tab1-input_tab2', '-');
 	
+	$("#updatePassword").click(function(){
+		alert("点击修改密码");
+//		$("#updatePass").style.display="block";
+	});
+	
 	function getNotFinishOrder(){
 		$.post("order_customer_queryOrderByUserId.action",
 			{

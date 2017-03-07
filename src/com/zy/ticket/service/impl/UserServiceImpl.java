@@ -58,6 +58,30 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 		}
 		return message;
 	}
+	
+	//修改用户密码
+	@Override
+	public Message updateUserPassword( String newPassword,String oldPassword) {
+		User user = (User)ActionContext.getContext().getSession().get("user");
+		if(!user.getPassword().equals(oldPassword)){
+			message.result = false;
+			message.content = "旧密码错误！";
+		}else if(user.getPassword().equals(newPassword)){
+			message.result = false;
+			message.content = "新密码不能与使用过的密码相同";
+		}else{
+			try{
+				userDao.updateUserPassword(user, newPassword);
+				message.result =true;
+				message.content = "密码修改成功,请重新登录";
+				ActionContext.getContext().getSession().remove("user");
+			}catch(Exception e){
+				message.result = false;
+				message.content = "修改失败！"+e.getMessage();
+			}
+		}
+		return null;
+	}
 
 
 
