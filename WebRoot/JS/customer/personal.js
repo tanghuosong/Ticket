@@ -22,9 +22,23 @@ $(function(){
 	});
 	new tab('test4-input-input_tab1-input_tab2', '-');
 	
+	// 点击修改密码，出现密码修改框
 	$("#updatePassword").click(function(){
-		alert("点击修改密码");
-//		$("#updatePass").style.display="block";
+		$("#updatePass").removeClass("updatePass").addClass("updatePassVisible");
+	});
+	
+	$("#submitUpdate").click(function(){
+		var oldPass = $("input[name='oldPassword']").val();
+		var newPass = $("input[name='newPassword']").val();
+		$.post("user_customer_updateUserPassword.action",{
+			'oldPassword':oldPass,
+			'newPassword':newPass
+		},function(data){
+			alert(data.msg.content);
+			if(data.msg.result){
+				refresh();
+			}
+		});
 	});
 	
 	function getNotFinishOrder(){
@@ -78,6 +92,9 @@ $(function(){
 		}
 	}
 });
+function refresh(){
+    window.location.reload();//刷新当前页面.
+}
 
 function tab(o, s, cb, ev){ //tab切换类
 	var $ = function(o){return document.getElementById(o)};

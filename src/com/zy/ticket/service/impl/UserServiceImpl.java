@@ -80,7 +80,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 				message.content = "修改失败！"+e.getMessage();
 			}
 		}
-		return null;
+		return message;
 	}
 
 

@@ -67,8 +67,7 @@ public class UserAction extends BaseAction<User>{
 	
 	// 修改用户密码
 	public String updateUserPassword(){
-		jsonMap.put("msg", userService.updateUserPassword(newPassword,oldPassword));
+		jsonMap.put("msg", userService.updateUserPassword(newPassword, oldPassword));
 		return "jsonMap";
 	}
-	
 }

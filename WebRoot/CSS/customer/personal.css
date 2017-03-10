@@ -20,7 +20,8 @@ h3{font-size:16px;padding:5px 0;}
 .trContent{color:gray;}
 
 .updatePass{margin-top:30px;visibility: hidden;}
-.submitUpdate{width:80px;height:30px;font-size:14px;}
+.updatePassVisible{margin-top: 30px;visibility: visible;}
+.submitUpdate{width:80px;height:30px;font-size:14px;background: white;}
 .notice{width:400px;height:400px;margin-left:40px;float:right;}
 .notice dl dt{line-height:15px;font-weight:bold;letter-spacing:1px;text-align:center;padding-top:30px;}
 .notice dl dd{line-height:23px;text-indent:20px;letter-spacing:1px;margin-top:10px;color:#777;}
