@@ -47,11 +47,6 @@
             </span><a href="javascript:void(0)" title="提示" class="warning" id="warn2">*</a>
         </div>
         <div class="row">
-           	角&nbsp;&nbsp;&nbsp;&nbsp;色: 
-               <label class="labelText1" for="user">用户</label><input type="radio" id="user" name="permisson" value="user" checked="checked" />
-               <label class="labelText1" for="admin">管理员</label><input type="radio" id="admin" name="permisson" value="admin"/>
-        </div>
-        <div class="row">
             <a href="#" id="loginbtn">登录</a>
         </div>
         <div class="row2">
