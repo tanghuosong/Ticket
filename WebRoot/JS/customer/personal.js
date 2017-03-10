@@ -27,6 +27,7 @@ $(function(){
 		$("#updatePass").removeClass("updatePass").addClass("updatePassVisible");
 	});
 	
+	// 确认修改密码按钮
 	$("#submitUpdate").click(function(){
 		var oldPass = $("input[name='oldPassword']").val();
 		var newPass = $("input[name='newPassword']").val();
@@ -40,7 +41,7 @@ $(function(){
 			}
 		});
 	});
-	
+	// 获取未完成订单
 	function getNotFinishOrder(){
 		$.post("order_customer_queryOrderByUserId.action",
 			{
@@ -53,6 +54,7 @@ $(function(){
 				show(data);
 		});
 	}
+	// 已完成订单
 	function getHasFinishOrder(){
 		$.post("order_customer_queryOrderByUserId.action",
 			{
@@ -65,7 +67,7 @@ $(function(){
 				show(data);
 		});
 	}
-	
+	// 已取票订单
 	function pickTicket(){
 		$.post("order_customer_queryOrderByUserId.action",
 			{
@@ -78,6 +80,7 @@ $(function(){
 				show(data);
 		});
 	}
+	
 	function show(data){
 		var content = '<div class="orderTitle"><span class="orderId">订单编号</span><span class="orderTime">订单日期</span><span class="carNum">车次</span><span class="des">目的地</span><span class="ticketCount">车票数量</span><span class="orderStatus">我要支付</span></div>';
 		for(var index in data.rows){

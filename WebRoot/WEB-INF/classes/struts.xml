@@ -58,6 +58,9 @@
 			<result type="json" name="jsonMap">
 				<param name="root">jsonMap</param>
 			</result>
+			<result type="redirectAction" name="gotoindex">
+				send_admin_index.action
+			</result>
 		</action>
 		<action name="order_*_*" class="orderAction" method="{2}">
 			<result type="json" name="jsonMap">

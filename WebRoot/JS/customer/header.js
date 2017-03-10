@@ -33,19 +33,36 @@ $(function(){
 				$(".warning").css({ display: 'none' });
 			}
 		}
-		$.post("user_customer_userLogin.action", 
-				{ 
-					'name':$("#txtName").val(),
-					'password':$("#txtPwd").val()
-				},
-				function(data){
-					if(data.msg.result){
-						$("#LoginBox input").val("");
-						refresh();
-					}else{
-						alert(data.msg.content);
-					}
-			},"json");
+		
+		if($("input[name='permisson']:checked").val()=="user"){
+			$.post("user_customer_userLogin.action", 
+					{ 
+						'name':$("#txtName").val(),
+						'password':$("#txtPwd").val()
+					},
+					function(data){
+						if(data.msg.result){
+							$("#LoginBox input").val("");
+							refresh();
+						}else{
+							alert(data.msg.content);
+						}
+				},"json");
+		}else{
+			$.post("manager_manager_managerLogin.action", 
+					{ 
+						'email':$("#txtName").val(),
+						'password':$("#txtPwd").val()
+					},
+					function(data){
+						if(data.msg.result){
+							
+						}else{
+							alert(data.msg.content);
+						}
+				},"json");
+		}
+		
 	});
 	//文本框不允许为空---单个文本触发
 	$("#txtName").on('blur', function () {

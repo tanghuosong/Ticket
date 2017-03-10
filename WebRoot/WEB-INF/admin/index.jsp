@@ -11,7 +11,7 @@
    	<div id="cc" class="easyui-layout" style="width:100%;height:100%;">  
 	    <div id="header_title" data-options="region:'north',title:'欢迎来到宇哥售票后台管理系统',split:false,collapsible:false" style="height:140px;">
 	    	<div id="title">长途汽车售票系统</div>
-	    	<div id="admin">管理员：${admin.adminName}</div>
+	    	<div id="admin">管理员：${manager.email}</div>
 	    </div>   
 	    <div data-options="region:'west',title:'系统操作',split:false,collapsible:false" style="width:200px;">
 	    	<!--以下是左菜单选项 -->

@@ -1,6 +1,7 @@
 package com.zy.ticket.action;
 
 import com.zy.ticket.bean.Manager;
+import com.zy.ticket.util.Message;
 
 public class ManagerAction extends BaseAction<Manager>{
 	private static final long serialVersionUID = 1L;
@@ -13,8 +14,13 @@ public class ManagerAction extends BaseAction<Manager>{
 	
 	// 管理员登录
 	public String managerLogin(){
-		jsonMap.put("msg", managerService.checkLogin(model));
-		return "jsonMap";
+		Message message = new Message();
+		message = managerService.checkLogin(model);
+		if(message.result){
+			return "gotoindex";
+		}
+		jsonMap.put("msg", message);
+		return "inputStream";
 	}
 	
 	//根据id删除管理员信息

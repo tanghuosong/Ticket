@@ -12,7 +12,7 @@ public class ManagerServiceImpl extends BaseServiceImpl<Manager> implements Mana
 		Message message = new Message();
 		if(managerDao.checkLogin(manager).size()!=0){
 			message.result = true;
-			message.content = "登录成功！";
+			message.content = "send_admin_index.action";
 			// 将管理员存入session中，以便后面取值
 			ActionContext.getContext().getSession().put("manager",manager);
 		}else{
