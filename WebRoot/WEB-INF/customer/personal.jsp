@@ -12,7 +12,6 @@
 		<div class="tab2">
 			<ul id="test3_li_now_">
 				<li class="now">个人信息</li>
-				<li>未完成订单</li>
 				<li>已完成订单</li>
 				<li>已取票订单</li>
 			</ul>
@@ -43,15 +42,10 @@
 				</div>
 			</div>
 			<div id="test3_2" class="tablist">
-				<div class="content">
-					<div id="finishOrder" class="orderClass"></div>
+				<div id="finishedOrder" class="orderClass">
 				</div>
 			</div>
 			<div id="test3_3" class="tablist">
-				<div id="unfinishedOrder" class="orderClass">
-				</div>
-			</div>
-			<div id="test3_4" class="tablist">
 				<div id="pickTicket" class="orderClass">
 					
 				</div>

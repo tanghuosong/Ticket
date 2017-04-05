@@ -8,19 +8,14 @@ $(function(){
 			break;
 		case 2:
 			flag="2";
-			getNotFinishOrder();
+			getHasFinishOrder();
 			break;
 		case 3:
 			flag="3";
-			getHasFinishOrder();
-			break;
-		case 4:
-			flag="4";
 			pickTicket();
 			break;
 		}
 	});
-	new tab('test4-input-input_tab1-input_tab2', '-');
 	
 	// 点击修改密码，出现密码修改框
 	$("#updatePassword").click(function(){
@@ -41,19 +36,7 @@ $(function(){
 			}
 		});
 	});
-	// 获取未完成订单
-	function getNotFinishOrder(){
-		$.post("order_customer_queryOrderByUserId.action",
-			{
-				"user.id":$("#userId").val(),
-				"rows":10,
-				"page":1,
-				"status":0
-			},
-			function(data){
-				show(data);
-		});
-	}
+	
 	// 已完成订单
 	function getHasFinishOrder(){
 		$.post("order_customer_queryOrderByUserId.action",
@@ -82,16 +65,37 @@ $(function(){
 	}
 	
 	function show(data){
-		var content = '<div class="orderTitle"><span class="orderId">订单编号</span><span class="orderTime">订单日期</span><span class="carNum">车次</span><span class="des">目的地</span><span class="ticketCount">车票数量</span><span class="orderStatus">我要支付</span></div>';
+		var content = '<div class="orderTitle"><span class="orderId">订单编号</span><span class="orderTime">订单日期</span><span class="carNum">车次</span><span class="des">目的地</span><span class="ticketCount">车票数量</span><span class="orderStatus">退票</span></div>';
 		for(var index in data.rows){
-			content = content+'<div class="orderContent"><span class="orderId">'+data.rows[index].id+'</span><span class="orderTime">'+data.rows[index].createtime+'</span><span class="carNum">'+'C'+data.rows[index].route.id+'</span><span class="des">'+data.rows[index].route.address.fullname+'</span><span class="ticketCount">'+data.rows[index].ticketnum+'</span><span class="orderStatus"><a href="javascript:void(0)" title='+data.rows[index].id+'>支付</a></span></div>';
+			content = content+'<div class="orderContent">'
+				+'<span class="orderId">'+data.rows[index].id+'</span>'
+				+'<span class="orderTime">'+data.rows[index].createtime+'</span>'
+				+'<span class="carNum">'+'C'+data.rows[index].route.id+'</span>'
+				+'<span class="des">'+data.rows[index].route.address.fullname+'</span>'
+				+'<span class="ticketCount">'+data.rows[index].ticketnum+'</span>'
+				+'<span class="orderStatus"><a class="returnTicket" href="javascript:void(0)" title='+data.rows[index].id+'>退票</a>'
+			 	+'</span></div>';
 		}
-		if(flag=="2"){
-			$("#finishOrder").html(content);
+		if(flag == "2"){
+			$("#finishedOrder").html(content);
+			$(".returnTicket").click(function(){
+				 if (confirm("您确定要退票吗？")) {  
+					 $.post("order_customer_returnTicket.action",
+						{
+							"id":this.title,
+							"status":3
+						},
+						function(data){
+							if(data.msg.result){
+								getHasFinishOrder();
+							}
+							alert(data.msg.content);
+					}); 
+		        }  
+			});
 		}else if(flag=="3"){
-			$("#unfinishedOrder").html(content);
-		}else if(flag=="4"){
 			$("#pickTicket").html(content);
+			$(".orderStatus").html("");
 		}
 	}
 });

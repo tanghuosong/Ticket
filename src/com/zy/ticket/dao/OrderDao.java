@@ -6,8 +6,10 @@ import com.zy.ticket.bean.Order;
 
 public interface OrderDao extends BaseDao<Order>{
 
-	public int sendTicket(Order order);
-
+	public int updateTicket(Order order);
+	
+	public Order buyTicket(Order order);
+	
 	public Order checkOrderStatusById(Order order);
 
 	public List<Order> queryOrderByUserId(Integer userId,Integer status, int startRows, int _rows);

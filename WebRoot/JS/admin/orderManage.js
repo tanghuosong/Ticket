@@ -28,12 +28,12 @@ $(function(){
 	        {field:'updatetime',title:'修改时间',width:160,align:'center'},
 	        {field:'status',title:'状态',width:160,align:'center',
 	        	formatter: function(value,row,index){
-					if (row.status==0){
-						return "未付款";
-					} else if(row.status==1){
-						return "未取票";
-					}else if(row.status==2){
+					if (row.status==1){
+						return "已支付";
+					} else if(row.status==2){
 						return "已取票";
+					}else if(row.status ==3){
+						return "已退票";
 					}
 	        	}}
 	    ]],

@@ -108,6 +108,15 @@ public class Route implements java.io.Serializable {
 	public void setSold(Integer sold) {
 		this.sold = sold;
 	}
+
+	@Override
+	public String toString() {
+		return "Route [id=" + id + ", address=" + address + ", car=" + car
+				+ ", driver=" + driver + ", starttime=" + starttime
+				+ ", price=" + price + ", sold=" + sold + "]";
+	}
+	
+	
 //
 //	public Set<?> getOrders() {
 //		return this.orders;

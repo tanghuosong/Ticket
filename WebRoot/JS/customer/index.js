@@ -68,6 +68,9 @@ $(function(){
     					status:0,
     					ticketnum:1
     				},function(data){
+    					if(data.msg.result){
+    						postUrl();
+    					}
     					alert(data.msg.content);
     			});
     		}

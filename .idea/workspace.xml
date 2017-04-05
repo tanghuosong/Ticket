@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd5c0ef0-5eb1-4495-a64e-7cf54d0f657e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/zy/ticket/action/ManagerAction.class" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/zy/ticket/action/ManagerAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/zy/ticket/service/impl/ManagerServiceImpl.class" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/zy/ticket/service/impl/ManagerServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/CSS/customer/header.css" afterPath="$PROJECT_DIR$/WebRoot/CSS/customer/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/JS/customer/header.js" afterPath="$PROJECT_DIR$/WebRoot/JS/customer/header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/JS/customer/personal.js" afterPath="$PROJECT_DIR$/WebRoot/JS/customer/personal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/public/header.jsp" afterPath="$PROJECT_DIR$/WebRoot/public/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zy/ticket/action/ManagerAction.java" afterPath="$PROJECT_DIR$/src/com/zy/ticket/action/ManagerAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zy/ticket/service/impl/ManagerServiceImpl.java" afterPath="$PROJECT_DIR$/src/com/zy/ticket/service/impl/ManagerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-    </list>
+    <list default="true" id="bd5c0ef0-5eb1-4495-a64e-7cf54d0f657e" name="Default" comment="" />
     <ignored path="Ticket.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -368,8 +357,8 @@
     <option name="totallyTimeSpent" value="7891000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.193265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

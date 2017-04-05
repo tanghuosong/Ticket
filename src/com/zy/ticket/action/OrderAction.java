@@ -10,11 +10,7 @@ public class OrderAction extends BaseAction<Order>{
 	
 	//买票
 	public String buyTicket(){
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		model.setCreatetime(df.format(new Date()));
-		model.setUpdatetime(df.format(new Date()));
-		System.out.println(model);
-		jsonMap.put("msg", orderService.saveModel(model));
+		jsonMap.put("msg", orderService.buyTicket(model));
 		return "jsonMap";
 	}
 	
@@ -24,6 +20,13 @@ public class OrderAction extends BaseAction<Order>{
 		model.setUpdatetime(df.format(new Date()));
 		model.setStatus(2);
 		jsonMap.put("msg", orderService.sendTicket(model));
+		return "jsonMap";
+	}
+	
+	// 退票
+	public String returnTicket(){
+		System.out.println(model);
+		jsonMap.put("msg", orderService.returnTicket(model));
 		return "jsonMap";
 	}
 	

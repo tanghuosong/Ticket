@@ -96,12 +96,12 @@ public class Order implements java.io.Serializable {
 		this.ticketnum = ticketnum;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Order [route=" + route + ", user=" + user + ", status="
-				+ status + ", ticketnum=" + ticketnum + ", createtime="
-				+ createtime + ", updatetime=" + updatetime +  "]";
+		return "Order [id=" + id + ", route=" + route + ", user=" + user
+				+ ", status=" + status + ", ticketnum=" + ticketnum
+				+ ", createtime=" + createtime + ", updatetime=" + updatetime
+				+ "]";
 	}
 
 }

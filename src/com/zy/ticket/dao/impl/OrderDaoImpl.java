@@ -13,9 +13,14 @@ public class OrderDaoImpl extends BaseDaoImpl<Order> implements OrderDao {
 		String sql = "FROM Order o LEFT JOIN FETCH o.route r LEFT JOIN FETCH r.address LEFT JOIN FETCH r.car c LEFT JOIN FETCH c.carType LEFT JOIN FETCH r.driver LEFT JOIN FETCH o.user WHERE o."+type+" like :key order by o."+sort+" "+order;
 		return session().createQuery(sql).setString("key", "%"+key+"%").setFirstResult(startRows).setMaxResults(_rows).list();
 	}
-
 	@Override
-	public int sendTicket(Order order) {
+	public Order buyTicket(Order order) {
+		session().save(order);
+		return order;
+	}
+	
+	@Override
+	public int updateTicket(Order order) {
 		String sqlString = "UPDATE Order o SET o.status =:status,o.updatetime =:updatetime WHERE o.id=:id";
 		return session().createQuery(sqlString).setInteger("status", order.getStatus()).setString("updatetime", order.getUpdatetime()).setInteger("id", order.getId()).executeUpdate();
 	}
@@ -32,7 +37,13 @@ public class OrderDaoImpl extends BaseDaoImpl<Order> implements OrderDao {
 		String sql = "FROM Order o LEFT JOIN FETCH o.route r LEFT JOIN FETCH r.address LEFT JOIN FETCH r.car c LEFT JOIN FETCH c.carType LEFT JOIN FETCH r.driver LEFT JOIN FETCH o.user WHERE o.user.id=:userId and o.status=:status order by o.id desc";
 		return session().createQuery(sql).setInteger("userId", userId).setInteger("status", status).setFirstResult(startRows).setMaxResults(_rows).list();
 	}
-
+	
+	@Override
+	public Order get(Integer id) {
+		String sql = "FROM Order o LEFT JOIN FETCH o.route r LEFT JOIN FETCH r.address LEFT JOIN FETCH r.car c LEFT JOIN FETCH c.carType LEFT JOIN FETCH r.driver LEFT JOIN FETCH o.user WHERE o.id=:id";
+		return (Order)session().createQuery(sql).setInteger("id", id).uniqueResult();
+	}
+	
 	@Override
 	public int getRowCountByUserIdAndStatus(Order model) {
 		String sqlString = "FROM Order o LEFT JOIN FETCH o.route r LEFT JOIN FETCH r.address LEFT JOIN FETCH r.car c LEFT JOIN FETCH c.carType LEFT JOIN FETCH r.driver LEFT JOIN FETCH o.user WHERE o.user.id=:userId and o.status=:status";
